@@ -1,0 +1,79 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.arena_button",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-9, 14, -9], "size": [18, 2, 18], "uv": [1, 40]},
+						{"origin": [-9, 0, -9], "size": [18, 2, 18], "uv": [56, 42]},
+						{"origin": [-8, 2, -8], "size": [16, 12, 16], "uv": [0, 60]}
+					],
+					"locators": {
+						"particle": [0, 16, 0]
+					}
+				},
+				{
+					"name": "rotation",
+					"parent": "root",
+					"pivot": [-1, 16, 0]
+				},
+				{
+					"name": "bone",
+					"parent": "rotation",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [6.6, 14, 7], "size": [3, 4, 3], "pivot": [7.5, 16, 7.5], "rotation": [-40.72746, 17.29377, 34.47034], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "rotation",
+					"pivot": [-1, 0, 0],
+					"cubes": [
+						{"origin": [-10.6, 14, 7], "size": [3, 4, 3], "pivot": [-8.5, 16, 7.5], "rotation": [-40.72746, -17.29377, -34.47034], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "rotation_2",
+					"parent": "root",
+					"pivot": [-1, 16, 0]
+				},
+				{
+					"name": "bone3",
+					"parent": "rotation_2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [6.6, 14, -10], "size": [3, 4, 3], "pivot": [7.5, 16, -7.5], "rotation": [40.72746, -17.29377, 34.47034], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "bone4",
+					"parent": "rotation_2",
+					"pivot": [-1, 0, 0],
+					"cubes": [
+						{"origin": [-10.6, 14, -10], "size": [3, 4, 3], "pivot": [-8.5, 16, -7.5], "rotation": [40.72746, 17.29377, -34.47034], "uv": [0, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "button",
+					"parent": "root",
+					"pivot": [0, 17, 0],
+					"cubes": [
+						{"origin": [-3, 16, -2], "size": [6, 2, 4], "uv": [0, 7]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ender_tp_mob": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'ender_sword'" }
+          ]
+        },
+        
+        "holding":{
+          "transitions": [
+            { "cant_use": "v.attack_time > 0.0 && q.get_equipped_item_name == 'ender_sword' && q.is_illager_captain" },
+            { "cant_use": "q.is_using_item && q.get_equipped_item_name == 'ender_sword' && q.is_illager_captain" },
+            { "tp_to_mob_in_range": "v.attack_time > 0.0 && q.get_equipped_item_name == 'ender_sword' && !q.is_illager_captain" },
+            { "tp_player_ender": "q.is_using_item && q.get_equipped_item_name == 'ender_sword' && !q.is_illager_captain" },
+            { "removing_state": "q.get_equipped_item_name != 'ender_sword'" }
+          ]
+        },
+
+        "cant_use":{
+          "transitions": [
+            {"default": "v.attack_time < 0.2 && !q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": ["/tellraw @s {\"rawtext\":[{\"text\":\"- §6Blink skills are not allowed within the arena§r\n\"}]}", "/playsound note.bassattack @s ~~~ 0.75 1 1"]
+        },
+
+        "removing_state":{
+          "on_entry": ["@s xp:remove_no_damage"],
+          "transitions": [
+            {"remove": "q.all_animations_finished"}
+          ]
+        },
+        "remove":{
+          "transitions": [
+            {"default": "q.all_animations_finished"}
+          ]
+        },
+        "tp_player_ender":{
+          "transitions": [
+            {"default": "!q.is_using_item && q.get_equipped_item_name == 'ender_sword'"}
+          ],
+          "on_entry": ["@s xp:use_tp", "/effect @s nausea 4 8 true", "@s xp:no_damage"]
+        },
+        "tp_to_mob_in_range":{
+          "transitions": [
+            {"default": "q.all_animations_finished && q.get_equipped_item_name == 'ender_sword'"}
+          ],
+          "on_entry": ["/function ender_sword/ender_in_range"]
+        }
+      }
+    },
+    "controller.animation.ender_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'ender_sword'" },
+            {"freefly": "q.is_jumping && q.is_sneaking && q.get_equipped_item_name == 'ender_sword'"},
+            {"particle": "q.get_equipped_item_name == 'ender_sword' && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": [
+            "/tag @s remove ender_sword",
+            "/effect @s strength 0 0 true",
+            "/effect @s invisibility 0 0 true",
+            "/effect @s jump_boost 0 0 true",
+            "/fog @s remove yes",
+            "/effect @s speed 0 0 true"
+          ]
+        },
+        "particle":{
+          "on_entry": [ 
+            "/particle xp:purple_emitter ~~~"
+          ],
+          "transitions": [
+            {"default": "q.get_equipped_item_name != 'ender_sword'"},
+            { "on_hold": "q.get_equipped_item_name == 'ender_sword'" }
+          ]
+        },
+        "on_hold": {
+          "transitions": [ { "on_hold": "(1.0)"} ]
+        },
+        "freefly":{
+          "on_entry": ["@s xp:freefly"],
+          "transitions": [
+            {"default": "q.is_on_ground"}
+          ]
+        },
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ender_sword'" }
+          ],
+          "on_entry": [ 
+            "/fog @s push minecraft:fog_warped_forest yes",
+            "/tag @s add ender_sword",
+            "/particle xp:purple_emitter ~~~",
+            "/playsound mob.endermen.idle @s",
+            "/effect @s speed 99999 3 true",
+            "/title @s actionbar §5- Hit To Remove Mobs Near You ! -§r",
+            "/effect @s strength 99999 3 true"
+           ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tnt_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "holding": "q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "/effect @s slow_falling 0 0"
+          ]
+        },
+        "holding": {
+          "transitions": [
+            { "default": "q.get_equipped_item_name != 'tnt_sword'" },
+            { "charge3": "q.is_using_item && q.get_equipped_item_name == 'tnt_sword' && !q.is_tamed" },
+            { "cant_use": "q.is_using_item && q.get_equipped_item_name == 'tnt_sword' && q.is_tamed" }
+          ],
+          "on_entry": [
+            "@s xp:clear_element",
+            "/stopsound @s respawn_anchor.ambient",
+            "@s xp:remove_no_damage",
+            "/effect @s slow_falling 0 0"
+          ]
+        },
+        "cant_use":{
+          "transitions": [
+            {"holding": "!q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": ["/tellraw @s {\"rawtext\":[{\"text\":\"- §6Explosive skills cannot be used in this area§r\n\"}]}", "/playsound note.bassattack @s ~~~ 0.75 1 1"]
+        },
+        "cancel": {
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_sword'"
+            },
+            {
+              "holding": "q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "/title @s actionbar - §aAbort§r -",
+            "/camerashake stop @s",
+            "/playsound random.fizz @s ~~~ 0.15 1 1",
+            "/playsound particle.soul_escape @s",
+            "/stopsound @s respawn_anchor.ambient",
+            "/stopsound @s random.fuse"
+          ]
+        },
+        "charge3": {
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_sword'"
+            },
+            {
+              "cancel": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            },
+            {
+              "charge2": "q.is_using_item && (q.life_time - v.tick_delay) >= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar - 3 -",
+            "/camerashake add @s 0.05 1 rotational",
+            "/playsound mob.wither.spawn @s ~~~ 0.15 1 1",
+            "/playsound random.fuse @s",
+            "/playsound respawn_anchor.ambient @s"
+          ]
+        },
+        "charge2": {
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_sword'"
+            },
+            {
+              "cancel": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            },
+            {
+              "charge1": "q.is_using_item && (q.life_time - v.tick_delay) >= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar - 2 -",
+            "/playsound mob.wither.spawn @s ~~~ 0.45 1 1",
+            "/playsound particle.soul_escape @s",
+            "/camerashake add @s 0.15 1 rotational"
+          ]
+        },
+        "charge1": {
+          "transitions": [
+            {
+              "default": "q.get_equipped_item_name != 'tnt_sword'"
+            },
+            {
+              "cancel": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            },
+            {
+              "explode": "q.is_using_item && (q.life_time - v.tick_delay) >= 1 && q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar - §c1§r -",
+            "/playsound mob.wither.spawn @s ~~~ 1 1 100",
+            "/playsound particle.soul_escape @s",
+            "/camerashake add @s 0.35 1 rotational"
+          ]
+        },
+        "explode": {
+          "transitions": [
+            {
+              "float": "(q.life_time - v.tick_delay) >= 3"
+            }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:no_damage",
+            "/effect @s levitation 1 50 true",
+            "/effect @s invisibility 3 255 true",
+
+            "/summon tnt ~2~1~ xp:short_fuse",
+            "/summon tnt ~-2~1~ xp:short_fuse",
+            "/summon tnt ~~1~2 xp:short_fuse",
+            "/summon tnt ~~1~-2 xp:short_fuse",
+
+            "/summon tnt ~1~1~-1 xp:short_fuse",
+            "/summon tnt ~-1~1~-1 xp:short_fuse",
+            "/summon tnt ~-1~1~1 xp:short_fuse",
+            "/summon tnt ~1~1~1 xp:short_fuse",
+
+            "/summon xp:tnt_sword.explode ~~~",
+            "/playsound random.totem @s ~~~ 10 1 100",
+            "/title @s actionbar - §cBANG§r -"
+          ]
+        },
+        "float": {
+          "transitions": [
+            {
+              "default": "q.is_on_ground && q.get_equipped_item_name != 'tnt_sword'"
+            },
+            {
+              "holding": "q.is_on_ground && q.get_equipped_item_name == 'tnt_sword'"
+            }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:remove_no_damage",
+            "/effect @s slow_falling 99999 1 true"
+          ]
+        }
+      }
+    }
+  }
+}

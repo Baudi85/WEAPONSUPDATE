@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.map_start.particles": {
+            "animation_length": 0.5,
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/playsound conduit.activate @a[r=25] ~~~ 1 1 0.01",
+                    "/playsound tp.ambient @a[r=25] ~~~ 0.75 0.75 0.01",
+                    "/playsound tp.ambient1 @a[r=25] ~~~ 0.5 1 0.1",
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_particles.white ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ],
+                "0.1": [
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl2 ~~-0.5~"
+                ],
+                "0.2": [
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ],
+                "0.3": [
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_particles.white ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ],
+                "0.4": [
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl2 ~~-0.5~"
+                ],
+                "0.5": [
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ]
+            }
+        }
+    }
+}

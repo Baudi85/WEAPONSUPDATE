@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:tnt_sword.explode",
+      "scripts": {
+        "animate": [
+          { "explode": "q.life_time > 0.05" }
+        ]
+      },
+      "animations": {
+        "explode": "animation.projectile.explode"
+      },
+      "particle_effects": {
+        "smoke": "xp:lava_burst_up",
+        "explode": "xp:lava_burst"
+      },
+      "sound_effects": {
+        "explode": "cool.sfx"
+      }
+    }
+  }
+}

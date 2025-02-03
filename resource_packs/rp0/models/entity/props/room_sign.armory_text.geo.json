@@ -1,0 +1,29 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.room_sign.armory_text",
+				"texture_width": 80,
+				"texture_height": 48,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [1.75, 15.75, 0]
+				},
+				{
+					"name": "text",
+					"parent": "body",
+					"pivot": [0.25, -14.25, -1],
+					"cubes": [
+						{"origin": [-19.75, -20.25, -1], "size": [40, 12, 0], "uv": [0, 36]}
+					]
+				}
+			]
+		}
+	]
+}

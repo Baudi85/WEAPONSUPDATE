@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.statue_rider": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "angry": "q.variant == 1" }
+          ]
+        },
+        "angry": {
+          "animations": [
+            "sfx"
+          ],
+          "transitions": [
+            { "default": "q.variant == 0" }
+          ],
+          "on_entry": [ 
+            "/playanimation @e[type=xp:statue,r=4] animation.armor_statue.angry"
+          ]
+        }
+      }
+    }
+  }
+}

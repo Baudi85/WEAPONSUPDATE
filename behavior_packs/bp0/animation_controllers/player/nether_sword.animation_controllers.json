@@ -1,0 +1,167 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.nether_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "say": "q.get_equipped_item_name == 'nether_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s fire_resistance 0 0 true",
+            "/effect @s strength 0 0 true",
+            "/fog @s remove nether",
+            "/tag @s remove nether_sword_user",
+            "@s xp:remove_nether_sword_buff"
+          ]
+        },
+        "say": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'nether_sword'" }
+          ],
+          "on_entry": [ 
+            "/title @s actionbar - Sneak + Use = §5Summon§f -- Use Hold = §4Lava Strike§f -"
+          ]
+        },
+
+        "holding": {
+          "animations": ["nether_sword.audio"],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" },
+            { "summon_charge": "q.is_sneaking && q.is_using_item && q.get_equipped_item_name == 'nether_sword'" } ,
+            { "charge": "q.is_using_item && q.get_equipped_item_name == 'nether_sword'" } 
+          ],
+          "on_entry": [ 
+            "@s xp:clear_element",
+            "/fog @s push xp:nether_sword nether",
+            "/tag @s add nether_sword_user",
+            "/effect @s fire_resistance 99999 250 true",
+            "/effect @s strength 99999 3 true",
+            "@s xp:nether_sword_buff"
+           ]
+        },
+
+        "summon_cancel": {
+          "animations": [ "nether_sword.audio" ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" },
+            { "holding": "q.get_equipped_item_name == 'nether_sword'" }
+          ],
+          "on_entry": [ 
+            "/event entity @e[type=xp:spawn.controller,r=15] xp:despawn"
+           ]
+        },
+
+        "summon_charge": {
+          "animations": [
+            "nether_sword.audio",
+            "summon.controller"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" } ,
+            { "summon_cancel": "(!q.is_using_item || !q.is_sneaking) && (q.life_time - v.tick_delay) <= 1.5 && q.get_equipped_item_name == 'nether_sword'" } ,
+            { "summon_ghast": "q.is_sneaking && q.is_using_item && (q.life_time - v.tick_delay) >= 1.5 && q.get_equipped_item_name == 'nether_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s fire_resistance 99999 250 true",
+            "/camerashake add @a[r=12] 0.075 1.75 rotational",
+            "@s xp:nether_sword_buff",
+            "/summon xp:spawn.controller ^^^4",
+            "v.tick_delay = q.life_time;"
+           ],
+           "on_exit": [ 
+             "/camerashake stop @a[r=12]"
+            ]
+        },
+
+        "summon_ghast": {
+          "animations": [
+            "nether_sword.audio",
+            "nether_sword.ghast",
+            "summon.controller"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" } ,
+            { "holding": "(!q.is_using_item || !q.is_sneaking) && (q.life_time - v.tick_delay) <= 5 && q.get_equipped_item_name == 'nether_sword'" },
+            { "holding": "(!q.is_using_item || q.is_using_item || !q.is_sneaking) && (q.life_time - v.tick_delay) >= 5 && q.get_equipped_item_name == 'nether_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s fire_resistance 99999 250 true",
+            "@s xp:nether_sword_buff",
+            "v.tick_delay = q.life_time;"
+           ],
+           "on_exit": [ 
+             "/event entity @e[type=xp:spawn.controller,r=15] xp:despawn"
+            ]
+        },
+
+        "charge": {
+          "animations": [
+            "nether_sword.audio"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" } ,
+            { "holding": "!q.is_using_item && (q.life_time - v.tick_delay) <= 0.5 && q.get_equipped_item_name == 'nether_sword'" } ,
+            { "shoot": "!q.is_using_item && (q.life_time - v.tick_delay) >= 0.5 && q.get_equipped_item_name == 'nether_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s fire_resistance 99999 250 true",
+            "@s xp:nether_sword_buff",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "shoot": {
+          "animations": ["nether_sword.audio"],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'nether_sword'" } ,
+            { "holding": "!q.is_using_item && q.get_equipped_item_name == 'nether_sword' && (q.life_time - v.tick_delay) >= 0.25" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/summon xp:nether_sword.target ^^5^15",
+            "/summon xp:nether_sword.fire_attack ^^^0.75"
+           ],
+           "on_exit": [ 
+            "/camerashake add @a[r=5] 0.15 0.25 rotational",
+            "/playsound block.lantern.break @a ~~~ 1 1.5 0.001",
+            "/playsound block.lantern.break @a ~~~ 0.75 0.5 0.001",
+            "/playsound fall.netherrack @a ~~~ 1 0.75 0.001",
+            "/playsound fall.netherrack @a ~~~ 0.75 0.25 0.001",
+            "/playsound fall.nether_gold_ore @a ~~~ 0.75 0.25 0.001"
+            ]
+        }
+      }
+    },
+
+    "controller.animation.spawner": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "animations": [
+            "particles"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.fire_attack": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "on_entry": [ 
+            "/execute @s ~~~ tp @s ~~0.25~ facing @e[type=xp:nether_sword.target] true",
+            "/structure load mystructure:nether_sword.fire_attack ~-2~~-2",
+            "/playsound bucket.empty_lava @a ~~~ 1 0.75 0.001",
+            "/playsound bucket.empty_lava @a ~~~ 0.5 0.25 0.001",
+            "/playsound liquid.lavapop @a ~~~ 1 1 0.001",
+            "/playsound liquid.lavapop @a ~~~ 0.75 0.25 0.001",
+            "/particle xp:nether_sword.lava_burst ~~-0.25~",
+            "/particle xp:nether_sword.black_smoke ~~~"
+           ]
+        }
+      }
+    }
+  }
+}

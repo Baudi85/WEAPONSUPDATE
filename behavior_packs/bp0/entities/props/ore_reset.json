@@ -1,0 +1,146 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:reset_ore",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "ore_room" ]
+      },
+      "animations": {
+        "ore_room": "controller.animation.ore_room",
+        "reset_ore": "animation.ore_reset"
+      }
+    },
+
+    "component_groups": {
+      "xp:default": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+
+      "xp:reset_ore": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "time": 7,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:default"
+          }
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "ore_button", "xp_dummy" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "void",
+            "damage_multiplier": 10e7,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  { "test": "has_damage", "value": "anvil" },
+                  { "test": "has_damage", "value": "block_explosion" },
+                  { "test": "has_damage", "value": "entity_explosion" },
+                  { "test": "has_damage", "value": "fire" },
+                  { "test": "has_damage", "value": "fire_tick" },
+                  { "test": "has_damage", "value": "lava" },
+                  { "test": "has_damage", "value": "projectile" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              },
+              "event": "xp:reset_ore"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [ { "test": "is_variant", "value": 0 } ]
+              },
+              "event": "xp:reset_ore"
+            },
+            "swing": true
+          }
+        ]
+      },
+      "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:breathable": {
+        "breathes_solids": true
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.25
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {}
+    },
+
+    "events": {
+      "xp:default": {
+        "add": {
+          "component_groups": [ "xp:default" ]
+        },
+        "remove": {
+          "component_groups": [ "xp:reset_ore" ]
+        }
+      },
+
+      "xp:reset_ore": {
+        "add": { "component_groups": ["xp:reset_ore"]
+        }
+      }
+    }
+  }
+}

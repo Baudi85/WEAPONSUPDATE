@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:jungle_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "i",
+            "N",
+            "/"
+        ],
+        "key": {
+            "i": { "item": "xp:jungle_ingot" },
+            "N": { "item": "xp:jungle_ingot" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:jungle_sword"
+        }
+    }
+}

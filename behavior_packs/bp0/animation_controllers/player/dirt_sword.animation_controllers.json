@@ -1,0 +1,84 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.dirt_sword": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "on_entry": ["v.tick_delay = q.life_time;"],
+            "transitions": [
+              { "shoot_dirt_sword": "q.is_using_item && q.get_equipped_item_name == 'dirt_sword' && (q.life_time - v.tick_delay) >= 0.75"},
+              { "attack_dirt_sword": "v.attack_time > 0.0 && q.get_equipped_item_name == 'dirt_sword' && (q.life_time - v.tick_delay) >= 0.75"}
+            ]
+          },
+          "attack_dirt_sword":{
+            "on_entry": ["/execute @e[tag=!dirt_sword,type=!item,r=15] ~~~ camerashake add @s 0.1 0.1","/execute @e[tag=!dirt_sword,type=!item,r=15] ^^2^ structure load spike_2 ~~~", "/execute @e[tag=!dirt_sword,type=!item,r=15] ^^2^ particle xp:dirt_trail ^^2^"],
+            "transitions": [
+              {"default": "!v.attack_time > 0.0"}
+            ]
+          },
+          "shoot_dirt_sword": {
+            "on_entry": [
+              "@s xp:dirt_sword",
+              "/playsound break.dirt_with_roots @p[r=15]",
+              "/camerashake add @s 0.02"
+            ],
+            "transitions": [ 
+              { "default": "q.all_animations_finished" }
+            ]
+          }
+        }
+      },
+      "controller.animation.structure_set_smoke_1_2":{
+        "initial_state": "default",
+        "states": {
+            "default":{
+                "transitions": [ {"set": "!q.mark_variant == 0"}]
+            },
+            "set":{
+                "on_entry": [ "/particle xp:dirt.impact_smoke ~~~"],
+                "transitions": [ {"default": "q.mark_variant == 1 && q.any_animation_finished"} ]
+            }
+        }
+    },
+      "controller.animation.dirt_sword_sneak_jump": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"dirt_use_sneak_jump": "q.is_sneaking && q.is_jumping && q.get_equipped_item_name == 'dirt_sword'"}
+            ]
+          },
+          "dirt_use_sneak_jump":{
+            "on_entry": ["/function dirt_sword/dirt_sword_setup"],
+            "transitions": [
+              {"default": "q.all_animations_finished"}
+            ]
+          }
+        }
+      },
+      "controller.animation.dirt_sword_effects":{
+        "initial_state": "default",
+        "states": {
+          "default":{
+            "transitions": [
+              {"dirt_sword": "q.get_equipped_item_name == 'dirt_sword'"}
+            ]
+          },
+          "dirt_sword": {
+            "on_entry": [
+              "/tag @s add dirt_sword",
+              "/effect @s strength 1000 2 true"
+            ],
+            "transitions": [
+              {"default": "q.get_equipped_item_name != 'dirt_sword'"}
+            ],
+            "on_exit": [
+              "/tag @s remove dirt_sword",
+              "/effect @s strength 0"
+            ]
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,129 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.arena_leave": {
+      "initial_state": "holding",
+      "states": {
+        "holding": {
+          "transitions": [
+            { "arena_leave": "q.get_equipped_item_name == 'arena_leave_arena' && q.is_using_item" }
+          ],
+          "on_entry": [ "/event entity @e[type=xp:arena_start] xp:default", "@s xp:out_arena" ]
+        },
+        "arena_leave": {
+          "animations": [ "leave_arena" ],
+          "transitions": [
+            { "holding": "!q.is_using_item && q.all_animations_finished" }
+          ],
+          "on_entry": [ "/scoreboard players set @a lives -10" ]
+        }
+      }
+    },
+
+    "controller.animation.arena": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ { "start": "q.variant == 1" } ],
+          "on_entry": [
+            "/execute @a[tag=!\"achievement_battle_arena\",r=25] ~~~ function achievements/battle_arena"
+          ]
+        },
+
+        "start": {
+          "animations": [ "ambient", "start" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "wave1": "q.variant == 2" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": [
+            "/music stop 3",
+            "/execute @e[type=xp:arena_button] ~~~ playsound block.grindstone.use @a ~~~ 0.25 1.75 0.001",
+            "/execute @e[type=xp:arena_button] ~~~ playsound block.grindstone.use @a ~~~ 0.75 0.75 0.001",
+            "/playanimation @e[type=xp:arena_button] animation.arena_button.pressed",
+            "/tag @a[r=25] add entered_arena",
+            "/scoreboard players set @a[tag=entered_arena] lives 3"
+          ]
+        },
+
+        "wave_transition": {
+          "animations": [ "wave_transition" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "wave2": "q.variant == 3 && q.all_animations_finished" },
+            { "wave3": "q.variant == 4 && q.all_animations_finished" },
+            { "win": "q.variant == 5 && q.all_animations_finished" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": [ "/setblock 6 1 8 air", "/setblock 8 1 8 air" ]
+        },
+
+        "wave1": {
+          "animations": [ "ambient", "wave1" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "wave_transition": "q.variant == 6" },
+            { "wave2": "q.variant == 3" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": []
+        },
+
+        "wave2": {
+          "animations": [ "ambient", "wave2" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "wave_transition": "q.variant == 6" },
+            { "wave2": "q.variant == 4" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": []
+        },
+
+        "wave3": {
+          "animations": [ "ambient", "wave3" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "win": "q.variant == 5" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": []
+        },
+
+        "win": {
+          "animations": [ "win", "win_particles" ],
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "lose": "q.variant == 7" }
+          ],
+          "on_entry": [
+            "/setblock 4 1 8 air",
+            "/setblock 6 1 8 air",
+            "/setblock 8 1 8 air"
+          ]
+        },
+
+        "lose": {
+          "animations": [ "lose" ],
+          "transitions": [ { "default": "q.variant == 0" } ],
+          "on_exit": [ "/event entity @e[type=xp:arena_start] xp:default" ]
+        }
+      }
+    },
+
+    //! controller for the players
+    "controller.animation.lose_player": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ { "lose": "q.is_baby" } ]
+        },
+        "lose": {
+          "animations": [ "arena_lose_player" ],
+          "transitions": [ { "default": "!q.is_baby" } ]
+        }
+      }
+    }
+  }
+}

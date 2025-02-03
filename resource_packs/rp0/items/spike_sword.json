@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "xp:spike_sword",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "spike_sword",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

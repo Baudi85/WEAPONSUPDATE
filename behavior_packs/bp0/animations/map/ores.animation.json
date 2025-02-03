@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.ore_reset": {
+      "animation_length": 10,
+      "loop": true,
+      "timeline": {
+        "1": [
+          "/camerashake add @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] 0.025 1.75 rotational",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.25 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.25 0.25 0.001",
+          "/particle xp:room.ore1 32 98 565",
+          "/particle xp:room.ore_poof 32 110 565"
+        ],
+        "1.25": [
+          "/particle xp:room.ore1 32 98 565",
+          "/particle xp:room.ore 32 107 565",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.45 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.45 0.25 0.001",
+          "/execute @a[x=47,y=96,z=580,dx=-30,dy=13,dz=-30] ~~~ tp @a 32 110 545 facing 32 109 560"
+        ],
+        "1.5": [
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.5 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.5 0.25 0.001",
+          "/particle xp:room.ore1 32 98 565"
+        ],
+        "1.75": [
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.75 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.75 0.25 0.001",
+          "/particle xp:room.ore1 32 98 565"
+        ],
+        "2.0": [
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.95 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45]~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.95 0.25 0.001",
+          "/particle xp:room.ore1 32 98 565",
+          "/particle xp:room.ore_poof 32 110 565"
+        ],
+        "2.75": [
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.netherrack @a[r=15] ~~~ 1 0.5 0.001",
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] ~~~ playsound fall.nether_gold_ore @a[r=15] ~~~ 1 0.5 0.001",
+          "/camerashake add @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] 0.25 0.1 rotational",
+          "/execute @a[x=47,y=96,z=580,dx=-30,dy=13,dz=-30] ~~~ tp @a 32 110 545 facing 32 109 560",
+          "/particle xp:room.ore_poof1 32 110.1 565",
+          "/particle xp:room.ore1 32 97 565",
+          "/function dev_skip_ore_reset"
+        ]
+      }
+    }
+  }
+}

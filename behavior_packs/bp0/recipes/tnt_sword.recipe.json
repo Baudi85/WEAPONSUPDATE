@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:tnt_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "i",
+            "N",
+            "/"
+        ],
+        "key": {
+            "i": { "item": "xp:tnt_ingot" },
+            "N": { "item": "xp:tnt_ingot" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:tnt_sword"
+        }
+    }
+}

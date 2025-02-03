@@ -1,0 +1,294 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:statue",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "xp:no_sword": { "minecraft:skin_id": { "value": 0 } },
+      "xp:darkness": {
+        "minecraft:skin_id": { "value": 1 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1, 0],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:dirt": { "minecraft:skin_id": { "value": 2 } },
+      "xp:earth": { "minecraft:skin_id": { "value": 3 } },
+      "xp:elemental": { "minecraft:skin_id": { "value": 4 } },
+      "xp:ender": { "minecraft:skin_id": { "value": 5 } },
+      "xp:fire": {
+        "minecraft:skin_id": { "value": 6 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:ice": { "minecraft:skin_id": { "value": 7 } },
+      "xp:jungle": { "minecraft:skin_id": { "value": 8 } },
+      "xp:light": { "minecraft:skin_id": { "value": 9 } },
+      "xp:magma": {
+        "minecraft:skin_id": { "value": 10 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:nether": { "minecraft:skin_id": { "value": 11 } },
+      "xp:ocean": {
+        "minecraft:skin_id": { "value": 12 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:poison": {
+        "minecraft:skin_id": { "value": 13 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:sonic": { "minecraft:skin_id": { "value": 14 } },
+      "xp:spike": {
+        "minecraft:skin_id": { "value": 15 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:storm": { "minecraft:skin_id": { "value": 16 } },
+      "xp:thunder": {
+        "minecraft:skin_id": { "value": 17 },
+        "minecraft:addrider": {
+          "entity_type": "xp:statue_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "statue_rider" ],
+          "seats": [
+            {
+              "position": [0, 1.5, 1.25],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+      "xp:tnt": { "minecraft:skin_id": { "value": 18 } },
+      "xp:water": { "minecraft:skin_id": { "value": 19 } },
+      "xp:wind": { "minecraft:skin_id": { "value": 20 } },
+      "xp:wither": { "minecraft:skin_id": { "value": 21 } }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "xp_dummy" ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {}
+    },
+
+    "events": {
+      "xp:no_sword": { "add": { "component_groups": [ "xp:no_sword" ] } },
+      "xp:darkness": { "add": { "component_groups": [ "xp:darkness" ] } },
+      "xp:dirt": { "add": { "component_groups": [ "xp:dirt" ] } },
+      "xp:earth": { "add": { "component_groups": [ "xp:earth" ] } },
+      "xp:elemental": { "add": { "component_groups": [ "xp:elemental" ] } },
+      "xp:ender": { "add": { "component_groups": [ "xp:ender" ] } },
+      "xp:fire": { "add": { "component_groups": [ "xp:fire" ] } },
+      "xp:ice": { "add": { "component_groups": [ "xp:ice" ] } },
+      "xp:jungle": { "add": { "component_groups": [ "xp:jungle" ] } },
+      "xp:light": { "add": { "component_groups": [ "xp:light" ] } },
+      "xp:magma": { "add": { "component_groups": [ "xp:magma" ] } },
+      "xp:nether": { "add": { "component_groups": [ "xp:nether" ] } },
+      "xp:ocean": { "add": { "component_groups": [ "xp:ocean" ] } },
+      "xp:poison": { "add": { "component_groups": [ "xp:poison" ] } },
+      "xp:sonic": { "add": { "component_groups": [ "xp:sonic" ] } },
+      "xp:spike": { "add": { "component_groups": [ "xp:spike" ] } },
+      "xp:storm": { "add": { "component_groups": [ "xp:storm" ] } },
+      "xp:thunder": { "add": { "component_groups": [ "xp:thunder" ] } },
+      "xp:tnt": { "add": { "component_groups": [ "xp:tnt" ] } },
+      "xp:water": { "add": { "component_groups": [ "xp:water" ] } },
+      "xp:wind": { "add": { "component_groups": [ "xp:wind" ] } },
+      "xp:wither": { "add": { "component_groups": [ "xp:wither" ] } },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "add": { "component_groups": [ "xp:no_sword" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:darkness" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:dirt" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:earth" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:elemental" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:ender" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:fire" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:ice" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:jungle" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:light" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:magma" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:nether" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:ocean" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:poison" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:sonic" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:spike" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:storm" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:thunder" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:tnt" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:water" ] },
+            "weight": 1
+          },
+          {
+            "add": { "component_groups": [ "xp:wind" ] },
+            "weight": 1
+          }
+        ]
+      }
+    }
+  }
+}

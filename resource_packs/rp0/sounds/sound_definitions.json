@@ -1,0 +1,320 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "arena_ambient": {
+      "category": "music",
+      "sounds": [
+        {
+          "is3D": false,
+          "name": "sounds/ambient/nether/soulsand_valley/ambience",
+          "stream": true,
+          "volume": 0.75
+        }
+      ]
+    },
+    "arena_ambient1": {
+      "category": "music",
+      "stream": true,
+      "volume": 1.0,
+      "sounds": [
+        "sounds/ambient/nether/warped_forest/mood1",
+        "sounds/ambient/nether/warped_forest/mood2",
+        "sounds/ambient/nether/warped_forest/mood3",
+        "sounds/ambient/nether/warped_forest/mood4"
+      ]
+    },
+    "victory": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/victory",
+          "volume": 1.25
+        }
+      ]
+    },
+    "arena_music": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/arena_music",
+          "volume": 4
+        }
+      ]
+    },
+    "intro": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/intro",
+          "volume": 1.5
+        }
+      ]
+    },
+    "showroom": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/showroom",
+          "volume": 1.5
+        }
+      ]
+    },
+    "armory": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/armory",
+          "stream": true,
+          "volume": 1.5
+        }
+      ]
+    },
+    "tp.ambient1": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/particle/soulspeed1",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed2",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed3",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed4",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed5",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed6",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed7",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed8",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed9",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed10",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed11",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed12",
+          "volume": 0.25
+        },
+        {
+          "name": "sounds/particle/soulspeed13",
+          "volume": 0.25
+        }
+      ]
+    },
+    "tp.ambient": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "sounds": [
+        "sounds/block/respawn_anchor/ambient1",
+        "sounds/block/respawn_anchor/ambient2",
+        "sounds/block/respawn_anchor/ambient3"
+      ]
+    },
+    "tp": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/mob/endermen/portal",
+          "volume": 2.0
+        },
+        {
+          "name": "sounds/mob/endermen/portal2",
+          "volume": 2.0
+        }
+      ]
+    },
+    "tp1": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/block/conduit/activate",
+          "volume": 5.0
+        }
+      ]
+    },
+    "tp.shriek": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/block/sculk_shrieker/shriek1",
+          "volume": 1
+        },
+        {
+          "name": "sounds/block/sculk_shrieker/shriek2",
+          "volume": 1
+        },
+        {
+          "name": "sounds/block/sculk_shrieker/shriek3",
+          "volume": 1
+        },
+        {
+          "name": "sounds/block/sculk_shrieker/shriek4",
+          "volume": 1
+        },
+        {
+          "name": "sounds/block/sculk_shrieker/shriek5",
+          "volume": 1
+        }
+      ]
+    },
+    "xp:summon2": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/mob/shulker/shoot1",
+          "volume": 2.0
+        },
+        {
+          "name": "sounds/mob/shulker/shoot2",
+          "volume": 2.0
+        },
+        {
+          "name": "sounds/mob/shulker/shoot3",
+          "volume": 2.0
+        },
+        {
+          "name": "sounds/mob/shulker/shoot4",
+          "volume": 2.0
+        }
+      ]
+    },
+    "xp:summon": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/mob/endermen/portal",
+          "volume": 2.0
+        },
+        {
+          "name": "sounds/mob/endermen/portal2",
+          "volume": 2.0
+        }
+      ]
+    },
+
+    "xp.ghast.scream": {
+      "category": "neutral",
+      "min_distance": 300.0,
+      "sounds": [
+        {
+          "name": "sounds/mob/ghast/scream1",
+          "volume": 2.5
+        },
+        {
+          "name": "sounds/mob/ghast/scream2",
+          "volume": 2.5
+        },
+        {
+          "name": "sounds/mob/ghast/scream3",
+          "volume": 2.5
+        },
+        {
+          "name": "sounds/mob/ghast/scream4",
+          "volume": 2.5
+        },
+        {
+          "name": "sounds/mob/ghast/scream5",
+          "volume": 2.5
+        }
+      ]
+    },
+
+    "boost.in_air": {
+      "__use_legacy_max_distance": "true",
+      "category": "music",
+      "min_distance": 5.0,
+      "sounds": [
+        {
+          "name": "sounds/elytra/elytra_loop",
+          "volume": 0.6
+        }
+      ]
+    },
+
+    "meteor.splash": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/mob/dolphin/splash2",
+          "volume": 10
+        },
+        {
+          "name": "sounds/mob/dolphin/splash3",
+          "volume": 10
+        }
+      ]
+    },
+
+    "thunder_sword.impact": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/item/trident/thunder1",
+          "volume": 3
+        },
+        {
+          "name": "sounds/item/trident/thunder1",
+          "volume": 3
+        }
+      ]
+    },
+
+    "ice_cube.impact": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/random/glass1",
+          "volume": 10
+        },
+        {
+          "name": "sounds/random/glass2",
+          "volume": 10
+        },
+        {
+          "name": "sounds/random/glass3",
+          "volume": 10
+        }
+      ]
+    },
+
+    "ui.challenge_complete": {
+      "category": "ui",
+      "sounds": [
+        {
+          "is3D": false,
+          "name": "sounds/ui/challenge_complete",
+          "load_on_low_memory": true
+        }
+      ]
+    }
+  }
+}

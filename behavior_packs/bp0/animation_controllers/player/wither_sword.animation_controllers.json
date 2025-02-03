@@ -1,0 +1,57 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.wither_sword":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "on_entry": [ 
+                        "/effect @s strength 0 0 true"
+                    ],
+                    "transitions": [
+                        {"held": "q.get_equipped_item_name == 'wither_sword'"},
+                        {"wither_sword": "q.get_equipped_item_name == 'wither_sword' && v.attack_time > 0.0"}
+                    ]
+                },
+                "wither_sword":{
+                    "on_entry": [
+                        "@s xp:wither_shoot"
+                    ],
+                    "transitions": [
+                        {"default": "!v.attack_time > 0.0"}
+                    ]
+                },
+                "held":{
+                    "on_entry": [ 
+                       "/effect @s strength 10000 8 true"
+                    ],
+                    "transitions": [
+                        { "default": "q.get_equipped_item_name != 'wither_sword'" }
+                    ]
+                }
+            }
+        },
+        "controller.animation.wither_sword_shoot":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"wither_sword": "q.get_equipped_item_name == 'wither_sword' && v.attack_time > 0.0"}
+                    ]
+                },
+                "wither_sword":{
+                    "on_entry": [
+                        "/camerashake add @s 0.2 0.2",
+                        "/playsound mob.ghast.fireball @a ~~~ 0.15 0.5 0.01",
+                        "/playsound mob.ghast.fireball @a ~~~ 0.25 1.75 0.01",
+                        "/playsound mob.ghast.fireball @a ~~~ 0.35 1 0.01",
+                        "@s xp:wither_shoot"
+                    ],
+                    "transitions": [
+                        {"default": "!v.attack_time > 0.0"}
+                    ]
+                }
+            }
+        }
+    }
+}

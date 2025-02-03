@@ -1,0 +1,1013 @@
+{
+  "format_version": "1.18.20",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {"elemental_sword": "q.variant <=29"},
+          {"ocean_sword": "q.variant <=29"},
+          {"ice_sword": "q.variant <=29"},
+          {"lava_sword": "q.variant <=29"},
+          {"fire_sword": "q.variant <=29"},
+          {"light_sword": "q.variant <=29"},
+          {"air_sword": "q.variant <=29"},
+          {"tnt_sword": "q.variant <=29"},
+          {"thunder_sword": "q.variant <=29"},
+          {"darkness_sword": "q.variant <=29"},
+          {"sonic_sword": "q.variant <=29"},
+          {"nether_sword": "q.variant <=29"},
+          {"earth_sword": "q.variant <=29"},
+          {"ender_sword": "q.variant <=29"},
+          {"ender_sword2": "q.variant <=29"},
+          {"dirt_sword_effects": "q.variant <=29"},
+          {"dirt_sword_project": "q.variant <=29"},
+          {"dirt_sword_sj": "q.variant <=29"},
+          {"spike_sword": "q.variant <=29"},
+          {"sonic_text": "q.variant <=29"},
+          {"storm_sword": "q.variant <=29"},
+          {"water_sword": "q.variant <=29"},
+          {"water_sword_shoot": "q.variant <=29"},
+          {"poison_sword_shoot": "q.variant <=29"},
+          {"poison_sword": "q.variant <=29"},
+          {"jungle_sword": "q.variant <=29"},
+          {"jungle_sword_throw": "q.variant <=29"},
+          {"storm_sword_hw": "q.variant <=29"},
+          {"storm_sword_use": "q.variant <=29"},
+          {"sonic_detect": "q.variant <=29"},
+          {"poison_use": "q.variant <=29"},
+          {"js_effect": "q.variant <=29"},
+          {"arena_leave": "q.variant <=29"},
+          "cutscene",
+          "cutscene2",
+          "cutscene3",
+          "light_ray",
+          {"wither": "q.variant <=29"},
+          {"wither_shoot": "q.variant <=29"},
+          "achievements_controller",
+          {"player_death_controller": "q.variant <=29"},
+          "weapon_room_center_tf",
+          
+          "elemental_sword.first_user",
+          "ocean_sword.first_user",
+          "air_sword.first_user",
+          "ice_sword.first_user",
+          "fire_sword.first_user",
+          "light_sword.first_user",
+          "earth_sword.first_user",
+          "nether_sword.first_user",
+          "tnt_sword.first_user",
+          "thunder_sword.first_user",
+          "lava_sword.first_user",
+          "sonic_sword.first_user",
+          "darkness_sword.first_user",
+          "ender_sword.first_user",
+          "dirt_sword.first_user",
+          "spike_sword.first_user",
+          "storm_sword.first_user",
+          "water_sword.first_user",
+          "wither_sword.first_user",
+          "poison_sword.first_user",
+          "jungle_sword.first_user"
+        ]
+      },
+      "animations": {
+        // xp controllers
+        "player_death_controller": "controller.animation.arena.player_death_controller",
+        "cutscene": "controller.animation.cutscene",
+        "cutscene2": "controller.animation.cutscene2",
+        "cutscene3": "controller.animation.cutscene3",
+        "light_ray": "controller.animation.reset_light_ray",
+
+        "weapon_room_center_tf": "animation.weapon_room_center_tf",
+
+        "elemental_sword.first_user": "controller.animation.elemental_sword.first_user",
+        "ocean_sword.first_user": "controller.animation.ocean_sword.first_user",
+        "air_sword.first_user": "controller.animation.air_sword.first_user",
+        "ice_sword.first_user": "controller.animation.ice_sword.first_user",
+        "fire_sword.first_user": "controller.animation.fire_sword.first_user",
+        "light_sword.first_user": "controller.animation.light_sword.first_user",
+        "earth_sword.first_user": "controller.animation.earth_sword.first_user",
+        "nether_sword.first_user": "controller.animation.nether_sword.first_user",
+        "tnt_sword.first_user": "controller.animation.tnt_sword.first_user",
+        "thunder_sword.first_user": "controller.animation.thunder_sword.first_user",
+        "lava_sword.first_user": "controller.animation.lava_sword.first_user",
+        "sonic_sword.first_user": "controller.animation.sonic_sword.first_user",
+        "darkness_sword.first_user": "controller.animation.darkness_sword.first_user",
+        "ender_sword.first_user": "controller.animation.ender_sword.first_user",
+        "dirt_sword.first_user": "controller.animation.dirt_sword.first_user",
+        "spike_sword.first_user": "controller.animation.spike_sword.first_user",
+        "storm_sword.first_user": "controller.animation.storm_sword.first_user",
+        "water_sword.first_user": "controller.animation.water_sword.first_user",
+        "wither_sword.first_user": "controller.animation.wither_sword.first_user",
+        "poison_sword.first_user": "controller.animation.poison_sword.first_user",
+        "jungle_sword.first_user": "controller.animation.jungle_sword.first_user",
+
+        "wither": "controller.animation.wither_sword",
+        "wither_shoot": "controller.animation.wither_sword_shoot",
+        "elemental_sword": "controller.animation.elemental_sword",
+        "ocean_sword": "controller.animation.ocean_sword",
+        "ice_sword": "controller.animation.ice_sword",
+        "fire_sword": "controller.animation.fire_sword",
+        "light_sword": "controller.animation.light_sword",
+        "earth_sword": "controller.animation.earth_sword",
+        "nether_sword": "controller.animation.nether_sword",
+        "lava_sword": "controller.animation.lava_sword",
+        "air_sword": "controller.animation.air_sword",
+        "tnt_sword": "controller.animation.tnt_sword",
+        "thunder_sword": "controller.animation.thunder_sword",
+        "darkness_sword": "controller.animation.darkness_sword",
+        "sonic_sword": "controller.animation.sonic_sword",
+        "sonic_text": "controller.animation.sonic_sword_text",
+        "ender_sword": "controller.animation.ender_sword",
+        "ender_sword2": "controller.animation.ender_tp_mob",
+        "dirt_sword_effects": "controller.animation.dirt_sword_effects",
+        "dirt_sword_project": "controller.animation.dirt_sword",
+        "dirt_sword_sj": "controller.animation.dirt_sword_sneak_jump",
+        "spike_sword": "controller.animation.spike_sword",
+        "storm_sword": "controller.animation.storm_sword",
+        "storm_sword_hw": "controller.animation.storm_swordhealth_watcher",
+        "water_sword": "controller.animation.water_sword",
+        "water_sword_shoot": "controller.animation.water_sword_shoot",
+        "poison_sword_shoot": "controller.animation.poison_sword_shoot",
+        "poison_sword": "controller.animation.poison_sword",
+        "jungle_sword": "controller.animation.jungle_sword",
+        "storm_sword_use": "controller.animation.storm_sword_use",
+        "jungle_sword_throw": "controller.animation.jungle_sword_throw",
+        "js_effect": "controller.animation.jungle_sword_effects",
+        "sonic_detect": "controller.animation.sonic_sword_detection",
+        "poison_use": "controller.animation.poison_sword_use",
+        "arena_leave": "controller.animation.arena_leave",
+
+        // achievement controllers
+        "achievements_controller": "controller.animation.achievements",
+        "achievements.inventory_detect": "controller.animation.achievements.inventory_detect",
+        "achievements.armor_detect": "controller.animation.achievements.armor_detect",
+        "achievements.hand_detect": "controller.animation.achievements.hand_detect",
+        "achievement.harvest_plant": "animation.achievement.harvest_plant",
+        "achievement.mine_ore": "animation.achievement.mine_ore",
+        "achievement.craft_weapon": "animation.achievement.craft_weapon",
+
+        // xp animations
+        "leave_arena": "animation.arena_leave",
+        "scene_0": "animation.scene_0",
+        "scene_0.effects": "animation.scene_0.effects",
+        "scene_1": "animation.scene_1",
+        "scene_2": "animation.scene_2",
+        "scene_3": "animation.scene_3",
+
+        "scene_1a": "animation.scene_1a",
+        "scene_2a": "animation.scene_2a",
+        "scene_3a": "animation.scene_3a",
+
+        "scene_1r": "animation.scene_1r",
+        "scene_2r": "animation.scene_2r",
+        "scene_3r": "animation.scene_3r",
+
+        "timer_10_sec_cooldown": "animation.10_sec_cooldown_dummy",
+
+        "thunder_strike": "animation.thunder_strike",
+        "thunder_audio": "animation.thunder_audio",
+        
+        "ice_sword.ice_walk": "animation.ice_sword.ice_walk",
+        "ice_sword.blade_audio": "animation.ice_sword.blade_audio",
+        "ice_sword.shoot_audio": "animation.ice_sword.shoot_audio",
+
+        "nether_sword.audio": "animation.nether_sword.audio",
+        "nether_sword.summon_audio": "animation.nether_sword.summon_audio",
+        "nether_sword.ghast": "animation.nether_sword.ghast",
+        "summon.controller": "animation.summon.controller",
+
+        "camerashake": "animation.cameras_shake",
+        "air_sword.special": "animation.air_sword.special",
+        "summon_tornado": "animation.summon_tornado",
+        "fire_sword.attack": "animation.fire_sword.attack",
+        "fire_sword.particles": "animation.fire_sword.particles",
+        "fire_sword.audio": "animation.fire_sword.audio",
+        "earth_attack": "animation.earth_attack",
+        "shockwave_p": "animation.shockwave_p",
+        "sp2": "animation.shockwave_p2",
+        "use_sonic": "animation.sonic_anim_sync",
+        "darkness_emitter": "animation.darkness_emitter",
+        "spike_sword_use": "animation.spike_summon"
+      }
+    },
+
+    "component_groups": {
+
+      "minecraft:add_bad_omen": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "bad_omen",
+              "duration": 6000,
+              "visible": false,
+              "display_on_screen_animation": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": [ 0.0, 0.0 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:clear_add_bad_omen",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:clear_bad_omen_spell_effect": {
+        "minecraft:spell_effects": {
+        }
+      },
+      "minecraft:raid_trigger": {
+        "minecraft:raid_trigger": {
+          "triggered_event": {
+            "event": "minecraft:remove_raid_trigger",
+            "target": "self"
+          }
+        },
+        "minecraft:spell_effects": {
+          "remove_effects": "bad_omen"
+        }
+      },
+
+
+      // xp components 
+      "xp:lose_player": { "minecraft:is_baby": {} },
+			"xp:in_ore_room": { "minecraft:is_tamed": {} },
+			"xp:in_arena": { "minecraft:is_illager_captain": {} },
+      "xp:cutscene":{
+        "minecraft:out_of_control": {},
+        "minecraft:variant": {
+          "value": 30
+        }
+      },
+      "xp:cutscene2":{
+        "minecraft:out_of_control": {},
+        "minecraft:variant": {
+          "value": 31
+        }
+      },
+      "xp:cutscene3":{
+        "minecraft:out_of_control": {},
+        "minecraft:variant": {
+          "value": 32
+        }
+      },
+      "xp:remove_cutscene":{
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      
+      "xp:ice_sword": {
+        "minecraft:scheduler": {
+          "min_delay_secs": 0,
+          "max_delay_secs": 0,
+          "scheduled_events" : [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "hourly_clock_time", "operator": ">=", "value": 0 },
+                  { "test": "hourly_clock_time", "operator": "<", "value": 13000 }
+                ]
+              },
+              "event": "xp:ice_sword.glint"
+            },
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "hourly_clock_time", "operator": ">=", "value": 13000 },
+                  { "test": "hourly_clock_time", "operator": "<", "value": 24000 }
+                ]
+              },
+              "event": "xp:remove_ice_sword.glint"
+            }
+          ]
+        }
+      },
+      "xp:ice_sword.glint":{
+        "minecraft:out_of_control": {}
+      },
+      "xp:ice_sword_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:ice_cube.projectile",
+            "num_to_spawn": 3,
+            "single_use": true
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.025,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:remove_ice_sword_projectile"
+          }
+        }
+      },
+
+      "xp:test_for_damage":{
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+
+
+      "xp:use_tp":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:ender_tp_dummy",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:wither_shoot":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:wither_skull_dangerous",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:poison_projectile":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:poison_projectile",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:water_beam":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:water_beam_projectile",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:use_sonic_knock":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:sonic_knockback",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:use_sonic_knock_pull":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:sonic_knockback_pull",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:dirt_sword":{
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:dirt_projectile",
+            "num_to_spawn": 1,
+            "single_use": true
+          }
+        }
+      },
+      "xp:freefly":{
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      },
+      "xp:lava_sword_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:lava_sword.projectile",
+            "num_to_spawn": 3,
+            "single_use": true
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.05,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:remove_lava_sword_projectile"
+          }
+        }
+      },
+      
+      "xp:ocean_sword": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+
+      "xp:light_sword_projectile": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_entity": "xp:light_sword.glow",
+            "num_to_spawn": 10,
+            "single_use": true
+          }
+        },
+        "minecraft:timer": {
+          "time": 0.05,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:remove_light_sword_projectile"
+          }
+        }
+      },
+      "xp:fire_sword.attack": {
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0.0,
+            "max_wait_time": 0.0,
+            "spawn_entity": "xp:fire_sword.projectile",
+            "num_to_spawn": 3,
+            "single_use": true
+          }
+        },
+        "minecraft:timer": {
+          "time": 1,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:remove_fire_sword.attack"
+          }
+        }
+      },
+
+      "xp:earth_attack": {
+        "minecraft:addrider": {
+          "entity_type": "xp:earth_sword.attack2"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "dummy"
+          ],
+          "seats": [
+            {
+              "position": [ 0, -1, 0 ],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        }
+      },
+
+      "xp:nether_sword_buff": {
+        "minecraft:lava_movement": {
+          "value": 0.135
+        }
+      },
+      
+      "xp:no_damage": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        }
+      },
+      
+      "xp:no_fall": {
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "fall",
+            "deals_damage": false
+          }
+        }
+      },
+
+      "xp:ocean_sword.glint":{
+        "minecraft:out_of_control": {},
+        "minecraft:timer": {
+          "time": 0.5,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:remove_ocean_sword.glint"
+          }
+        }
+      },
+
+      "xp:particle_rider": {
+        "minecraft:addrider": {
+          "entity_type": "xp:particle_rider"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "dummy"
+          ],
+          "seats": [
+            {
+              "position": [ 0, -1.25, 0 ],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 90
+            }
+          ]
+        }
+      },
+
+      //Elemental
+      
+      "xp:earth_element":{
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "xp:fire_element":{
+        "minecraft:variant": {
+          "value": 4
+        }
+      },
+      "xp:water_element":{
+        "minecraft:variant": {
+          "value": 5
+        }
+      },
+      "xp:wind_element":{
+        "minecraft:variant": {
+          "value": 6
+        }
+      },
+      "xp:lightning_element":{
+        "minecraft:variant": {
+          "value": 7
+        }
+      },
+      "xp:clear_element":{
+        "minecraft:variant": {
+          "value": 0
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:experience_reward": {
+        "on_death": "Math.Min(query.player_level * 7, 100)"
+      },
+      "minecraft:type_family": {
+        "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/empty.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:movement": {
+        "value": 0.05
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:exhaustion_values": {
+        "heal": 6,
+        "jump": 0.05,
+        "sprint_jump": 0.2,
+        "mine": 0.005,
+        "attack": 0.1,
+        "damage": 0.1,
+        "walk": 0.0,
+        "sprint": 0.01,
+        "swim": 0.01
+      },
+      "minecraft:player.saturation": {
+        "value": 5,
+         "max": 20
+      },
+      "minecraft:player.exhaustion": {
+        "value": 0,
+        "max": 20
+      },
+      "minecraft:player.level": {
+        "value": 0,
+        "max": 24791
+      },
+      "minecraft:player.experience": {
+        "value": 0,
+        "max": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": -1,
+        "inhale_time": 3.75,
+        "generates_bubbles": false
+      },
+      "minecraft:nameable": {
+        "always_show": true,
+        "allow_name_tag_renaming": false
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:insomnia": {
+        "days_until_insomnia": 3
+      },
+      "minecraft:rideable": {
+        "seat_count": 2,
+        "family_types": [
+          "parrot_tame"
+        ],
+        "pull_in_entities": true,
+        "seats": [
+          {
+            "position": [ 0.4, -0.2, -0.1 ],
+            "min_rider_count": 0,
+            "max_rider_count": 0,
+            "lock_rider_rotation": 0
+          },
+          {
+            "position": [ -0.4, -0.2, -0.1 ],
+            "min_rider_count": 1,
+            "max_rider_count": 2,
+            "lock_rider_rotation": 0
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+      },
+      "minecraft:block_climber": {},
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "all_of": [
+              {
+                "test": "has_mob_effect",
+                "subject": "self",
+                "value": "bad_omen"
+              },
+              {
+                "test": "is_in_village",
+                "subject": "self",
+                "value": true
+              }
+            ]
+          },
+          "event": "minecraft:trigger_raid"
+        }
+      }
+    },
+
+    "events": {
+
+      // arena 
+      "xp:in_arena": { "add": { "component_groups": [ "xp:in_arena" ] } },
+      "xp:out_arena": { "remove": { "component_groups": [ "xp:in_arena" ] } },
+      "xp:lose_player": { "add": { "component_groups": [ "xp:lose_player" ] } },
+      "xp:reset_lose_player": { "remove": { "component_groups": [ "xp:lose_player" ] } },
+
+      "xp:in_ore_room": { "add": { "component_groups": [ "xp:in_ore_room" ] } },
+      "xp:out_ore_room": { "remove": { "component_groups": [ "xp:in_ore_room" ] } },
+
+      "minecraft:gain_bad_omen": {
+        "add": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        }
+      },
+      "minecraft:clear_add_bad_omen": {
+        "remove": {
+          "component_groups": [
+            "minecraft:add_bad_omen"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:clear_bad_omen_spell_effect"
+          ]
+        }
+      },
+      "minecraft:trigger_raid": {
+        "add": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      "minecraft:remove_raid_trigger": {
+        "remove": {
+          "component_groups": [ "minecraft:raid_trigger" ]
+        }
+      },
+      // xp events
+      "xp:test_for_damage":{
+        "add": {
+          "component_groups": ["xp:test_for_damage"]
+        }
+      },
+
+
+      "xp:use_tp":{
+        "add": {
+          "component_groups": ["xp:use_tp"]
+        }
+      },
+
+      "xp:add_lava_sword_projectile": {
+        "add": {
+          "component_groups": [ "xp:lava_sword_projectile" ]
+        }
+      },
+      "xp:remove_lava_sword_projectile": {
+        "remove": {
+          "component_groups": [ "xp:lava_sword_projectile" ]
+        }
+      },
+
+      "xp:ice_sword": {
+        "add": {
+          "component_groups": [ "xp:ice_sword" ]
+        }
+      },
+      "xp:remove_ice_sword": {
+        "remove": {
+          "component_groups": [ "xp:ice_sword" ]
+        }
+      },
+      "xp:ice_sword.glint": {
+        "add": {
+          "component_groups": [ "xp:ice_sword.glint" ]
+        }
+      },
+      "xp:remove_ice_sword.glint": {
+        "remove": {
+          "component_groups": [ "xp:ice_sword.glint" ]
+        }
+      },
+      "xp:add_ice_sword_projectile": {
+        "add": {
+          "component_groups": [ "xp:ice_sword_projectile" ]
+        }
+      },
+      "xp:remove_ice_sword_projectile": {
+        "remove": {
+          "component_groups": [ "xp:ice_sword_projectile" ]
+        }
+      },
+
+      "xp:add_light_sword_projectile": {
+        "add": {
+          "component_groups": [ "xp:light_sword_projectile" ]
+        }
+      },
+      "xp:remove_light_sword_projectile": {
+        "remove": {
+          "component_groups": [ "xp:light_sword_projectile" ]
+        }
+      },
+
+      "xp:fire_sword.attack": {
+        "add": {
+          "component_groups": [ "xp:fire_sword.attack" ]
+        }
+      },
+      "xp:remove_fire_sword.attack": {
+        "remove": {
+          "component_groups": [ "xp:fire_sword.attack" ]
+        }
+      },
+
+      "xp:nether_sword_buff": {
+        "add": { "component_groups": [ "xp:nether_sword_buff" ] }
+      },
+      "xp:remove_nether_sword_buff": {
+        "remove": { "component_groups": [ "xp:nether_sword_buff" ] }
+      },
+
+      "xp:earth_attack": {
+        "add": { "component_groups": [ "xp:earth_attack" ] }
+      },
+      "xp:remove_earth_attack": {
+        "remove": { "component_groups": [ "xp:earth_attack" ] }
+      },
+
+      "xp:dirt_sword":{
+        "add": {
+          "component_groups": ["xp:dirt_sword"]
+        }
+      },
+
+      "xp:freefly":{
+        "add": {
+          "component_groups": ["xp:freefly"]
+        }
+      },
+      
+      "xp:use_sonic_knock":{
+        "add": {
+          "component_groups": ["xp:use_sonic_knock"]
+        }
+      },
+
+      "xp:water_beam":{
+        "add": {
+          "component_groups": ["xp:water_beam"]
+        }
+      },
+
+      "xp:poison_projectile":{
+        "add": {
+          "component_groups": ["xp:poison_projectile"]
+        }
+      },
+      
+      "xp:use_sonic_knock_pull": {
+        "add": {
+          "component_groups": [ "xp:use_sonic_knock_pull" ]
+        }
+      },
+
+      "xp:no_damage": {
+        "add": {
+          "component_groups": [ "xp:no_damage" ]
+        }
+      },
+
+      "xp:remove_no_damage": {
+        "remove": {
+          "component_groups": [ "xp:no_damage" ]
+        }
+      },
+
+      "xp:no_fall": {
+        "add": {
+          "component_groups": [ "xp:no_fall" ]
+        }
+      },
+
+      "xp:yes_fall": {
+        "remove": {
+          "component_groups": [ "xp:no_fall" ]
+        }
+      },
+      
+      //Elemental
+      "xp:fire_element": {
+        "add": {
+          "component_groups": [ "xp:fire_element" ]
+        }
+      },
+      "xp:remove_fire_element": {
+        "remove": {
+          "component_groups": [ "xp:fire_element" ]
+        }
+      },
+
+      "xp:water_element": {
+        "add": {
+          "component_groups": [ "xp:water_element" ]
+        }
+      },
+      "xp:remove_water_element": {
+        "remove": {
+          "component_groups": [ "xp:water_element" ]
+        }
+      },
+
+      "xp:earth_element": {
+        "add": {
+          "component_groups": [ "xp:earth_element" ]
+        }
+      },
+      "xp:remove_earth_element": {
+        "remove": {
+          "component_groups": [ "xp:earth_element" ]
+        }
+      },
+
+      "xp:wind_element": {
+        "add": {
+          "component_groups": [ "xp:wind_element" ]
+        }
+      },
+      "xp:remove_wind_element": {
+        "remove": {
+          "component_groups": [ "xp:wind_element" ]
+        }
+      },
+
+      "xp:lightning_element": {
+        "add": {
+          "component_groups": [ "xp:lightning_element" ]
+        }
+      },
+      "xp:remove_lightning_element": {
+        "remove": {
+          "component_groups": [ "xp:lightning_element" ]
+        }
+      },
+
+      "xp:clear_element": {
+        "add": {
+          "component_groups": [ "xp:clear_element" ]
+        }
+      },
+
+      "xp:ocean_sword":{
+        "add": {
+          "component_groups": ["xp:ocean_sword"]
+        }
+      },
+      "xp:remove_ocean_sword": {
+        "remove": {
+          "component_groups": [ "xp:ocean_sword" ]
+        }
+      },
+      "xp:ocean_sword.glint": {
+        "add": { "component_groups": [ "xp:ocean_sword.glint" ] }
+      },
+      "xp:remove_ocean_sword.glint": {
+        "remove": { "component_groups": [ "xp:ocean_sword.glint" ] }
+      },
+
+      "xp:particle_rider": {
+        "add": { "component_groups": [ "xp:particle_rider" ] }
+      },
+      "xp:remove_particle_rider": {
+        "remove": { "component_groups": [ "xp:particle_rider" ] }
+      },
+
+      "xp:cutscene": {
+        "add": {
+          "component_groups": [ "xp:cutscene" ]
+        }
+      },
+      "xp:remove_cutscene": {
+        "remove": {
+          "component_groups": [ "xp:cutscene" ]
+        }
+      },
+
+      "xp:cutscene2": {
+        "add": {
+          "component_groups": [ "xp:cutscene2" ]
+        }
+      },
+
+      "xp:wither_shoot":{
+        "add": {
+          "component_groups": ["xp:wither_shoot"]
+        }
+      },
+
+      "xp:cutscene3": {
+        "add": {
+          "component_groups": [ "xp:cutscene3" ]
+        }
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:dirt_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "i",
+            "N",
+            "/"
+        ],
+        "key": {
+            "i": { "item": "xp:dirt_ingot" },
+            "N": { "item": "xp:dirt_ingot" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:dirt_sword"
+        }
+    }
+}

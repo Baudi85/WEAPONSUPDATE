@@ -1,0 +1,94 @@
+{
+  "individual_event_sounds": {},
+  "entity_sounds": {
+    "entities": {
+      "xp:skeleton": {
+        "events": {
+          "ambient": "mob.skeleton.say",
+          "death": "mob.skeleton.death",
+          "hurt": {
+            "sound": "mob.skeleton.hurt",
+            "volume": 0.7
+          },
+          "step": {
+            "pitch": 1.0,
+            "sound": "mob.skeleton.step",
+            "volume": 1.0
+          }
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1.0
+      },
+      "xp:vex": {
+        "events": {
+          "ambient": "mob.vex.ambient",
+          "charge": "mob.vex.charge",
+          "death": "mob.vex.death",
+          "hurt": "mob.vex.hurt"
+        },
+        "pitch": [
+          0.8,
+          1.2
+        ],
+        "volume": 1.0
+      },
+      "xp:poison_projectile": {
+        "volume": 1.0,
+        "events": {
+          "hurt": {
+            "pitch": 1.0,
+            "sound": "null",
+            "volume": 50
+          },
+          "death": {
+            "pitch": [
+              0.8,
+              1.2
+            ],
+            "sound": "null",
+            "volume": 10
+          }
+        }
+      },
+      "xp:skeleton_prop": {
+        "volume": 1.0,
+        "events": {
+          "hurt": {
+            "pitch": 1.0,
+            "sound": "null",
+            "volume": 50
+          },
+          "death": {
+            "pitch": [
+              0.8,
+              1.2
+            ],
+            "sound": "null",
+            "volume": 10
+          }
+        }
+      },
+      "xp:toxic": {
+        "volume": 1.0,
+        "events": {
+          "hurt": {
+            "pitch": 1.0,
+            "sound": "null",
+            "volume": 50
+          },
+          "death": {
+            "pitch": [
+              0.8,
+              1.2
+            ],
+            "sound": "null",
+            "volume": 10
+          }
+        }
+      }
+    }
+  }
+}

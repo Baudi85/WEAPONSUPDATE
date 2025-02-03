@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.ceiling_lights": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "array.prop[Math.floor(math.sin((q.life_time * 180) * 5.0) * 5.0)]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+        "textures": {
+          "array.prop": [ 
+            "texture.ceiling_lights_0",
+            "texture.ceiling_lights_1",
+            "texture.ceiling_lights_2",
+            "texture.ceiling_lights_3",
+            "texture.ceiling_lights_4"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.armor_statue.fire_blade": {
+			"loop": true,
+			"animation_length": 3.20833,
+			"particle_effects": {
+				"0.0": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle"
+				},
+				"0.25": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"0.4583": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle3"
+				},
+				"0.5833": [
+					{
+						"effect": "fire_sword1",
+						"locator": "smoke_particle3"
+					},
+					{
+						"effect": "fire_sword",
+						"locator": "smoke_particle3"
+					}
+				],
+				"0.7083": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"0.7917": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle2"
+				},
+				"0.9583": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle"
+				},
+				"1.125": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle3"
+				},
+				"1.2917": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"1.4583": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle2"
+				},
+				"1.7083": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle"
+				},
+				"1.875": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"2.0": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle2"
+				},
+				"2.1667": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle"
+				},
+				"2.3333": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle3"
+				},
+				"2.5": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"2.6667": {
+					"effect": "fire_sword1",
+					"locator": "smoke_particle2"
+				},
+				"2.9167": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle"
+				},
+				"3.0833": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle4"
+				},
+				"3.2083": {
+					"effect": "fire_sword",
+					"locator": "smoke_particle2"
+				}
+			}
+		},
+		"animation.armor_statue.magma_blade": {
+			"loop": true,
+			"animation_length": 1.16667,
+			"particle_effects": {
+				"0.0": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke"
+				},
+				"0.1667": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke2"
+				},
+				"0.3333": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke3"
+				},
+				"0.5": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke4"
+				},
+				"0.6667": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke"
+				},
+				"0.8333": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke2"
+				},
+				"1.0": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke3"
+				},
+				"1.1667": {
+					"effect": "fire_sword",
+					"locator": "magma_smoke4"
+				}
+			}
+		},
+		"animation.armor_statue.angry": {
+			"animation_length": 9,
+			"bones": {
+				"Head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.125": [14.9575, 0.6518, 7.4718],
+						"0.375": [14.9575, 0.6518, 7.4718],
+						"0.5": [15.414, -13.8303, 3.52515],
+						"0.75": [15.414, -13.8303, 3.52515],
+						"1.0": [15.84435, 18.64498, 12.47796],
+						"1.25": [15.84435, 18.64498, 12.47796],
+						"1.5": [15.414, -13.8303, 3.52515],
+						"1.75": [15.414, -13.8303, 3.52515],
+						"2.0": [15.84435, 18.64498, 12.47796],
+						"2.25": [15.84435, 18.64498, 12.47796],
+						"2.5": [15.414, -13.8303, 3.52515],
+						"2.75": [15.414, -13.8303, 3.52515],
+						"3.0": [14.9575, 0.6518, 7.4718],
+						"4.2917": [14.9575, 0.6518, 7.4718],
+						"6.5": [21.80574, 4.4613, -7.05362],
+						"8.2083": [21.80574, 4.4613, -7.05362],
+						"8.5": [14.9575, 0.6518, 7.4718],
+						"9.0": [0, 0, 0]
+					}
+				},
+				"LeftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.125": [-10, 0, -10],
+						"8.5": [-10, 0, -10],
+						"9.0": [0, 0, 0]
+					},
+					"position": [0, 0, 0]
+				},
+				"RightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.125": [-109.59166, 34.24754, -8.84276],
+						"8.5": [-109.59, 34.25, -8.84],
+						"9.0": [0, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.125": [-0.5, 1, 0],
+						"8.5": [-0.5, 1, 0],
+						"9.0": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

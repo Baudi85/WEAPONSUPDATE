@@ -1,0 +1,129 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.podium.item_float": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [0, 0, "q.skin_id == 1 ? -32.5 : -40"],
+					"position": ["q.skin_id == 1 ? 4 : 12", 0, 0]
+				},
+				"wind_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [25.1, 30, 0],
+					"scale": 1.5
+				},
+				"darkness_swordpng": {
+					"rotation": [0, "query.life_time *-14.0544", 180],
+					"position": [27.86604, 31.35721, 0],
+					"scale": 1.5
+				},
+				"dirt_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [20.1, 19, 0],
+					"scale": 1.5
+				},
+				"earth_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"elemental_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [24.1, 30, 0],
+					"scale": 1.5
+				},
+				"ender_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [24.1, 30, 0],
+					"scale": 1.5
+				},
+				"fire_sword": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [18.5, 17, 0],
+					"scale": 1.5
+				},
+				"fire_blade": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [18.30849, 17.1607, 0.25],
+					"scale": 1.5
+				},
+				"ice_sword": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"jungle_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [24.1, 30, 0],
+					"scale": 1.5
+				},
+				"light_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [25.1, 30, 0],
+					"scale": 1.5
+				},
+				"magma_sword": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [24.1, 30, 0],
+					"scale": 1.5
+				},
+				"nether_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 33, 0],
+					"scale": 1.5
+				},
+				"ocean_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"poison_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"sonic_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"spike_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"storm_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [27.1, 30, 0],
+					"scale": 1.5
+				},
+				"thunder_sword": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [22.1, 21, 0],
+					"scale": 1.5
+				},
+				"thunder_sword_drop": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [22.1, 21, 0],
+					"scale": [2, 1.5, 2]
+				},
+				"tnt_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [19.5, 22, 0],
+					"scale": 1.5
+				},
+				"water_swordpng": {
+					"rotation": [0, "query.life_time *-15", 180],
+					"position": [21.5, 19, 0],
+					"scale": 1.5
+				},
+				"weapon": {
+					"rotation": [0, "query.life_time *-15", 175],
+					"position": [37.23484, 38.85534, 0],
+					"scale": 1.085
+				}
+			}
+		}
+	}
+}

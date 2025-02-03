@@ -1,0 +1,1194 @@
+{
+  "namespace": "xp_podium_screen",
+
+  "weapons_podium_list": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "podium_gui_info@common.empty_panel": {
+          "size": [ "100%", "100%" ],
+          "$weapon_gui": "info",
+          "controls": [
+            {
+              "elemental_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_elemental_sword')",
+
+                "$weapon_name": "item.xp:elemental_sword.name",
+                "$weapon_description": "item.xp:elemental_sword.description",
+                "$weapon_stat_bar_level_attack": "8",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "darkness_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_darkness_sword')",
+
+                "$weapon_name": "item.xp:darkness_sword.name",
+                "$weapon_description": "item.xp:darkness_sword.description",
+                "$weapon_stat_bar_level_attack": "5",
+                "$weapon_stat_bar_level_cooldown": "0",
+                "$weapon_stat_bar_level_range": "5"
+              }
+            },
+            {
+              "dirt_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_dirt_sword')",
+
+                "$weapon_name": "item.xp:dirt_sword.name",
+                "$weapon_description": "item.xp:dirt_sword.description",
+                "$weapon_stat_bar_level_attack": "2",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "earth_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_earth_sword')",
+
+                "$weapon_name": "item.xp:earth_sword.name",
+                "$weapon_description": "item.xp:earth_sword.description",
+                "$weapon_stat_bar_level_attack": "7",
+                "$weapon_stat_bar_level_cooldown": "2",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "ender_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_ender_sword')",
+
+                "$weapon_name": "item.xp:ender_sword.name",
+                "$weapon_description": "item.xp:ender_sword.description",
+                "$weapon_stat_bar_level_attack": "4",
+                "$weapon_stat_bar_level_cooldown": "2",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "fire_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_fire_sword')",
+
+                "$weapon_name": "item.xp:fire_sword.name",
+                "$weapon_description": "item.xp:fire_sword.description",
+                "$weapon_stat_bar_level_attack": "6",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "ice_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_ice_sword')",
+
+                "$weapon_name": "item.xp:ice_sword.name",
+                "$weapon_description": "item.xp:ice_sword.description",
+                "$weapon_stat_bar_level_attack": "4",
+                "$weapon_stat_bar_level_cooldown": "2",
+                "$weapon_stat_bar_level_range": "7"
+              }
+            },
+            {
+              "jungle_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_jungle_sword')",
+
+                "$weapon_name": "item.xp:jungle_sword.name",
+                "$weapon_description": "item.xp:jungle_sword.description",
+                "$weapon_stat_bar_level_attack": "3",
+                "$weapon_stat_bar_level_cooldown": "2",
+                "$weapon_stat_bar_level_range": "3"
+              }
+            },
+            {
+              "magma_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_magma_sword')",
+
+                "$weapon_name": "item.xp:lava_sword.name",
+                "$weapon_description": "item.xp:lava_sword.description",
+                "$weapon_stat_bar_level_attack": "8",
+                "$weapon_stat_bar_level_cooldown": "3",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "light_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_light_sword')",
+
+                "$weapon_name": "item.xp:light_sword.name",
+                "$weapon_description": "item.xp:light_sword.description",
+                "$weapon_stat_bar_level_attack": "5",
+                "$weapon_stat_bar_level_cooldown": "3",
+                "$weapon_stat_bar_level_range": "6"
+              }
+            },
+            {
+              "nether_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_nether_sword')",
+
+                "$weapon_name": "item.xp:nether_sword.name",
+                "$weapon_description": "item.xp:nether_sword.description",
+                "$weapon_stat_bar_level_attack": "7",
+                "$weapon_stat_bar_level_cooldown": "3",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "ocean_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_ocean_sword')",
+
+                "$weapon_name": "item.xp:ocean_sword.name",
+                "$weapon_description": "item.xp:ocean_sword.description",
+                "$weapon_stat_bar_level_attack": "6",
+                "$weapon_stat_bar_level_cooldown": "2",
+                "$weapon_stat_bar_level_range": "3"
+              }
+            },
+            {
+              "poison_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_poison_sword')",
+
+                "$weapon_name": "item.xp:poison_sword.name",
+                "$weapon_description": "item.xp:poison_sword.description",
+                "$weapon_stat_bar_level_attack": "5",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "sonic_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_sonic_sword')",
+
+                "$weapon_name": "item.xp:sonic_sword.name",
+                "$weapon_description": "item.xp:sonic_sword.description",
+                "$weapon_stat_bar_level_attack": "4",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "spike_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_spike_sword')",
+
+                "$weapon_name": "item.xp:spike_sword.name",
+                "$weapon_description": "item.xp:spike_sword.description",
+                "$weapon_stat_bar_level_attack": "4",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "storm_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_storm_sword')",
+
+                "$weapon_name": "item.xp:storm_sword.name",
+                "$weapon_description": "item.xp:storm_sword.description",
+                "$weapon_stat_bar_level_attack": "3",
+                "$weapon_stat_bar_level_cooldown": "3",
+                "$weapon_stat_bar_level_range": "6"
+              }
+            },
+            {
+              "thunder_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_thunder_sword')",
+
+                "$weapon_name": "item.xp:thunder_sword.name",
+                "$weapon_description": "item.xp:thunder_sword.description",
+                "$weapon_stat_bar_level_attack": "8",
+                "$weapon_stat_bar_level_cooldown": "3",
+                "$weapon_stat_bar_level_range": "5"
+              }
+            },
+            {
+              "tnt_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_tnt_sword')",
+
+                "$weapon_name": "item.xp:tnt_sword.name",
+                "$weapon_description": "item.xp:tnt_sword.description",
+                "$weapon_stat_bar_level_attack": "8",
+                "$weapon_stat_bar_level_cooldown": "5",
+                "$weapon_stat_bar_level_range": "7"
+              }
+            },
+            {
+              "water_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_water_sword')",
+
+                "$weapon_name": "item.xp:water_sword.name",
+                "$weapon_description": "item.xp:water_sword.description",
+                "$weapon_stat_bar_level_attack": "3",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            },
+            {
+              "wind_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_wind_sword')",
+
+                "$weapon_name": "item.xp:air_sword.name",
+                "$weapon_description": "item.xp:air_sword.description",
+                "$weapon_stat_bar_level_attack": "3",
+                "$weapon_stat_bar_level_cooldown": "0",
+                "$weapon_stat_bar_level_range": "6"
+              }
+            },
+            {
+              "wither_sword@xp_podium_screen.weapons_podium_screen_content": {
+                "$visible_binding": "(#dialogtext = 'podium_info_wither_sword')",
+
+                "$weapon_name": "item.xp:wither_sword.name",
+                "$weapon_description": "item.xp:wither_sword.description",
+                "$weapon_stat_bar_level_attack": "3",
+                "$weapon_stat_bar_level_cooldown": "1",
+                "$weapon_stat_bar_level_range": "8"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "podium_gui_recipe@common.empty_panel": {
+          "size": [ "100%", "100%" ],
+          "$weapon_gui": "recipe",
+          "controls": [
+            { "elemental_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_elemental_sword')", "$weapon_description": "item.xp:elemental_sword.description", "$weapon_recipe_index": "elemental_sword" } },
+            { "darkness_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_darkness_sword')", "$weapon_description": "item.xp:darkness_sword.description", "$weapon_recipe_index": "darkness_sword" } },
+            { "dirt_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_dirt_sword')", "$weapon_description": "item.xp:dirt_sword.description", "$weapon_recipe_index": "dirt_sword" } },
+            { "earth_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_earth_sword')", "$weapon_description": "item.xp:earth_sword.description", "$weapon_recipe_index": "earth_sword" } },
+            { "ender_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_ender_sword')", "$weapon_description": "item.xp:ender_sword.description", "$weapon_recipe_index": "ender_sword" } },
+            { "fire_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_fire_sword')", "$weapon_description": "item.xp:fire_sword.description", "$weapon_recipe_index": "fire_sword" } },
+            { "ice_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_ice_sword')", "$weapon_description": "item.xp:ice_sword.description", "$weapon_recipe_index": "ice_sword" } },
+            { "jungle_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_jungle_sword')", "$weapon_description": "item.xp:jungle_sword.description", "$weapon_recipe_index": "jungle_sword" } },
+            { "magma_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_magma_sword')", "$weapon_description": "item.xp:lava_sword.description", "$weapon_recipe_index": "lava_sword" } },
+            { "light_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_light_sword')", "$weapon_description": "item.xp:light_sword.description", "$weapon_recipe_index": "light_sword" } },
+            { "nether_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_nether_sword')", "$weapon_description": "item.xp:nether_sword.description", "$weapon_recipe_index": "nether_sword" } },
+            { "ocean_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_ocean_sword')", "$weapon_description": "item.xp:ocean_sword.description", "$weapon_recipe_index": "ocean_sword" } },
+            { "poison_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_poison_sword')", "$weapon_description": "item.xp:poison_sword.description", "$weapon_recipe_index": "poison_sword" } },
+            { "sonic_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_sonic_sword')", "$weapon_description": "item.xp:sonic_sword.description", "$weapon_recipe_index": "sonic_sword" } },
+            { "spike_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_spike_sword')", "$weapon_description": "item.xp:spike_sword.description", "$weapon_recipe_index": "spike_sword" } },
+            { "storm_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_storm_sword')", "$weapon_description": "item.xp:storm_sword.description", "$weapon_recipe_index": "storm_sword" } },
+            { "thunder_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_thunder_sword')", "$weapon_description": "item.xp:thunder_sword.description", "$weapon_recipe_index": "thunder_sword" } },
+            { "tnt_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_tnt_sword')", "$weapon_description": "item.xp:tnt_sword.description", "$weapon_recipe_index": "tnt_sword" } },
+            { "water_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_water_sword')", "$weapon_description": "item.xp:water_sword.description", "$weapon_recipe_index": "water_sword" } },
+            { "wind_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_wind_sword')", "$weapon_description": "item.xp:air_sword.description", "$weapon_recipe_index": "wind_sword" } },
+            { "wither_sword@xp_podium_screen.weapons_podium_screen_content": { "$visible_binding": "(#dialogtext = 'podium_recipe_wither_sword')", "$weapon_description": "item.xp:wither_sword.description", "$weapon_recipe_index": "wither_sword" } }
+          ]
+        }
+      },
+      {
+        "gui_buttons@common.empty_panel": {
+          "size": "$gui_buttons_size",
+          "offset": "$gui_buttons_offset",
+
+          "$gui_buttons_size|default": [ 147, 86 ],
+          "$gui_buttons_offset|default": [ "147px - 0.22%", -21 ],
+
+          "$gui_buttons_item_size|default": [ 18, 19 ],
+          "$gui_buttons_item_content_size|default": [ 17, 17 ],
+          "$gui_buttons_item_content_offset|default": [ 15, 0 ],
+          "$gui_buttons_item_helper_offset|default": [ -4, -4 ],
+
+          "variables": [
+            {
+              "requires": "(not ($is_android or $is_ios or $nx_os))",
+
+              "$gui_buttons_size": [ 220.5, 129 ],
+              "$gui_buttons_offset": [ "220.5px - 0.22%", -31.5 ],
+
+              "$gui_buttons_item_size": [ 27, 28.5 ],
+              "$gui_buttons_item_content_size": [ 25.5, 25.5 ],
+              "$gui_buttons_item_content_offset": [ 22.5, 0 ],
+              "$gui_buttons_item_helper_offset": [ -6, -6 ]
+            },
+            {
+              "requires": "($is_android or $is_ios or $nx_os)",
+
+              "$gui_buttons_size": [ 183.75, 107.5 ],
+              "$gui_buttons_offset": [ "183.75px - 0.22%", -26.25 ],
+
+              "$gui_buttons_item_size": [ 22.5, 23.75 ],
+              "$gui_buttons_item_content_size": [ 21.25, 21.25 ],
+              "$gui_buttons_item_content_offset": [ 18.75, 0 ],
+              "$gui_buttons_item_helper_offset": [ -5, -5 ]
+            }
+          ],
+          "controls": [
+            {
+              "gui_buttons@xp_podium_screen.weapon_buttons": {
+                "offset": "@xp_podium_screen.weapon_button_anim_in"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "weapons_podium_screen_content": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "offset": "$podium_offset",
+
+    "$weapon_name|default": "weapon_name",
+    "$weapon_description|default": "weapon_description",
+    "$weapon_recipe_index|default": "none",
+    "$weapon_stat_bar_level_attack|default": "d",
+    "$weapon_stat_bar_level_cooldown|default": "b",
+    "$weapon_stat_bar_level_range|default": "g",
+
+
+    "$podium_offset|default": [ 0, 20 ],
+
+    "$gui_info_size|default": [ 147, 86 ],
+    "$gui_info_panel_anim_in_offset|default": [ 0, "-15px" ],
+    "$gui_info_panel_anim_flush_offset|default": [ 0, "-43px" ],
+    "$gui_info_weapon_render_size|default": [ 60, 76 ],
+    "$gui_info_weapon_render_offset|default": [ 5, 5 ],
+    "$gui_info_weapon_stats_size|default": [ 73, 78 ],
+    "$gui_info_weapon_stats_offset|default": [ 73.5, 7 ],
+    "$gui_info_weapon_stats_icon_size|default": [ 23, 23 ],
+    "$gui_info_weapon_stats_icon_offset|default": [ 0, 0 ],
+    "$gui_info_weapon_stats_bar_size|default": [ 43, 15 ],
+    "$gui_info_weapon_stats_bar_offset|default": [ 20, 0 ],
+
+    "$gui_recipe_size|default": [ 147, 86 ],
+    "$gui_recipe_offset|default": [ 0, -43 ],
+
+    "$gui_texts_size|default": [ 147, 64 ],
+    "$gui_texts_offset|default": [ 0, 32 ],
+    "$gui_texts_lore_text_offset|default": [ 0, 9 ],
+    "$gui_texts_obtaining_text_offset|default": [ 0, -21.5 ],
+
+    "variables": [
+      {
+        "requires": "(not ($is_android or $is_ios or $nx_os))",
+
+        "$podium_offset": [ 0, 30 ],
+
+        "$gui_info_size": [ 220.5, 129 ],
+        "$gui_info_panel_anim_in_offset": [ 0, "-22.5px" ],
+        "$gui_info_panel_anim_flush_offset": [ 0, "-64.5px" ],
+        "$gui_info_weapon_render_size": [ 90, 114 ],
+        "$gui_info_weapon_render_offset": [ 7.5, 7.5 ],
+        "$gui_info_weapon_stats_size": [ 109.5, 117 ],
+        "$gui_info_weapon_stats_offset": [ 110.25, 10.5 ],
+        "$gui_info_weapon_stats_icon_size": [ 34.5, 34.5 ],
+        "$gui_info_weapon_stats_icon_offset": [ 0, 0 ],
+        "$gui_info_weapon_stats_bar_size": [ 64.5, 22.5 ],
+        "$gui_info_weapon_stats_bar_offset": [ 30, 0 ],
+
+        "$gui_recipe_size": [ 220.5, 129 ],
+        "$gui_recipe_offset": [ 0, -64.5 ],
+
+        "$gui_texts_size": [ 220.5, 96 ],
+        "$gui_texts_offset": [ 0, 48 ],
+        "$gui_texts_lore_text_offset": [ 0, 13.5 ],
+        "$gui_texts_obtaining_text_offset": [ 0, -32.25 ]
+      },
+      {
+        "requires": "($is_android or $is_ios or $nx_os)",
+
+        "$podium_offset": [ 0, 25 ],
+
+        "$gui_info_size": [ 183.75, 107.5 ],
+        "$gui_info_panel_anim_in_offset": [ 0, "-18.75px" ],
+        "$gui_info_panel_anim_flush_offset": [ 0, "-53.75px" ],
+        "$gui_info_weapon_render_size": [ 75, 95 ],
+        "$gui_info_weapon_render_offset": [ 6.25, 6.25 ],
+        "$gui_info_weapon_stats_size": [ 91.25, 97.5 ],
+        "$gui_info_weapon_stats_offset": [ 91.875, 8.75 ],
+        "$gui_info_weapon_stats_icon_size": [ 28.75, 28.75 ],
+        "$gui_info_weapon_stats_icon_offset": [ 0, 0 ],
+        "$gui_info_weapon_stats_bar_size": [ 53.75, 18.75 ],
+        "$gui_info_weapon_stats_bar_offset": [ 25, 0 ],
+
+        "$gui_recipe_size": [ 183.75, 107.5 ],
+        "$gui_recipe_offset": [ 0, -53.75 ],
+
+        "$gui_texts_size": [ 183.75, 80 ],
+        "$gui_texts_offset": [ 0, 40 ],
+        "$gui_texts_lore_text_offset": [ 0, 9 ],
+        "$gui_texts_obtaining_text_offset": [ 0, -26.875 ]
+      }
+    ],
+    "controls": [
+      {
+        "gui_info@xp_podium_screen.weapons_info_panel": {
+          "$panel_layer": 100
+        }
+      },
+      {
+        "gui_recipe@xp_podium_screen.weapon_recipe_panel": {
+          "offset": "$gui_recipe_offset",
+          "$panel_layer": 100
+        }
+      },
+      {
+        "gui_texts@xp_podium_screen.weapons_description_panel": {
+          "offset": "$gui_texts_offset"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#dialogtext",
+        "binding_type": "global"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$visible_binding",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "weapon_main_panel_in": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "from": "$gui_info_panel_anim_in_offset",
+    "to": "$gui_info_panel_anim_in_offset",
+    "duration": 0.3,
+    "next": "@xp_podium_screen.weapon_main_panel_flush"
+  },
+  "weapon_main_panel_flush": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "from": "$gui_info_panel_anim_in_offset",
+    "to": "$gui_info_panel_anim_flush_offset",
+    "duration": 0.25
+  },
+
+  "weapon_other_panel_alpha_in": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 0.0,
+    "to": 0.0,
+    "duration": 0.9,
+    "next": "@xp_podium_screen.weapon_other_panel_alpha_flush"
+  },
+  "weapon_other_panel_alpha_flush": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 1.0,
+    "to": 1.0,
+    "duration": 0.1
+  },
+
+  "weapons_info_panel@common.empty_panel": {
+    "size": "$gui_info_size",
+    "layer": "$panel_layer",
+    "controls": [
+      {
+        "panel_background": {
+          "type": "image",
+          "texture": "textures/ui/xp/gui_info",
+          "anims": [ "@xp_podium_screen.weapon_main_panel_in" ],
+          "size": [ "100%", "100%" ],
+          "uv_size": [ "147px", "86px" ],
+          "layer": "$panel_layer",
+          "controls": [
+            {
+              "weapon_render@xp_podium_screen.weapon_render_panel": {
+                "offset": "$gui_info_weapon_render_offset"
+              }
+            },
+            {
+              "weapon_stats@xp_podium_screen.weapon_stats_panel": {
+                "offset": "$gui_info_weapon_stats_offset"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ignored": "(not ($weapon_gui = 'info'))"
+  },
+
+  "weapon_render_panel": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": "$gui_info_weapon_render_size",
+    "clips_children": true,
+    "layer": "$panel_layer",
+    "controls": [
+      {
+        "portrait_indent": {
+          "type": "custom",
+          "renderer": "actor_portrait_renderer",
+          "size": [ "100%", "100%" ],
+          "offset": [ 0, "12.5%" ],
+          "enable_scissor_test": true,
+          "layer": "$panel_layer",
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_collection_name": "skins_collection",
+              "binding_name": "#skin_index"
+            }
+          ]
+        }
+      },
+      {
+        "weapon_name_panel@common.empty_panel": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "100%", "100%cm" ],
+          "offset": [ 0, "-5%" ],
+          "layer": "$panel_layer",
+          "controls": [
+            {
+              "label@xp_podium_screen.weapon_name": {
+                "text_alignment": "center"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "weapon_stats_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": "$gui_info_weapon_stats_size",
+    "layer": "$panel_layer",
+    "controls": [
+      {
+        "attack_stat@xp_podium_screen.weapon_stats_panel_template": {
+          "$weapon_stats_type": "attack",
+          "$weapon_stat_bar_level": "$weapon_stat_bar_level_attack"
+        }
+      },
+      {
+        "cooldown_stat@xp_podium_screen.weapon_stats_panel_template": {
+          "$weapon_stats_type": "cooldown",
+          "$weapon_stat_bar_level": "$weapon_stat_bar_level_cooldown"
+        }
+      },
+      {
+        "range_stat@xp_podium_screen.weapon_stats_panel_template": {
+          "$weapon_stats_type": "range",
+          "$weapon_stat_bar_level": "$weapon_stat_bar_level_range"
+        }
+      }
+    ]
+  },
+
+  "weapon_stats_panel_template@common.empty_panel": {
+    "size": [ "100%c", "100%cm" ],
+    "layer": "$panel_layer",
+    "controls": [
+      {
+        "stat_icon": {
+          "type": "image",
+          "texture": "('textures/ui/xp/info_bar_' + $weapon_stats_type)",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": "$gui_info_weapon_stats_icon_size",
+          "offset": "$gui_info_weapon_stats_icon_offset",
+          "uv_size": [ 23, 23 ],
+          "layer": "$panel_layer"
+        }
+      },
+      {
+        "stat_bar": {
+          "type": "image",
+          "texture": "('textures/ui/xp/info_bar_' + $weapon_stats_type)",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": "$gui_info_weapon_stats_bar_size",
+          "offset": "$gui_info_weapon_stats_bar_offset",
+          "uv": "('@xp_podium_screen.weapon_stats_uv_0' + $weapon_stat_bar_uv)",
+          "uv_size": [ 43, 15 ],
+          "layer": "$panel_layer",
+
+          "$weapon_stat_bar_uv|default": "$weapon_stat_bar_level",
+          "variables": [
+            { "requires": "($weapon_stat_bar_level = '1')", "$weapon_stat_bar_uv": "a" },
+            { "requires": "($weapon_stat_bar_level = '2')", "$weapon_stat_bar_uv": "b" },
+            { "requires": "($weapon_stat_bar_level = '3')", "$weapon_stat_bar_uv": "c" },
+            { "requires": "($weapon_stat_bar_level = '4')", "$weapon_stat_bar_uv": "d" },
+            { "requires": "($weapon_stat_bar_level = '5')", "$weapon_stat_bar_uv": "e" },
+            { "requires": "($weapon_stat_bar_level = '6')", "$weapon_stat_bar_uv": "f" },
+            { "requires": "($weapon_stat_bar_level = '7')", "$weapon_stat_bar_uv": "g" },
+            { "requires": "($weapon_stat_bar_level = '8')", "$weapon_stat_bar_uv": "h" }
+          ]
+        }
+      }
+    ]
+  },
+
+  "weapon_stats_uv_base": {
+    "$set_fps|default": 0.0,
+    "$set_image_uv|default": [ 0, 0 ],
+    "$set_image_uv_next|default": "@xp_podium_screen.weapon_stats_uv_base_conclude",
+
+    "anim_type": "uv",
+    "duration": "$set_fps",
+    "from": "$set_image_uv",
+    "to": "$set_image_uv",
+    "easing": "linear",
+    "next": "$set_image_uv_next"
+  },
+  "weapon_stats_uv_base_conclude": {
+    "$set_fps|default": 0.0,
+    "$set_image_uv|default": [ 0, 0 ],
+
+    "anim_type": "uv",
+    "duration": "$set_fps",
+    "from": "$set_image_uv",
+    "to": "$set_image_uv",
+    "easing": "linear"
+  },
+
+  "weapon_stats_uv_00@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 0 ] },
+
+  "weapon_stats_uv_0a@weapon_stats_uv_base": { "$set_fps": 0.1666666666666667, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1a" },
+  "weapon_stats_uv_1a@weapon_stats_uv_base": { "$set_fps": 0.1666666666666667, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2a" },
+  "weapon_stats_uv_2a@weapon_stats_uv_base": { "$set_fps": 0.1666666666666667, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3a" },
+  "weapon_stats_uv_3a@weapon_stats_uv_base": { "$set_fps": 0.1666666666666667, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4a" },
+  "weapon_stats_uv_4a@weapon_stats_uv_base": { "$set_fps": 0.1666666666666667, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_a" },
+  "weapon_stats_uv_a@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 60 ] },
+  
+  "weapon_stats_uv_0b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1b" },
+  "weapon_stats_uv_1b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2b" },
+  "weapon_stats_uv_2b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3b" },
+  "weapon_stats_uv_3b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4b" },
+  "weapon_stats_uv_4b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5b" },
+  "weapon_stats_uv_5b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6b" },    
+  "weapon_stats_uv_6b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7b" },    
+  "weapon_stats_uv_7b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8b" },   
+  "weapon_stats_uv_8b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9b" },   
+  "weapon_stats_uv_9b@weapon_stats_uv_base": { "$set_fps": 0.0625, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_b" },  
+  "weapon_stats_uv_b@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 135 ] },
+
+  "weapon_stats_uv_0c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1c" },
+  "weapon_stats_uv_1c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2c" },
+  "weapon_stats_uv_2c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3c" },
+  "weapon_stats_uv_3c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4c" },
+  "weapon_stats_uv_4c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5c" },
+  "weapon_stats_uv_5c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6c" },    
+  "weapon_stats_uv_6c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7c" },    
+  "weapon_stats_uv_7c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8c" },   
+  "weapon_stats_uv_8c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9c" },   
+  "weapon_stats_uv_9c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10c" },  
+  "weapon_stats_uv_10c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11c" }, 
+  "weapon_stats_uv_11c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12c" }, 
+  "weapon_stats_uv_12c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13c" }, 
+  "weapon_stats_uv_13c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14c" }, 
+  "weapon_stats_uv_14c@weapon_stats_uv_base": { "$set_fps": 0.0384615384615385, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_c" }, 
+  "weapon_stats_uv_c@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 210 ] },
+
+  "weapon_stats_uv_0d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1d" },
+  "weapon_stats_uv_1d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2d" },
+  "weapon_stats_uv_2d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3d" },
+  "weapon_stats_uv_3d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4d" },
+  "weapon_stats_uv_4d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5d" },
+  "weapon_stats_uv_5d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6d" },    
+  "weapon_stats_uv_6d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7d" },    
+  "weapon_stats_uv_7d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8d" },   
+  "weapon_stats_uv_8d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9d" },   
+  "weapon_stats_uv_9d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10d" },  
+  "weapon_stats_uv_10d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11d" }, 
+  "weapon_stats_uv_11d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12d" }, 
+  "weapon_stats_uv_12d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13d" }, 
+  "weapon_stats_uv_13d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14d" }, 
+  "weapon_stats_uv_14d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_15d" }, 
+  "weapon_stats_uv_15d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 225 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_16d" }, 
+  "weapon_stats_uv_16d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 240 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_17d" }, 
+  "weapon_stats_uv_17d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 255 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_18d" }, 
+  "weapon_stats_uv_18d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 270 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_19d" }, 
+  "weapon_stats_uv_19d@weapon_stats_uv_base": { "$set_fps": 0.0277777777777778, "$set_image_uv": [ 23, 285 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_d" }, 
+  "weapon_stats_uv_d@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 285 ] },
+
+  "weapon_stats_uv_0e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1e" },
+  "weapon_stats_uv_1e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2e" },
+  "weapon_stats_uv_2e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3e" },
+  "weapon_stats_uv_3e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4e" },
+  "weapon_stats_uv_4e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5e" },
+  "weapon_stats_uv_5e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6e" },    
+  "weapon_stats_uv_6e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7e" },    
+  "weapon_stats_uv_7e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8e" },   
+  "weapon_stats_uv_8e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9e" },   
+  "weapon_stats_uv_9e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10e" },  
+  "weapon_stats_uv_10e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11e" }, 
+  "weapon_stats_uv_11e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12e" }, 
+  "weapon_stats_uv_12e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13e" }, 
+  "weapon_stats_uv_13e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14e" }, 
+  "weapon_stats_uv_14e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_15e" }, 
+  "weapon_stats_uv_15e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 225 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_16e" }, 
+  "weapon_stats_uv_16e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 240 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_17e" }, 
+  "weapon_stats_uv_17e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 255 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_18e" }, 
+  "weapon_stats_uv_18e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 270 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_19e" }, 
+  "weapon_stats_uv_19e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 285 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_20e" }, 
+  "weapon_stats_uv_20e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 300 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_21e" }, 
+  "weapon_stats_uv_21e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 315 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_22e" }, 
+  "weapon_stats_uv_22e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 330 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_23e" }, 
+  "weapon_stats_uv_23e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 345 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_24e" }, 
+  "weapon_stats_uv_24e@weapon_stats_uv_base": { "$set_fps": 0.0217391304347826, "$set_image_uv": [ 23, 360 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_e" }, 
+  "weapon_stats_uv_e@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 360 ] },
+
+  "weapon_stats_uv_0f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1f" },
+  "weapon_stats_uv_1f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2f" },
+  "weapon_stats_uv_2f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3f" },
+  "weapon_stats_uv_3f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4f" },
+  "weapon_stats_uv_4f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5f" },
+  "weapon_stats_uv_5f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6f" },    
+  "weapon_stats_uv_6f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7f" },    
+  "weapon_stats_uv_7f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8f" },   
+  "weapon_stats_uv_8f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9f" },   
+  "weapon_stats_uv_9f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10f" },  
+  "weapon_stats_uv_10f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11f" }, 
+  "weapon_stats_uv_11f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12f" }, 
+  "weapon_stats_uv_12f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13f" }, 
+  "weapon_stats_uv_13f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14f" }, 
+  "weapon_stats_uv_14f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_15f" }, 
+  "weapon_stats_uv_15f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 225 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_16f" }, 
+  "weapon_stats_uv_16f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 240 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_17f" }, 
+  "weapon_stats_uv_17f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 255 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_18f" }, 
+  "weapon_stats_uv_18f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 270 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_19f" }, 
+  "weapon_stats_uv_19f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 285 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_20f" }, 
+  "weapon_stats_uv_20f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 300 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_21f" }, 
+  "weapon_stats_uv_21f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 315 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_22f" }, 
+  "weapon_stats_uv_22f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 330 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_23f" }, 
+  "weapon_stats_uv_23f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 345 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_24f" }, 
+  "weapon_stats_uv_24f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 360 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_25f" }, 
+  "weapon_stats_uv_25f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 375 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_26f" }, 
+  "weapon_stats_uv_26f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 390 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_27f" }, 
+  "weapon_stats_uv_27f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 405 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_28f" }, 
+  "weapon_stats_uv_28f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 420 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_29f" }, 
+  "weapon_stats_uv_29f@weapon_stats_uv_base": { "$set_fps": 0.0178571428571429, "$set_image_uv": [ 23, 435 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_f" }, 
+  "weapon_stats_uv_f@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 435 ] },
+
+  "weapon_stats_uv_0g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1g" },
+  "weapon_stats_uv_1g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2g" },
+  "weapon_stats_uv_2g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3g" },
+  "weapon_stats_uv_3g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4g" },
+  "weapon_stats_uv_4g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5g" },
+  "weapon_stats_uv_5g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6g" },    
+  "weapon_stats_uv_6g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7g" },    
+  "weapon_stats_uv_7g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8g" },   
+  "weapon_stats_uv_8g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9g" },   
+  "weapon_stats_uv_9g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10g" },  
+  "weapon_stats_uv_10g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11g" }, 
+  "weapon_stats_uv_11g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12g" }, 
+  "weapon_stats_uv_12g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13g" }, 
+  "weapon_stats_uv_13g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14g" }, 
+  "weapon_stats_uv_14g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_15g" }, 
+  "weapon_stats_uv_15g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 225 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_16g" }, 
+  "weapon_stats_uv_16g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 240 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_17g" }, 
+  "weapon_stats_uv_17g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 255 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_18g" }, 
+  "weapon_stats_uv_18g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 270 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_19g" }, 
+  "weapon_stats_uv_19g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 285 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_20g" }, 
+  "weapon_stats_uv_20g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 300 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_21g" }, 
+  "weapon_stats_uv_21g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 315 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_22g" }, 
+  "weapon_stats_uv_22g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 330 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_23g" }, 
+  "weapon_stats_uv_23g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 345 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_24g" }, 
+  "weapon_stats_uv_24g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 360 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_25g" }, 
+  "weapon_stats_uv_25g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 375 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_26g" }, 
+  "weapon_stats_uv_26g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 390 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_27g" }, 
+  "weapon_stats_uv_27g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 405 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_28g" }, 
+  "weapon_stats_uv_28g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 420 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_29g" }, 
+  "weapon_stats_uv_29g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 435 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_30g" }, 
+  "weapon_stats_uv_30g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 450 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_31g" }, 
+  "weapon_stats_uv_31g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 465 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_32g" }, 
+  "weapon_stats_uv_32g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 480 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_33g" }, 
+  "weapon_stats_uv_33g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 495 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_34g" }, 
+  "weapon_stats_uv_34g@weapon_stats_uv_base": { "$set_fps": 0.0151515151515152, "$set_image_uv": [ 23, 510 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_g" }, 
+  "weapon_stats_uv_g@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 510 ] },
+
+  "weapon_stats_uv_0h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 0 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_1h" },
+  "weapon_stats_uv_1h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 15 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_2h" },
+  "weapon_stats_uv_2h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 30 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_3h" },
+  "weapon_stats_uv_3h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 45 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_4h" },
+  "weapon_stats_uv_4h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 60 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_5h" },
+  "weapon_stats_uv_5h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 75 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_6h" },    
+  "weapon_stats_uv_6h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 90 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_7h" },    
+  "weapon_stats_uv_7h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 105 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_8h" },   
+  "weapon_stats_uv_8h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 120 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_9h" },   
+  "weapon_stats_uv_9h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 135 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_10h" },  
+  "weapon_stats_uv_10h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 150 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_11h" }, 
+  "weapon_stats_uv_11h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 165 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_12h" }, 
+  "weapon_stats_uv_12h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 180 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_13h" }, 
+  "weapon_stats_uv_13h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 195 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_14h" }, 
+  "weapon_stats_uv_14h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 210 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_15h" }, 
+  "weapon_stats_uv_15h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 225 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_16h" }, 
+  "weapon_stats_uv_16h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 240 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_17h" }, 
+  "weapon_stats_uv_17h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 255 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_18h" }, 
+  "weapon_stats_uv_18h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 270 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_19h" }, 
+  "weapon_stats_uv_19h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 285 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_20h" }, 
+  "weapon_stats_uv_20h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 300 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_21h" }, 
+  "weapon_stats_uv_21h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 315 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_22h" }, 
+  "weapon_stats_uv_22h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 330 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_23h" }, 
+  "weapon_stats_uv_23h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 345 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_24h" }, 
+  "weapon_stats_uv_24h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 360 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_25h" }, 
+  "weapon_stats_uv_25h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 375 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_26h" }, 
+  "weapon_stats_uv_26h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 390 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_27h" }, 
+  "weapon_stats_uv_27h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 405 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_28h" }, 
+  "weapon_stats_uv_28h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 420 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_29h" }, 
+  "weapon_stats_uv_29h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 435 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_30h" }, 
+  "weapon_stats_uv_30h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 450 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_31h" }, 
+  "weapon_stats_uv_31h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 465 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_32h" }, 
+  "weapon_stats_uv_32h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 480 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_33h" }, 
+  "weapon_stats_uv_33h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 495 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_34h" }, 
+  "weapon_stats_uv_34h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 510 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_35h" }, 
+  "weapon_stats_uv_35h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 525 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_36h" }, 
+  "weapon_stats_uv_36h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 540 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_37h" }, 
+  "weapon_stats_uv_37h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 555 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_38h" }, 
+  "weapon_stats_uv_38h@weapon_stats_uv_base": { "$set_fps": 0.0135135135135135, "$set_image_uv": [ 23, 570 ], "$set_image_uv_next": "@xp_podium_screen.weapon_stats_uv_h" }, 
+  "weapon_stats_uv_h@weapon_stats_uv_base_conclude": { "$set_image_uv": [ 23, 570 ] },
+
+  "weapon_recipe_panel@common.empty_panel": {
+    "size": "$gui_recipe_size",
+    "layer": "$panel_layer",
+    "controls": [
+      {
+        "panel_background": {
+          "type": "image",
+          "texture": "textures/ui/xp/gui_recipe",
+          "size": [ "100%", "100%" ],
+          "uv_size": [ "147px", "86px" ],
+          "layer": "$panel_layer",
+          "controls": [
+            {
+              "recipe_preview_image": {
+                "type": "image",
+                "texture": "('textures/ui/xp/recipes/' + $weapon_recipe_index)",
+                "size": [ "100%", "100%" ],
+                "uv_size": [ "147px", "86px" ],
+                "layer": "$panel_layer"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ignored": "(not ($weapon_gui = 'recipe'))"
+  },
+
+  "weapon_description_in": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "from": [ 0, "-75%" ],
+    "to": [ 0, "-75%" ],
+    "duration": 1.0,
+    "next": "@xp_podium_screen.weapon_description_flush"
+  },
+  "weapon_description_flush": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "from": [ 0, "-75%" ],
+    "to": [ 0, 0 ],
+    "duration": 0.25
+  },
+
+  "weapons_description_panel": {
+    "type": "panel",
+    "size": "$gui_texts_size",
+    "alpha": "@xp_podium_screen.weapon_other_panel_alpha_in",
+    "propagate_alpha": true,
+    "layer": 3,
+    "controls": [
+      {
+        "panel_background": {
+          "type": "image",
+          "texture": "textures/ui/xp/gui_texts",
+          "size": [ "100%", "100%" ],
+          "offset": "@xp_podium_screen.weapon_description_in",
+          "uv_size": [ "147px", "64px" ],
+          "layer": 1,
+          "controls": [
+            {
+              "lore_text@xp_podium_screen.weapon_description": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "max_size": [ "100% - 32px", "100% - 12px" ],
+                "offset": "$gui_texts_lore_text_offset"
+              }
+            },
+            {
+              "obtaining_text@xp_podium_screen.weapon_description": {
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "text": "$set_text",
+                "text_alignment": "center",
+                "offset": "$gui_texts_obtaining_text_offset",
+                "color": "$e_color_format",
+                "alpha": "@xp_podium_screen.text_alpha_beat_01",
+                "variables": [
+                  {
+                    "requires": "($weapon_gui = 'info')",
+                    "$set_text": "ui.podium.recipe"
+                  },
+                  {
+                    "requires": "(not ($weapon_gui = 'info'))",
+                    "$set_text": "ui.podium.info"
+                  },
+                  {
+                    "requires":"(not ($is_android or $is_ios or $nx_os))",
+                    "$font_scale_factor": 1.0
+                  },
+                  {
+                    "requires":"($is_android or $is_ios or $nx_os)",
+                    "$font_scale_factor": 0.75
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }  
+    ]
+  },
+
+  "text_label": {
+    "type": "label",
+    "size": [ "default", "default" ],
+    "max_size": [ "100% - 15px", "default" ],
+    "font_scale_factor": "$font_scale_factor",
+    "shadow": true,
+    "layer": 4,
+    "variables": [
+      {
+        "requires":"(not ($is_android or $is_ios or $nx_os))",
+        "$font_scale_factor": 1.0
+      },
+      {
+        "requires":"($is_android or $is_ios or $nx_os)",
+        "$font_scale_factor": 0.75
+      }
+    ]
+  },
+
+  "text_alpha_beat_01": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.0,
+    "from": 1.0,
+    "to": 0.0,
+    "next": "@xp_podium_screen.text_alpha_beat_02"
+  },
+  "text_alpha_beat_02": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.0,
+    "from": 0.0,
+    "to": 1.0,
+    "next": "@xp_podium_screen.text_alpha_beat_01"
+  },
+
+  "weapon_name@text_label": {
+    "text": "$weapon_name",
+    "font_type": "MinecraftTen"
+  },
+
+  "weapon_description@text_label": {
+    "text": "$weapon_description",
+    "text_alignment": "left",
+    "color": "$f_color_format"
+  },
+
+  "weapon_buttons": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "collection_name": "student_buttons_collection",
+    "size": [ "100%", "100%" ],
+    "alpha": "@xp_podium_screen.weapon_other_panel_alpha_in",
+    "propagate_alpha": true,
+    "layer": 1,
+    "controls": [
+      {
+        "close_button@xp_podium_screen.weapon_button_template_item": {
+          "collection_index": 0,
+          "$button_type": "close",
+          "$default_button_texture": "textures/ui/xp/close_button_default",
+          "$click_button_texture": "textures/ui/xp/close_button_hover",
+          "$button_sound_effect_name": "random.click"
+        }
+      },
+      {
+        "padding@common.empty_panel": {
+          "size": "$padding_size",
+          "variables": [
+            {
+              "requires": "(not ($is_android or $is_ios or $nx_os))",
+              "$padding_size": [ 1, 4 ]
+            },
+            {
+              "requires": "($is_android or $is_ios or $nx_os)",
+              "$padding_size": [ 1, 2 ]
+            }
+          ]
+        }
+      },
+      {
+        "recipe_button_switcher@common.empty_panel": {
+          "size": [ "100%cm", "100%cm" ],
+          "collection_index": 1,
+          "$button_sound_effect_name": "dig.netherite",
+          "controls": [
+            {
+              "view_recipe_button@xp_podium_screen.weapon_button_recipe_switcher": {
+                "$visible_binding": "(#student_button_text = 'recipe')",
+                "$button_type": "recipe",
+                "$default_button_texture": "textures/ui/xp/recipe_button_default",
+                "$click_button_texture": "textures/ui/xp/recipe_button_hover",
+                "$button_sound_effect_pitch": 1.5
+              }
+            },
+            {
+              "view_stats_button@xp_podium_screen.weapon_button_recipe_switcher": {
+                "$visible_binding": "(#student_button_text = 'info')",
+                "$button_type": "return",
+                "$default_button_texture": "textures/ui/xp/return_button_default",
+                "$click_button_texture": "textures/ui/xp/return_button_hover",
+                "$button_sound_effect_pitch": 0.75
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "weapon_button_anim_in": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "from": [ "-12.5%", 0 ],
+    "to": [ "-12.5%", 0 ],
+    "duration": 1.0,
+    "next": "@xp_podium_screen.weapon_button_anim_flush"
+  },
+  "weapon_button_anim_flush": {
+    "anim_type": "offset",
+    "easing": "out_quad",
+    "from": [ "-12.5%", 0 ],
+    "to": [ 0, 0 ],
+    "duration": 0.25
+  },
+
+  "weapon_button_control@common.empty_panel": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "button@common_buttons.light_text_button": {
+          "$border_visible": false,
+          "$hover_button_texture": "$click_button_texture",
+          "$pressed_button_texture": "$click_button_texture",
+
+          "$button_type_panel": "common.empty_panel",
+          "$pressed_button_name": "button.student_button",
+
+          "$button_sound_effect_name|default": "random.click",
+          "$button_sound_effect_volume|default": 1.0,
+          "$button_sound_effect_pitch|default": 1.0,
+          "sound_name": "$button_sound_effect_name",
+          "sound_volume": "$button_sound_effect_volume",
+          "sound_pitch": "$button_sound_effect_pitch",
+
+          "size": [ "100%", "100%" ],
+          "layer": 1,
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "student_buttons_collection",
+              "binding_collection_prefix": "student_buttons"
+            }
+          ],
+          "button_mappings": [
+            {
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "focused"
+            },
+
+            {
+              "ignored": "(not (($button_type = 'recipe') or ($button_type = 'return')))",
+              "from_button_id": "button.controller_secondary_select",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "global"
+            },
+            {
+              "ignored": "(not ($button_type = 'close'))",
+              "from_button_id": "button.menu_cancel",
+              "to_button_id": "$pressed_button_name",
+              "mapping_type": "global"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "weapon_button_template_item": {
+    "type": "panel",
+    "layer": 1,
+    "size": "$gui_buttons_item_size",
+    "controls": [
+      {
+        "tooltip_helper_base@common.empty_panel": {
+          "anchor_to": "left_middle",
+          "anchor_from": "left_middle",
+          "size": "$gui_buttons_item_content_size",
+          "offset": "$gui_buttons_item_content_offset",
+          "allow_clipping": false,
+          "ignored": "$touch",
+          "bindings": [
+            {
+              "binding_name": "#gamepad_helper_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "gamepad_helper_b@common.gamepad_helper_b": {
+                "size": [ "100%", "100%" ],
+                "offset": "$gui_buttons_item_helper_offset",
+                "$hide_description": true,
+                "ignored": "(not ($button_type = 'close'))"
+              }
+            },
+            {
+              "gamepad_helper_y@common.gamepad_helper_y": {
+                "size": [ "100%", "100%" ],
+                "offset": "$gui_buttons_item_helper_offset",
+                "$hide_description": true,
+                "ignored": "(not (($button_type = 'recipe') or ($button_type = 'return')))"
+              }
+            }
+          ]
+        }
+      },
+      { "slot_button_control@xp_podium_screen.weapon_button_control": {} }
+    ]
+  },
+
+  "weapon_button_recipe_switcher@common.empty_panel": {
+    "size": [ "100%c", "100%c" ],
+    "controls": [
+      { "selected_button@xp_podium_screen.weapon_button_template_item": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#student_button_text",
+        "binding_collection_name": "student_buttons_collection"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$visible_binding",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

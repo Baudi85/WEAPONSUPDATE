@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:particle_rider",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/enter" },
+      "geometry": { "default": "geometry.enter_sign" },
+      "scripts": {
+        "scale": "1.5",
+        "animate": [
+          "particles",
+          "face_player",
+          "bob"
+        ]
+      },
+      "animations": { "particles": "animation.tp_particles",
+        "face_player": "animation.sign.billboard",
+        "bob": "animation.enter_sign.bob"  
+      },
+      "particle_effects": {
+        "spiral": "xp:tp_swirl",
+        "spiral2": "xp:tp_swirl2",
+        "suction": "xp:tp_particles"
+      }
+    }
+  }
+}

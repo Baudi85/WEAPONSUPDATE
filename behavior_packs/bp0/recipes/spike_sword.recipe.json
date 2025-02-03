@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:spike_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "i",
+            "N",
+            "/"
+        ],
+        "key": {
+            "i": { "item": "xp:spike_ingot" },
+            "N": { "item": "xp:spike_ingot" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:spike_sword"
+        }
+    }
+}

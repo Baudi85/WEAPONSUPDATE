@@ -1,0 +1,22 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:earth_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "i",
+            "N",
+            "/"
+        ],
+        "key": {
+            "i": { "item": "xp:earth_ingot" },
+            "N": { "item": "xp:earth_ingot" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:earth_sword"
+        }
+    }
+}

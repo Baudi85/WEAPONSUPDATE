@@ -1,0 +1,1 @@
+execute @e[type=xp:tornado] ~~~ tp @s ^^^-2

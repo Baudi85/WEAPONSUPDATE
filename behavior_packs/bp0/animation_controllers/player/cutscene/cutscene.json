@@ -1,0 +1,140 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.cutscene": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "scene_transition_0": "q.variant == 30 && q.out_of_control" }
+          ],
+          "on_entry": [
+            "/gamerule sendcommandfeedback false",
+            "/event entity @s xp:clear_element",
+            "/tag @s remove just_entered",
+            "/function achievements/setup",
+            "/function showcase_room/setup"
+          ]
+        },
+        "scene_transition_0": {
+          "transitions": [
+            { "scene_0": "(q.life_time - v.tick_delay) >= 1.5" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/weather clear",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_0": {
+          "animations": [ "scene_2" ],
+          "transitions": [
+            { "scene_transition_1": "(q.life_time - v.tick_delay) >= 16" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/particle xp:room.weapons_center_swirl 32 104 469",
+            "/effect @s invisibility 99999 2 true",
+            "/title @s times 20 940 20",
+            "/title @s title xp_cutscene",
+            "/tp @s 8 111 469 facing 32 115 469",
+            "/playsound showroom @s ~~~ 1 1 1",
+            "/title @s actionbar xp_captions:title"
+          ]
+        },
+
+        "scene_transition_1": {
+          "animations": [ "scene_0" ],
+          "transitions": [
+            { "scene_1": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_1": {
+          "animations": [
+            "scene_0",
+            "scene_0.effects"
+          ],
+          "transitions": [
+            { "scene_transition_2": "(q.life_time - v.tick_delay) >= 12.25" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/tp @s 16 115 450 facing 32 115 469",
+            "/title @s actionbar xp_captions:a1"
+          ]
+        },
+
+        "scene_transition_2": {
+          "animations": [
+            "scene_0"
+          ],
+          "transitions": [
+            { "scene_2": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_2": {
+          "animations": [ "scene_3" ],
+          "transitions": [
+            { "scene_transition_3": "(q.life_time - v.tick_delay) >= 13.25" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/particle xp:room.weapons_center_swirl 32 104 469",
+            "/tp @s 21 112 480 facing 32 108 469",
+            "/title @s actionbar xp_captions:a2"
+          ]
+        },
+
+        "scene_transition_3": {
+          "animations": [
+            "scene_3"
+          ],
+          "transitions": [
+            { "scene_end": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_end": {
+          "transitions": [
+            { "default": "(q.life_time - v.tick_delay) >= 2.5" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/effect @s invisibility 0 0 true",
+            "/tp @s 8 110 469 facing 32 115 469",
+            "/title @s title xp_cutscene_out"
+          ],
+          "on_exit": [
+            "/gamemode s @a",
+            "/gamerule sendcommandfeedback true",
+            "/gamerule sendcommandfeedback true",
+            "/function achievements/showcase_room",
+            "/function achievements/showcase_room",
+            "/event entity @e[type=xp:room_sign] xp:text",
+            "/tag @s remove just_entered",
+            "/event entity @s xp:clear_element"
+          ]
+        }
+      }
+    }
+  }
+}

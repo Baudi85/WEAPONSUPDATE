@@ -1,0 +1,147 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.nether_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"nether.attack":"v.attack_time > 0"},
+                        {"nether.charge":"q.is_using_item && !q.is_sneaking"},
+                        {"nether.summon":"q.is_sneaking && q.is_using_item"}
+                    ]
+                },
+                "nether.attack":{
+                    "animations": ["nether.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "nether.charge":{
+                    "animations": ["nether.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item" },
+                        {"nether.hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "nether.hold_charge":{
+                    "animations": ["nether.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"nether.release": "!q.is_using_item"}
+                    ]
+                },
+                "nether.release":{
+                    "animations": ["nether.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "nether.summon":{
+                    "animations": ["nether.summon"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "(!q.is_using_item || !q.is_sneaking) && (q.life_time - v.tick_delay) <= 1.25"},
+                        {"nether.hold_summon": "q.all_animations_finished && q.is_sneaking && q.is_using_item && (q.life_time - v.tick_delay) >= 1.25"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "nether.hold_summon":{
+                    "animations": ["nether.hold_summon"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished && !q.is_using_item"}
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        },
+        "controller.animation.nether_sword.tpp": {
+            "initial_state": "weapon_t_draw",
+            "states": {
+                "weapon_t_draw":{
+                    "animations": ["weapon_t_draw", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_t_hold":{
+                    "animations": ["bob","weapon_t_hold", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"nether.t_attack":"v.attack_time > 0"},
+                        {"nether.t_charge":"q.is_using_item && !q.is_sneaking"},
+                        {"nether.t_summon":"q.is_sneaking && q.is_using_item"}
+                    ]
+                },
+                "nether.t_attack":{
+                    "animations": ["nether.t_attack", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "nether.t_charge":{
+                    "animations": ["nether.t_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "!q.is_using_item" },
+                        {"nether.t_hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "nether.t_hold_charge":{
+                    "animations": ["nether.t_hold_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"nether.t_release": "!q.is_using_item"}
+                    ]
+                },
+                "nether.t_release":{
+                    "animations": ["nether.t_release", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "nether.t_summon":{
+                    "animations": ["nether.t_summon", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "(!q.is_using_item || !q.is_sneaking) && (q.life_time - v.tick_delay) <= 1.25"},
+                        {"nether.t_hold_summon": "q.all_animations_finished && q.is_sneaking && q.is_using_item && (q.life_time - v.tick_delay) >= 1.25"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "nether.t_hold_summon":{
+                    "animations": ["nether.t_hold_summon", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished && !q.is_using_item"}
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        }
+    }
+}

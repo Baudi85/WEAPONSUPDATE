@@ -1,0 +1,269 @@
+{
+  "namespace": "xp_achievement_common",
+
+  "achievement_animation_in": {
+    "anim_type": "offset",
+    "easing": "spring",
+    "duration": 0.5,
+    "from": [ 180, 0 ],
+    "to": [ 130, 0 ],
+    "next": "@xp_achievement_common.achievement_animation_stay_0"
+  },
+  "achievement_animation_stay_0": {
+    "anim_type": "wait",
+    "duration": 1.0,
+    "next": "@xp_achievement_common.achievement_animation_in_full"
+  },
+  "achievement_animation_in_full": {
+    "anim_type": "offset",
+    "easing": "in_quad",
+    "duration": 0.5,
+    "from": [ 130, 0 ],
+    "to": [ 0, 0 ],
+    "next": "@xp_achievement_common.achievement_animation_stay_1"
+  },
+  "achievement_animation_stay_1": {
+    "anim_type": "wait",
+    "duration": 3.4,
+    "next": "@xp_achievement_common.achievement_animation_out"
+  },
+  "achievement_animation_out": {
+    "anim_type": "offset",
+    "easing": "out_quad",
+    "duration": 1.0,
+    "from": [ 0, 0 ],
+    "to": [ 180, 0 ]
+  },
+
+  "achievement_animation_alpha_out_01": {
+    "anim_type": "wait",
+    "duration": 6.4,
+    "next": "@xp_achievement_common.achievement_animation_alpha_out_02"
+  },
+  "achievement_animation_alpha_out_02": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.1,
+    "from": 1.0,
+    "to": 0.0
+  },
+
+  "achievement_checkmark_alpha_in": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.5,
+    "from": 1.0,
+    "to": 1.0,
+    "next": "@xp_achievement_common.achievement_checkmark_alpha_out"
+  },
+  "achievement_checkmark_alpha_out": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.25,
+    "from": 1.0,
+    "to": 0.0
+  },
+
+  "achievement_checkmark_uv_0@xp_achievement_common.achievement_checkmark_uv": {
+    "$set_fps": 0.25,
+    "$set_uv": [ 0, 0 ],
+    "$set_frame": 1
+  },
+  "achievement_checkmark_uv_1@xp_achievement_common.achievement_checkmark_uv": {
+    "$set_fps": 0.25,
+    "$set_uv": [ 24, 0 ],
+    "$set_frame": 2
+  },
+  "achievement_checkmark_uv_2@xp_achievement_common.achievement_checkmark_uv": {
+    "$set_fps": 0.25,
+    "$set_uv": [ 48, 0 ],
+    "$set_frame": 3
+  },
+  "achievement_checkmark_uv_3@xp_achievement_common.achievement_checkmark_uv": {
+    "$set_fps": 0.25,
+    "$set_uv": [ 72, 0 ],
+    "$set_frame": 4
+  },
+  "achievement_checkmark_uv_4@xp_achievement_common.achievement_checkmark_uv": {
+    "$set_fps": 5.0,
+    "$set_uv": [ 96, 0 ]
+  },
+
+  "achievement_checkmark_uv": {
+    "anim_type": "uv",
+    "duration": "$set_fps",
+    "from": "$set_uv",
+    "to": "$set_uv",
+    "easing": "linear",
+    "next": "('@xp_achievement_common.achievement_checkmark_uv_' + $set_frame)"
+  },
+
+  "achievement_icon_alpha_in": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.0,
+    "from": 0.5,
+    "to": 0.5,
+    "next": "@xp_achievement_common.achievement_icon_alpha_out"
+  },
+  "achievement_icon_alpha_out": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.5,
+    "from": 0.5,
+    "to": 1.0
+  },
+
+  "achievement_text_fade_out_title": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 3.6,
+    "from": 1.0,
+    "to": 1.0,
+    "next": "@xp_achievement_common.achievement_text_fade_out_title_stay"
+  },
+  "achievement_text_fade_out_title_stay": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.2,
+    "from": 1.0,
+    "to": 0.0
+  },
+
+  "achievement_text_fade_in_content": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 3.9,
+    "from": 0.0,
+    "to": 0.0,
+    "next": "@xp_achievement_common.achievement_text_fade_in_content_stay"
+  },
+  "achievement_text_fade_in_content_stay": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.2,
+    "from": 0.0,
+    "to": 1.0
+  },
+
+  "achievement_popup_custom_label": {
+    "type": "label",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "size": [ "80%", "default" ],
+    "color": "$achievement_text_color",
+    "shadow": true,
+    "localize": true,
+    "layer": 1
+  },
+
+  "achievement_icon_display_image": {
+    "type": "image",
+    "size": [ "100% - 3px", "100% - 3px" ],
+    "alpha": "@xp_achievement_common.achievement_icon_alpha_in",
+    "layer": 148,
+    "controls": [
+      {
+        "checkmark_icon_border": {
+          "type": "image",
+          "texture": "textures/ui/xp/achievement_unlocked",
+          "uv": "@xp_achievement_common.achievement_checkmark_uv_0",
+          "uv_size": [ 24, 22 ],
+          "size": [ "100% - 4px", "100% - 2px" ],
+          "alpha": "@xp_achievement_common.achievement_checkmark_alpha_in",
+          "layer": 149
+        }
+      }
+    ]
+  },
+
+  "toast_achievement_popup_template": {
+    "type": "image",
+    "offset": "@xp_achievement_common.achievement_animation_in",
+    "size": [ 178, 56 ],
+    "texture": "textures/ui/xp/achievement_toast_bg",
+    "clips_children": true,
+    "alpha": "@xp_achievement_common.achievement_animation_alpha_out_01",
+    "propagate_alpha": true,
+    "layer": 150,
+
+    "$achievement_header|default": "toast.achievement.header",
+    "$achievement_header_color|default": "yellow",
+    "$achievement_name|default": "achievement_name",
+    "$achievement_icon|default": "achievement_icon",
+    "$achievement_length|default": "normal",
+
+    "controls": [
+      {
+        "achievement_get_header_label@xp_achievement_common.achievement_popup_custom_label": {
+          "text": "$achievement_header",
+          "offset": "$set_anim_offset",
+          "alpha": "$set_anim_alpha",
+          "layer": 151,
+          "variables": [
+            {
+              "requires": "(not ($achievement_length = 'long'))",
+              "$set_anim_offset": [ 54, -5 ],
+              "$set_anim_alpha": 1.0
+            },
+            {
+              "requires": "($achievement_length = 'long')",
+              "$set_anim_offset": [ 54, 1 ],
+              "$set_anim_alpha": "@xp_achievement_common.achievement_text_fade_out_title"
+            },
+            {
+              "requires": "(not ($achievement_header_color = 'purple'))",
+              "$achievement_text_color": "$e_color_format"
+            },
+            {
+              "requires": "($achievement_header_color = 'purple')",
+              "$achievement_text_color": "$d_color_format"
+            }
+          ]
+        }
+      },
+      {
+        "achievement_get_name_label@xp_achievement_common.achievement_popup_custom_label": {
+          "text": "$achievement_name",
+          "offset": "$set_anim_offset",
+          "alpha": "$set_anim_alpha",
+          "layer": 151,
+          "variables": [
+            {
+              "requires": "(not ($achievement_length = 'long'))",
+              "$set_anim_offset": [ 54, 7 ],
+              "$set_anim_alpha": 1.0
+            },
+            {
+              "requires": "($achievement_length = 'long')",
+              "$set_anim_offset": [ 54, 1 ],
+              "$set_anim_alpha": "@xp_achievement_common.achievement_text_fade_in_content"
+            }
+          ]
+        }
+      },
+      {
+        "achievement_icon_panel@common.empty_panel": {
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ 24, 24 ],
+          "offset": [ 18, 0 ],
+          "controls": [
+            {
+              "custom_path@xp_achievement_common.achievement_icon_display_image": {
+                "ignored": "(($achievement_icon - 'textures/') = $achievement_icon)",
+                "texture": "$achievement_icon"
+              }
+            },
+            {
+              "default_path@xp_achievement_common.achievement_icon_display_image": {
+                "ignored": "(not (($achievement_icon - 'textures/') = $achievement_icon))",
+                "texture": "('textures/ui/xp/achievement_' + $achievement_icon)"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

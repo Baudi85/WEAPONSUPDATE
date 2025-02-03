@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+      "description": {
+        "identifier": "xp:fire_ingot",
+        "category": "Equipment"
+      },
+      "components": {
+        "minecraft:icon": "fire_ingot",
+        "minecraft:render_offsets": "tools"
+      }
+    }
+  }

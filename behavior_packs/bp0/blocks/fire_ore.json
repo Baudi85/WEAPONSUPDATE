@@ -1,0 +1,23 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "xp:fire_ore",
+            "is_experimental": false,
+            "menu_category": {
+                "category": "nature",
+                "group": "itemGroup.name.ore"
+            }
+        },
+        "components": {
+            "minecraft:loot": "loot_tables/ore_blocks/fire_ore.json",
+            "minecraft:destroy_time": 1.15,
+            "minecraft:map_color": "#ffffff",
+            "minecraft:explosion_resistance": 0.5,
+            "minecraft:flammable": {
+              "flame_odds": 1,
+              "burn_odds": 1
+            }
+        }
+    }
+}

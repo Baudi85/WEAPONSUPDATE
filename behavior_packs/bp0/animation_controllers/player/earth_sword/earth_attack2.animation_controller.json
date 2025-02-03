@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.earth_attack2": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "on_entry": [ 
+            "/particle xp:nether_sword.black_smoke ~~~"
+           ]
+        }
+      }
+    }
+  }
+}

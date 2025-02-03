@@ -1,0 +1,18 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.skeleton_setup": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "death": "query.variant >= 1" }
+                    ]
+                },
+                "death": {
+                    "animations": [ "death" ]
+                }
+            }
+        }
+    }
+}

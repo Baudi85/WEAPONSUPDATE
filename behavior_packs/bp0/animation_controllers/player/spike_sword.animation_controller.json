@@ -1,0 +1,43 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.spike_sword":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"dash": "q.get_equipped_item_name == 'spike_sword' && q.is_using_item"},
+                        {"use_spike": "q.get_equipped_item_name == 'spike_sword' && v.attack_time > 0.0"}
+                    ]
+                },
+                "use_spike":{
+                    "animations": [
+                        "spike_sword_use"
+                    ],
+                    "transitions": [
+                        {"default": "q.all_animations_finished"}
+                    ]
+                },
+                "dash":{
+                    "on_entry": [ 
+                        "v.tick_delay = q.life_time;",
+                        "/camerashake add @s 0.02 2 positional",
+                        "/playsound boost.in_air @s",
+                        "/effect @s levitation 1 1 true",
+                        "/effect @s slowness 1 1 true",
+                        "/summon xp:spike_sword_boost ^^-0.25^-0.5"
+                    ],
+                    "on_exit": [ 
+                        "/effect @s levitation 0 0 true",
+                        "/camerashake stop @s",
+                        "/effect @s slowness 0 0 true",
+                        "/stopsound @s boost.in_air"
+                    ],
+                    "transitions": [
+                        { "default": "q.get_equipped_item_name == 'spike_sword' && (q.life_time - v.tick_delay) >= 0.5 && q.is_on_ground" }
+                    ]
+                }
+            }
+        }
+    }
+}

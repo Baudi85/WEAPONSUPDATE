@@ -1,0 +1,133 @@
+{
+  "namespace": "xp_achievement_list",
+
+  "toast_achievement_popup_control": {
+    "type": "panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ "100%c", "100%c" ],
+    "clips_children": false,
+    "controls": [
+      {
+        "showcase_room@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.showcase_room'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.showcase_room",
+          "$achievement_icon": "elemental_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "harvest_plant@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.harvest_plant'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.harvest_plant",
+          "$achievement_icon": "textures/items/wood_hoe",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "mine_ore@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.mine_ore'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.mine_ore",
+          "$achievement_icon": "textures/items/wood_pickaxe",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "craft_weapon@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.craft_weapon'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.craft_weapon",
+          "$achievement_icon": "craft_weapon",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "battle_arena@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.battle_arena'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.battle_arena",
+          "$achievement_icon": "battle_arena",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "wear_elemental_armor@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.wear_elemental_armor'))",
+          "$achievement_header": "toast.achievement.header.rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.content.wear_elemental_armor",
+          "$achievement_icon": "textures/items/armour/chestplate",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "air_sword@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.air_sword'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.air_sword",
+          "$achievement_icon": "air_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "fire_sword@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.fire_sword'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.fire_sword",
+          "$achievement_icon": "fire_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "water_sword@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.water_sword'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.water_sword",
+          "$achievement_icon": "water_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "earth_sword@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.earth_sword'))",
+          "$achievement_header": "toast.achievement.header.normal",
+          "$achievement_header_color": "yellow",
+          "$achievement_name": "toast.achievement.content.earth_sword",
+          "$achievement_icon": "earth_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "elemental_sword@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.elemental_sword'))",
+          "$achievement_header": "toast.achievement.header.rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.content.elemental_sword",
+          "$achievement_icon": "elemental_sword",
+          "$achievement_length": "normal"
+        }
+      },
+      {
+        "all_swords@xp_achievement_common.toast_achievement_popup_template": {
+          "ignored": "(not ($var_title_text = 'xp_achievement.all_swords'))",
+          "$achievement_header": "toast.achievement.header.rare",
+          "$achievement_header_color": "purple",
+          "$achievement_name": "toast.achievement.content.all_swords",
+          "$achievement_icon": "all_swords",
+          "$achievement_length": "normal"
+        }
+      }
+    ]
+  }
+}

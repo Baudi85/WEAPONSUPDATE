@@ -1,0 +1,27 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:helmet"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "gNg",
+            "g g"
+        ],
+        "key": {
+            "g": {
+                "item": "minecraft:gold_ingot"
+            },
+            "N": {
+                "item": "minecraft:nether_star"
+            }
+        },
+        "result": {
+            "item": "minecraft:chainmail_helmet",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "xp:torch",
+        "materials": { "default": "spider" },
+        "textures": { "default": "textures/entity/torch"},
+        "scripts": { "animate": [ "align", "fire" ] },
+        "animations": { 
+          "align": "animation.prop.align",
+          "fire": "animation.torch"
+         },
+         "spawn_egg": {
+           "texture": "wall_torch",
+           "texture_index": 0
+         },
+        "sound_effects": {
+          "fire": "cool sfx here"
+        },
+        "particle_effects": {
+          "fire": "xp:fire1",
+          "smoke": "xp:torch.smoke",
+          "sparks": "xp:torch.sparks"
+        },
+        "geometry": { "default": "geometry.torch" },
+        "render_controllers": [ "controller.render.default" ]
+      }
+    }
+  }

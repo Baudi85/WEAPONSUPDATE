@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [
+            "idle"
+          ],
+          "transitions": [
+            { "hit1": "q.variant == 1" },
+            { "hit2": "q.variant == 2" },
+            { "hit3": "q.variant == 3" }
+          ]
+        },
+
+        "hit1": {
+          "animations": [
+            "hit1"
+          ],
+          "transitions": [
+            { "idle": "q.variant == 0 && q.all_animations_finished" },
+            { "hit2": "q.variant == 2" },
+            { "hit3": "q.variant == 3" }
+          ],
+          "blend_transition": 0.15
+        },
+
+        "hit2": {
+          "animations": [
+            "hit2"
+          ],
+          "transitions": [
+            { "idle": "q.variant == 0 && q.all_animations_finished" },
+            { "hit3": "q.variant == 3" }
+          ],
+          "blend_transition": 0.15
+        },
+
+        "hit3": {
+          "animations": [
+            "hit3"
+          ],
+          "transitions": [
+            { "idle": "q.variant == 0 && q.all_animations_finished" },
+            { "hit1": "q.variant == 1" }
+          ],
+          "blend_transition": 0.15
+        }
+      }
+    }
+  }
+} 

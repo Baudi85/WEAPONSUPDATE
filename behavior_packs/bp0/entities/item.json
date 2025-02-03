@@ -1,0 +1,116 @@
+{
+  "format_version": "1.17.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": true,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "root"
+        ]
+      },
+      "animations": {
+        "root": "controller.animation.item.root"
+      }
+    },
+    "component_groups": {
+      "xp:drop_item": {
+        "minecraft:addrider": {
+          "entity_type": "xp:drop_item"
+        },
+        "minecraft:collision_box": {
+          "height": 0.00001,
+          "width": 0.00001
+        }
+      },
+      "minecraft:player_item": {
+        "minecraft:is_charged": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "item" ]
+      },
+      "minecraft:tick_world": {},
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "item"
+        ],
+        "seats": {
+          "position": [ 0, 0, 0 ]
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "ice_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "darkness_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "ender_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "poison_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "water_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "spike_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "sonic_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "storm_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "jungle_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "dirt_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "magma_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "light_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "air_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "earth_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "tnt_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "nether_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "elemental_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "fire_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "ocean_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "thunder_sword" },
+                { "test": "has_tag", "subject": "self", "operator": "==", "value": "wither_sword" }
+              ]
+            },
+            "event": "xp:drop_item"
+          }
+        ]
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "xp:drop_item": {
+        "add": {
+          "component_groups": [
+            "xp:drop_item"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:player_item"
+          ]
+        }
+      }
+    }
+  }
+}

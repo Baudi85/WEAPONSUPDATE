@@ -1,0 +1,634 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.weapon_room_center_tf": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @a[x=38,y=136,z=474,dx=-15,dy=7,dz=-10] ~~~ event entity @s xp:in_ore_room",
+          "/execute @a[x=38,y=144,z=474,dx=-15,dy=7,dz=-10] ~~~ event entity @s xp:out_ore_room"
+        ]
+      }
+    },
+
+    "animation.arena_start": {
+      "animation_length": 10.8,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.25": [],
+        "1.0": [
+          "/gamerule doimmediaterespawn true",
+          "/gamerule keepinventory true",
+          "/title @a[tag=entered_arena] actionbar xp_fade",
+          "/tag @s add arena_running"
+        ],
+        "1.2": [
+          "/execute @a[tag=entered_arena] ~~~ event entity @s xp:in_arena",
+          "/gamemode a @a[tag=entered_arena]"
+        ],
+        "1.6": [
+          "/spawnpoint @a[tag=entered_arena] 6 95 397",
+          "/tp @a[tag=entered_arena] 6 95 397 facing 32 96 397",
+          "/structure load arena_start 2 101 378 270_degrees"
+        ],
+        "1.7": [
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.075 0.25 1",
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.1 0.5 1",
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.1 1 1"
+        ],
+        "1.9": [
+          "/title @a[tag=entered_arena] times 20 70 20",
+          "/title @a[tag=entered_arena] title xp_arena.welcome",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 0.1 0.5 1",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 0.1 0.25 1",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 1 0.9 1"
+        ],
+        "8.8": [
+          "/give @a[tag=entered_arena] xp:arena_leave_arena 1 0 {\"minecraft:item_lock\":{\"mode\":\"lock_in_inventory\"}}",
+          "/playsound random.pop @a[tag=entered_arena]",
+          "/execute @a[tag=entered_arena,scores={lives=3}] ~~~ title @s title xp_arena.lives_remaining.3"
+        ],
+        "10.0": [
+          "/event entity @e[type=xp:arena_start] xp:wave1"
+        ]
+      }
+    },
+
+    "animation.arena_leave": {
+      "animation_length": 5,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.1": [
+          "/setblock 4 1 8 air",
+          "/setblock 6 1 8 air",
+          "/setblock 8 1 8 air",
+          "/music stop 3"
+        ],
+        "1.0": [
+          "/clearspawnpoint @a[tag=entered_arena]",
+          "/title @a[tag=entered_arena] actionbar xp_fade",
+          "/clear @a[tag=entered_arena] xp:arena_leave_arena"
+        ],
+        "1.7": [
+          "/execute @e[family=monster,x=2,y=90,z=414,dx=60,dy=25,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop1,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop2,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop3,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop4,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop5,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop6,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop7,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/stopsound @a[r=150] arena_ambient",
+          "/stopsound @a[r=150] arena_ambient1"
+        ],
+        "1.8": [
+          "/spawnpoint @a[tag=entered_arena] -37 110 469",
+          "/tp @a[tag=entered_arena] 29 110 397 facing 32 110.5 397",
+          "/gamemode s @a[tag=entered_arena]",
+          "/structure load arena 2 90 378"
+        ],
+        "1.9": [
+          "/scoreboard players set @e[type=xp:scoreboard] lives_str 9367103",
+          "/scoreboard players set @e[type=xp:scoreboard] lives -10",
+          "/setblock 28 110 397 barrier",
+          "/tag @a remove entered_arena"
+        ],
+        "4.8": [
+          "/execute @a[tag=entered_arena] ~~~ event entity @s xp:out_arena",
+          "/gamerule doimmediaterespawn false",
+          "/structure load arena_tf 4 1 7",
+          "/event entity @e[type=xp:arena_start] xp:default",
+          "/tag @s remove arena_running"
+        ]
+      }
+    },
+
+    "animation.arena_wave1": {
+      "animation_length": 6.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.1 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.pre"
+        ],
+        "2.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.25 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.3"
+        ],
+        "3.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.2"
+        ],
+        "4.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.1"
+        ],
+        "5.0": [
+          "/title @a[tag=entered_arena] title xp_arena.hide",
+          "/music play arena_music 0.25 0 loop",
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena]",
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena] ~~~ 0.5 0.5 1",
+          //TF Monsters on
+          "/setblock 8 1 8 redstone_block"
+        ],
+        //Zombie spawns
+        "5.25": [
+          "/particle xp:tp_swirl 47 97 401",
+          "/particle xp:tp_swirl 47 97 401",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 401 1 1 0.01",
+          "/summon zombie 47 95 401 xp:big_zombie",
+          "/particle xp:tp_swirl 47 97 392",
+          "/particle xp:tp_swirl 47 97 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon zombie 47 95 392 xp:big_zombie",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:fire_sword.impact_burst 41 95 388",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 388 1 1 0.01",
+          "/summon zombie 41 95 388 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:fire_sword.impact_burst 41 95 390",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 390 1 1 0.01",
+          "/summon zombie 41 95 390 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:fire_sword.impact_burst 41 95 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon zombie 41 95 392 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:fire_sword.impact_burst 41 95 394",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 394 1 1 0.01",
+          "/summon zombie 41 95 394 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:fire_sword.impact_burst 41 95 396",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 396 1 1 0.01",
+          "/summon zombie 41 95 396 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:fire_sword.impact_burst 41 95 398",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 398 1 1 0.01",
+          "/summon zombie 41 95 398 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:fire_sword.impact_burst 41 95 400",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 400 1 1 0.01",
+          "/summon zombie 41 95 400 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:fire_sword.impact_burst 41 95 402",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 402 1 1 0.01",
+          "/summon zombie 41 95 402 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:fire_sword.impact_burst 41 95 404",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 404 1 1 0.01",
+          "/summon zombie 41 95 404 xp:zombie",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:fire_sword.impact_burst 41 95 406",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 406 1 1 0.01",
+          "/summon zombie 41 95 406 xp:zombie"
+        ]
+      }
+    },
+
+    "animation.arena_wave2": {
+      "animation_length": 6.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.1 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.pre"
+        ],
+        "2.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.25 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.3"
+        ],
+        "3.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.2"
+        ],
+        "4.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.1"
+        ],
+        "5.0": [
+          "/title @a[tag=entered_arena] title xp_arena.hide",
+          "/music play arena_music 0.25 0 loop",
+          "/playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena]",
+          "/playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena] ~~~ 0.5 0.5 1",
+          //TF Monsters on
+          "/setblock 6 1 8 redstone_block"
+        ],
+        //Skelly spawns
+        "5.25": [
+          "/particle xp:tp_swirl 47 97 401",
+          "/particle xp:tp_swirl 47 97 401",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 401 1 1 0.01",
+          "/summon skeleton_horse 47 95 401 xp:skeleton_horse",
+          "/particle xp:tp_swirl 47 97 392",
+          "/particle xp:tp_swirl 47 97 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon skeleton_horse 47 95 392 xp:skeleton_horse",
+          "/particle xp:tp_swirl 38 95 396",
+          "/particle xp:tp_swirl 38 95 396",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon skeleton_horse 38 95 396 xp:skeleton_horse",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:fire_sword.impact_burst 41 95 388",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 388 1 1 0.01",
+          "/summon skeleton 41 95 388 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:fire_sword.impact_burst 41 95 390",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 390 1 1 0.01",
+          "/summon skeleton 41 95 390 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:fire_sword.impact_burst 41 95 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon skeleton 41 95 392 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:fire_sword.impact_burst 41 95 394",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 394 1 1 0.01",
+          "/summon skeleton 41 95 394 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:fire_sword.impact_burst 41 95 396",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 396 1 1 0.01",
+          "/summon skeleton 41 95 396 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:fire_sword.impact_burst 41 95 398",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 398 1 1 0.01",
+          "/summon skeleton 41 95 398 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:fire_sword.impact_burst 41 95 400",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 400 1 1 0.01",
+          "/summon skeleton 41 95 400 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:fire_sword.impact_burst 41 95 402",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 402 1 1 0.01",
+          "/summon skeleton 41 95 402 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:fire_sword.impact_burst 41 95 404",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 404 1 1 0.01",
+          "/summon skeleton 41 95 404 xp:skeleton",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:fire_sword.impact_burst 41 95 406",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 406 1 1 0.01",
+          "/summon skeleton 41 95 406 xp:skeleton"
+        ]
+      }
+    },
+
+    "animation.arena_wave3": {
+      "animation_length": 6.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.1 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.pre"
+        ],
+        "2.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.25 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.3"
+        ],
+        "3.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.2"
+        ],
+        "4.0": [
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.wither.spawn @a[tag=entered_arena] ~~~ 0.9 1 1",
+          "/title @a[tag=entered_arena] title xp_arena.get_ready.1"
+        ],
+        "5.0": [
+          "/title @a[tag=entered_arena] title xp_arena.hide",
+          "/music play arena_music 0.25 0 loop",
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena]",
+          "/execute @a[tag=entered_arena] ~~~ playsound mob.evocation_illager.prepare_attack @a[tag=entered_arena] ~~~ 0.5 0.5 1",
+          //TF Monsters on
+          "/setblock 4 1 8 redstone_block"
+        ],
+        //Skelly spawns
+        "5.25": [
+          "/particle xp:tp_swirl 47 97 401",
+          "/particle xp:tp_swirl 47 97 401",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 401 1 1 0.01",
+          "/summon evocation_illager 47 95 401 xp:evocation_illager",
+          "/particle xp:tp_swirl 47 97 392",
+          "/particle xp:tp_swirl 47 97 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon evocation_illager 47 95 392 xp:evocation_illager",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:tp_swirl 41 96.5 388",
+          "/particle xp:fire_sword.impact_burst 41 95 388",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 388 1 1 0.01",
+          "/summon vindicator 41 95 388 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:tp_swirl 41 96.5 390",
+          "/particle xp:fire_sword.impact_burst 41 95 390",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 390 1 1 0.01",
+          "/summon vindicator 41 95 390 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:tp_swirl 41 96.5 392",
+          "/particle xp:fire_sword.impact_burst 41 95 392",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 392 1 1 0.01",
+          "/summon vindicator 41 95 392 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:tp_swirl 41 96.5 394",
+          "/particle xp:fire_sword.impact_burst 41 95 394",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 394 1 1 0.01",
+          "/summon vindicator 41 95 394 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:tp_swirl 41 96.5 396",
+          "/particle xp:fire_sword.impact_burst 41 95 396",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 396 1 1 0.01",
+          "/summon vindicator 41 95 396 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:tp_swirl 41 96.5 398",
+          "/particle xp:fire_sword.impact_burst 41 95 398",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 398 1 1 0.01",
+          "/summon vindicator 41 95 398 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:tp_swirl 41 96.5 400",
+          "/particle xp:fire_sword.impact_burst 41 95 400",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 400 1 1 0.01",
+          "/summon vindicator 41 95 400 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:tp_swirl 41 96.5 402",
+          "/particle xp:fire_sword.impact_burst 41 95 402",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 402 1 1 0.01",
+          "/summon vindicator 41 95 402 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:tp_swirl 41 96.5 404",
+          "/particle xp:fire_sword.impact_burst 41 95 404",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 404 1 1 0.01",
+          "/summon vindicator 41 95 404 xp:vindicator",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:tp_swirl 41 96.5 406",
+          "/particle xp:fire_sword.impact_burst 41 95 406",
+          "/playsound mob.evocation_illager.cast_spell @a[tag=entered_arena] 7 97 406 1 1 0.01",
+          "/summon vindicator 41 95 406 xp:vindicator"
+        ]
+      }
+    },
+
+    "animation.arena_win": {
+      "animation_length": 3.25,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/gamerule keepinventory false",
+          "/music stop 2",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 0.75 0.5 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1.5 1"
+        ],
+        "1.55": [
+          "/structure load arena_tf 4 1 7",
+          "/title @a[tag=entered_arena] actionbar xp_fade"
+        ],
+        "2.25": [
+          "/execute @e[type=xp:skeleton_prop,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop1,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop2,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop3,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop4,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop5,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop6,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop7,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn"
+        ],
+        "2.75": [
+          "/title @a[tag=entered_arena] title xp_arena.victory",
+          "/structure load arena 2 90 378",
+          "/structure load arena_start 2 101 378 270_degrees"
+        ],
+        "3.0": [
+          "/setblock 28 110 397 barrier",
+          "/structure load arena_loot 32 95 395",
+          "/tp @a[tag=entered_arena] 30 95 396.5 facing 32 95 396.5"
+        ],
+        "3.1": [
+          "/playsound victory @a[tag=entered_arena] ~~~ 1 1 1",
+          "/playsound victory @a[tag=entered_arena] ~~~ 0.5 0.25 1",
+          "/tag @s remove arena_running"
+        ]
+      }
+    },
+
+    "animation.win_transition": {
+      "animation_length": 3.2,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 0.75 0.5 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1.5 1"
+        ],
+        "1.55": [
+          "/structure load arena_tf 4 1 7",
+          "/title @a[tag=entered_arena] actionbar xp_fade"
+        ],
+        "2.25": [
+          "/execute @e[type=xp:skeleton_prop,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop1,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop2,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop3,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop4,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop5,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop6,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop7,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn"
+        ],
+        "2.75": [
+          "/structure load arena 2 90 378",
+          "/structure load arena_start 2 101 378 270_degrees"
+        ],
+        "3.0": [
+          "/setblock 28 110 397 barrier",
+          "/structure load arena_loot 32 95 394",
+          "/tp @a[tag=entered_arena] 28 95 396.5 facing 32 95 396.5"
+        ]
+      }
+    },
+
+    "animation.wave_transition": {
+      "animation_length": 7.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.0": [
+          "/music stop 2",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 0.75 0.5 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1 1",
+          "/playsound conduit.attack @a[tag=entered_arena] ~~~ 1 1.5 1"
+        ],
+        "1.55": [
+          "/structure load arena_tf 4 1 7",
+          "/title @a[tag=entered_arena] actionbar xp_fade"
+        ],
+        "2.25": [
+          "/execute @e[type=xp:skeleton_prop,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop1,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop2,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop3,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop4,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop5,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop6,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop7,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn"
+        ],
+        "2.75": [
+          "/structure load arena 2 90 378",
+          "/structure load arena_start 2 101 378 270_degrees"
+        ],
+        "3.0": [
+          "/setblock 28 110 397 barrier",
+          "/tp @a[tag=entered_arena] 6 95 397 facing 32 96 397"
+        ],
+        "3.1": [
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.075 0.25 1",
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.1 0.5 1",
+          "/playsound thunder_sword.impact @a[tag=entered_arena] 6 95 397 0.1 1 1",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 0.1 0.5 1",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 0.1 0.75 1",
+          "/playsound random.levelup @a[tag=entered_arena] ~~~ 1 0.9 1"
+        ],
+        "4.5": [
+          "/title @a[tag=entered_arena] title xp_arena.wave_incoming"
+        ]
+      }
+    },
+
+    "animation.arena_ambient": {
+      "animation_length": 7.0,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/playsound arena_ambient @a[tag=entered_arena] ~~~ 0.1 0.5 1",
+          "/playsound arena_ambient @a[tag=entered_arena] ~~~ 0.2 1 1",
+          "/playsound arena_ambient1 @a[tag=entered_arena] ~~~ 0.2 1 1"
+        ]
+      }
+    },
+
+    "animation.arena_music": {
+      "animation_length": 38.0,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/playsound arena_music @a[tag=entered_arena] 0.35 1 1"
+        ]
+      }
+    },
+
+    "animation.win_particles": {
+      "animation_length": 3.0,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/particle xp:arean.loot 32 95 396",
+          "/particle xp:arean.loot 32 95 397"
+        ]
+      }
+    },
+    // this plays for the players that get knocked out
+    //! this anim gets played on the player
+    "animation.lose_player": {
+      "animation_length": 6.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.1": [
+          "/gamerule keepinventory false",
+          "/setblock 4 1 8 air",
+          "/setblock 6 1 8 air",
+          "/setblock 8 1 8 air",
+          "/music stop 3"
+        ],
+        "0.9": [
+          "/title @s actionbar xp_fade",
+          "/clear @s xp:arena_leave_arena"
+        ],
+        "1.7": [
+          "/structure load arena 2 90 378",
+          "/stopsound @s arena_ambient",
+          "/stopsound @s arena_ambient1"
+        ],
+        "2.1": [
+          "/structure load arena_tf 4 1 7",
+          "/gamemode s @a[tag=entered_arena]",
+          "/tp @s 29 110 397 facing 32 110.5 397"
+        ],
+        "2.2": [
+          "/execute @a[tag=entered_arena] ~~~ event entity @s xp:out_arena",
+          "/event entity @e[type=xp:arena_start] xp:default",
+          "/tag @s remove entered_arena",
+          "@s xp:reset_lose_player"
+        ]
+      }
+    },
+    // all players lose
+    "animation.lose": {
+      "animation_length": 6.0,
+      "loop": "hold_on_last_frame",
+      "timeline": {
+        "0.1": [
+          "/gamerule keepinventory false",
+          "/music stop 4",
+          "/setblock 4 1 8 air",
+          "/setblock 6 1 8 air",
+          "/setblock 8 1 8 air"
+        ],
+        "0.9": [
+          "/structure load arena_tf 4 1 7",
+          "/clearspawnpoint @a[tag=entered_arena]",
+          "/title @a[tag=entered_arena] actionbar xp_fade",
+          "/clear @a[tag=entered_arena] xp:arena_leave_arena"
+        ],
+        "1.7": [
+          "/execute @e[family=monster,x=2,y=90,z=414,dx=60,dy=20,dz=-50] ~~~ kill @s",
+          "/execute @e[type=xp:skeleton_prop,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop1,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop2,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop3,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop4,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop5,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop6,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/execute @e[type=xp:skeleton_prop7,x=2,y=90,z=414,dx=60,dy=12,dz=-50] ~~~ event entity @s xp:despawn",
+          "/scoreboard players set @e[type=xp:scoreboard] lives -10",
+          "/scoreboard objectives setdisplay sidebar",
+          "/stopsound @a[r=150] arena_ambient",
+          "/stopsound @a[r=150] arena_ambient1"
+        ],
+        "2.1": [
+          "/title @a[tag=entered_arena] title xp_arena.defeat",
+          "/spawnpoint @a[tag=entered_arena] -37 110 469",
+          "/tp @a[tag=entered_arena] 29 110 397 facing 32 110.5 397",
+          "/gamemode s @a[tag=entered_arena]",
+          "/structure load arena 2 90 378"
+        ],
+        "2.2": [
+          "/execute @a[tag=entered_arena] ~~~ event entity @s xp:out_arena",
+          "/gamerule doimmediaterespawn false",
+          "/setblock 28 110 397 barrier",
+          "/tag @a remove entered_arena"
+        ],
+        "4": [
+          "/tag @s remove arena_running"
+        ],
+        "4.2": [
+          "/event entity @e[type=xp:arena_start] xp:default"
+        ]
+      }
+    }
+  }
+}

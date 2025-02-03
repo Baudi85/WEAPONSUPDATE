@@ -1,0 +1,79 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.ocean_sword.fpp": {
+          "initial_state": "weapon_draw",
+          "states": {
+              "weapon_draw":{
+                  "animations": ["weapon_draw"], 
+                  "transitions": [
+                      {"weapon_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.25,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_hold":{
+                  "animations": ["bob","weapon_hold"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"ocean.attack":"v.attack_time > 0"},
+                      {"ocean.charge":"q.is_using_item"}
+                  ]
+              },
+              "ocean.attack":{
+                  "animations": ["ocean.attack"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"weapon_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.25
+              },
+              "ocean.charge":{
+                  "animations": ["ocean.charge"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"weapon_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.15
+              }
+          }
+      },
+      "controller.animation.ocean_sword.tpp": {
+        "initial_state": "weapon_t_draw",
+        "states": {
+            "weapon_t_draw":{
+                "animations": ["weapon_t_draw", "move.arms"], 
+                "transitions": [
+                    {"weapon_t_hold":"q.all_animations_finished"}
+                ],
+                "blend_transition": 0.1,
+                "on_exit": [ "variable.draw_sword = 0;" ]
+            },
+            "weapon_t_hold":{
+                "animations": ["bob","weapon_t_hold", "move.arms"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"ocean.t_attack":"v.attack_time > 0"},
+                    {"ocean.t_charge": "q.is_using_item"}
+                ]
+            },
+            "ocean.t_attack":{
+                "animations": ["ocean.t_attack", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.15
+            },
+            "ocean.t_charge":{
+              "animations": ["ocean.t_charge", "holding_cancel"], 
+              "transitions": [
+                  {"weapon_t_draw":"v.draw_sword"},
+                  {"weapon_t_hold": "q.all_animations_finished"}
+              ],
+              "blend_transition": 0.15
+          }
+        }
+      }
+   }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "xp:darkness_sword",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "darkness_sword",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

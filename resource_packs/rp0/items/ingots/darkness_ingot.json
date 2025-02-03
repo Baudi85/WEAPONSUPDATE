@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+      "description": {
+        "identifier": "xp:dark_ingot",
+        "category": "Equipment"
+      },
+      "components": {
+        "minecraft:icon": "dark_ingot",
+        "minecraft:render_offsets": "tools"
+      }
+    }
+  }

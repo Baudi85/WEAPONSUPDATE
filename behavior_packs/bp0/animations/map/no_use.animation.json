@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.ore_button.no_weapon_use": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @a[x=53,y=96,z=586,dx=-42,dy=25,dz=-45] ~~~ event entity @a[x=53,y=96,z=586,dx=-42,dy=20,dz=-45] xp:in_ore_room"
+        ]
+      }
+    },
+    "animation.ore_button.yes_weapon_use": {
+      "animation_length": 0.1,
+      "loop": true,
+      "timeline": {
+        "0.0": [
+          "/execute @a[x=53,y=96,z=518,dx=-43,dy=25,dz=16] ~~~ event entity @a[x=53,y=96,z=518,dx=-43,dy=25,dz=16] xp:out_ore_room"
+        ]
+      }
+    }
+  }
+}

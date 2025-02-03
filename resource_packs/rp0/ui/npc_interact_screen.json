@@ -1,0 +1,67 @@
+{
+  "npc_screen_modified_index": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "screen_content@xp_podium_screen.weapons_podium_list": {} }
+    ]
+  },
+
+  "screen_exit_animation_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": 1.0,
+    "to": 1.0,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+  "screen_exit_animation_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": 1.0,
+    "to": 1.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+  "screen_exit_animation_push_offset": {
+    "anim_type": "offset",
+    "easing": "out_quad",
+    "duration": 1.0,
+    "from": [ 0, 0 ],
+    "to": [ 0, "100% + 200px" ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+  "screen_exit_animation_pop_offset": {
+    "anim_type": "offset",
+    "easing": "out_quad",
+    "duration": 1.0,
+    "from": [ 0, 0 ],
+    "to": [ 0, "-100% - 200px" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "npc_screen@common.base_screen": {
+    "$screen_content": "npc_interact.npc_screen_modified_index",
+    "$screen_animations|default": [
+      "@npc_interact.screen_exit_animation_push_offset",
+      "@npc_interact.screen_exit_animation_pop_offset",
+      "@npc_interact.screen_exit_animation_push_fade",
+      "@npc_interact.screen_exit_animation_pop_fade"
+    ],
+    "low_frequency_rendering": true,
+    "render_game_behind": true,
+    "cache_screen": false,
+    "screen_draws_last": true,
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_exit",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      }
+    ]
+  }
+}

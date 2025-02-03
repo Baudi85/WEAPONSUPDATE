@@ -1,0 +1,132 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.light_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'light_sword'" }
+          ],
+          "on_entry": [ 
+            "@s xp:yes_fall",
+            "/effect @s speed 0 0 true",
+            "/effect @s strength 0 0 true",
+            "/effect @s absorption 0 0 true",
+            "/stopsound @s boost.in_air"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'light_sword'" },
+            { "cant_use": "q.is_using_item && q.get_equipped_item_name == 'light_sword' && q.is_illager_captain" },
+            { "charge": "q.is_using_item && !q.is_illager_captain" },
+            { "attack": "q.get_equipped_item_name == 'light_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [ 
+            "@s xp:yes_fall",
+            "@s xp:clear_element",
+            "/effect @s strength 99999 30 true",
+            "/effect @s absorption 99999 1 true",
+            "/effect @s speed 99999 2 true"
+           ]
+        },
+        "cant_use":{
+          "transitions": [
+            {"holding": "q.get_equipped_item_name == 'light_sword' && v.attack_time < 0.2 && !q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"},
+            {"default": "q.get_equipped_item_name != 'light_sword' && v.attack_time < 0.2 && !q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/tellraw @s {\"rawtext\":[{\"text\":\"- §6Fast dash skills cannot be used within the arena§r\n\"}]}",
+            "/playsound note.bassattack @s ~~~ 0.75 1 1"
+          ]
+        },
+
+        "charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'light_sword'" },
+            { "holding": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1.0 && q.get_equipped_item_name == 'light_sword'" },
+            { "boost": "!q.is_using_item && (q.life_time - v.tick_delay) >= 1.0 && q.get_equipped_item_name == 'light_sword'" },
+            { "attack": "q.get_equipped_item_name == 'light_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.015 99999 rotational"
+           ],
+          "on_exit": [ 
+            "/camerashake stop @s"
+           ]
+        },
+
+        "boost": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'light_sword'" },
+            { "holding": "q.get_equipped_item_name == 'light_sword' && (q.life_time - v.tick_delay) >= 0.5 && (q.is_on_ground || q.is_in_water)" },
+            { "attack": "q.get_equipped_item_name == 'light_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:no_fall",
+            "/camerashake add @s 0.05 5 rotational",
+            "/playsound boost.in_air @s",
+            "/effect @s levitation 1 18 true",
+            "/effect @s slowness 1 1 true",
+            "/summon xp:light_sword_boost ^^-0.25^-0.5"
+           ],
+           "on_exit": [ 
+             "/effect @s levitation 0 0 true",
+             "/camerashake stop @s",
+             "/particle xp:nether_sword.lava_burst ~~0.15~",
+             "/particle xp:light_sword.impact ~~0.25~",
+             "/effect @s slowness 0 0 true",
+             "/stopsound @s boost.in_air",
+             "/playsound block.turtle_egg.break @a ~~~ 0.45 2 0.001",
+             "/playsound dig.bone_block @a ~~~ 0.5 0.75 0.001",
+             "/playsound block.lantern.break @a ~~~ 0.5 0.25 0.001",
+             "/playsound block.lantern.break @a ~~~ 0.35 0.5 0.001",
+             "/playsound fall.netherrack @a ~~~ 1 0.75 0.001",
+             "/playsound fall.netherrack @a ~~~ 0.75 0.25 0.001",
+             "/playsound fall.nether_gold_ore @a ~~~ 0.75 0.25 0.001",
+             "/playsound fall.nether_gold_ore @a ~~~ 0.75 0.5 0.001"
+            ]
+        },
+
+        "attack": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'light_sword'" },
+            { "charge": "q.is_using_item" },
+            { "holding": "q.get_equipped_item_name == 'light_sword' && v.attack_time <= 0.0f && (q.life_time - v.tick_delay) >= 2.75" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/execute @e[family=monster,c=7,r=15] ~~~ summon xp:light_sword.glow ^^^"
+           ]
+        }
+      }
+    },
+    "controller.animation.light_sword.glow": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "animations": [
+            "glow",
+            "particles"
+          ],
+          "transitions": [ 
+            { "remove_lights": "(q.life_time - v.tick_delay) >= 7.5" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+        "remove_lights": {
+          "animations": [
+            "off"
+          ]
+        }
+      }
+    }
+  }
+}

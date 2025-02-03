@@ -1,0 +1,133 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.ice_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"ice.attack":"v.attack_time > 0 && !q.is_sneaking"},
+                        {"ice.charge":"q.is_sneaking"},
+                        {"ice.shoot": "q.is_using_item"}
+                    ]
+                },
+                "ice.attack":{
+                    "animations": ["ice.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "ice.charge":{
+                    "animations": ["ice.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_sneaking" },
+                        {"ice.hold_charge": "q.all_animations_finished"}
+                    ]
+                },
+                "ice.hold_charge":{
+                    "animations": ["ice.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_sneaking"},
+                        {"ice.impact": "q.is_sneaking && v.attack_time > 0 && (q.life_time - v.tick_delay) >= 0.55"}
+                    ],
+                    "blend_transition": 0.05
+                },
+                "ice.impact":{
+                    "animations": ["ice.impact"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"ice.charge": "q.is_sneaking && q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "ice.shoot":{
+                    "animations": ["ice.shoot"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished && (q.life_time - v.tick_delay) >= 0.25"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.ice_sword.tpp": {
+            "initial_state": "weapon_t_draw",
+            "states": {
+                "weapon_t_draw":{
+                    "animations": ["weapon_t_draw", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_t_hold":{
+                    "animations": ["bob","weapon_t_hold", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"ice.t_attack":"v.attack_time > 0 && !q.is_sneaking"},
+                        {"ice.t_charge":"q.is_sneaking"},
+                        {"ice.t_shoot": "q.is_using_item"}
+                    ]
+                },
+                "ice.t_attack":{
+                    "animations": ["ice.t_attack", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "ice.t_charge":{
+                    "animations": ["ice.t_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "!q.is_sneaking" },
+                        {"ice.t_hold_charge": "q.all_animations_finished"}
+                    ]
+                },
+                "ice.t_hold_charge":{
+                    "animations": ["ice.t_hold_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "!q.is_sneaking"},
+                        {"ice.t_impact": "q.is_sneaking && v.attack_time > 0 && (q.life_time - v.tick_delay) >= 0.55"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "ice.t_impact":{
+                    "animations": ["ice.t_impact", "holding_cancel", "ice.t_blade_particles"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"},
+                        {"ice.t_charge": "q.is_sneaking && q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "ice.t_shoot":{
+                    "animations": ["ice.t_shoot", "holding_cancel", "ice.t_blade_particles"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished && (q.life_time - v.tick_delay) >= 0.25"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        }
+    }
+}

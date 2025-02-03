@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.farm_room": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ { "reset": "q.variant == 1" } ],
+          "on_entry": ["/setblock ~~-1~ barrier"]
+        },
+        "reset": {
+          "animations": [ "reset_farm" ],
+          "transitions": [ { "default": "q.variant == 0" } ],
+          "on_entry": [
+            "/execute @e[type=xp:farm_button] ~~~ playsound block.grindstone.use @a ~~~ 0.25 1.75 0.001",
+            "/execute @e[type=xp:farm_button] ~~~ playsound block.grindstone.use @a ~~~ 0.75 0.75 0.001",
+            "/playanimation @e[type=xp:farm_button] animation.arena_button.pressed"
+          ]
+        }
+      }
+    }
+  }
+}

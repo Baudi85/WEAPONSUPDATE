@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.reset_light_ray": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [
+            { "add_rays_nighttime": "q.is_alive && (q.time_of_day >= 0.75 || q.time_of_day <= 0.25)" },
+            { "add_rays": "q.is_alive" }
+          ],
+          "on_exit": [
+            "/execute @s[tag=\"host\"] ~~~ tag @a[tag=!\"host\"] add client",
+            "/tag @s[tag=!\"host\",tag=!\"client\"] add host"
+          ]
+        },
+
+        "add_rays": {
+          "transitions": [ { "on_detect": "(q.life_time - v.light_rays) >= 9.0" } ],
+          "on_entry": [
+            "v.light_rays = q.life_time;",
+
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray 35 104 465.65",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray 29 104 465.65",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray 29 104 473",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray 35 104 473"
+          ]
+        },
+        "add_rays_nighttime": {
+          "transitions": [ { "on_detect": "(q.life_time - v.light_rays) >= 9.0" } ],
+          "on_entry": [
+            "v.light_rays = q.life_time;",
+
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray_at_night 35 104 465.65",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray_at_night 29 104 465.65",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray_at_night 29 104 473",
+            "/execute @s[tag=\"host\"] ~~~ particle xp:light_ray_at_night 35 104 473"
+          ]
+        }
+      }
+    }
+  }
+}

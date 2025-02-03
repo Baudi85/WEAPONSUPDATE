@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:elemental_sword.recipe"
+        },
+        "tags": [ "crafting_table" ],
+        "pattern": [
+            "sil",
+            "gNf",
+            " / "
+        ],
+        "key": {
+            "i": { "item": "xp:air_sword" },
+            "N": { "item": "xp:earth_sword" },
+            "s": { "item": "xp:thunder_sword" },
+            "l": { "item": "xp:water_sword" },
+            "g": { "item": "xp:ocean_sword" },
+            "f": { "item": "xp:fire_sword" },
+            "/": { "item": "minecraft:stick" }
+        },
+        "result": {
+            "item": "xp:elemental_sword"
+        }
+    }
+}

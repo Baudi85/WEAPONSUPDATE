@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.skeleton_setup": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "v.tick_delay = q.life_time;"
+                    ],
+                    "transitions": [
+                        {
+                            "get_particle_id": "query.variant && (q.life_time - v.tick_delay) >= 0.1"
+                        }
+                    ]
+                },
+                "get_particle_id": {
+                    "animations": [
+                        "drop"
+                    ],
+                    "on_entry": [
+                        "/particle xp:poof ~~~",
+                        "/playsound mob.skeleton.death @a[r=15] ~~~ 0.75 1 0.001"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.statue.look_at_target": {
+			"loop": true,
+			"bones": {
+				"Head": {
+					"rotation": ["query.target_x_rotation - this", "query.target_y_rotation - this", 0]
+				}
+			}
+		},
+		"animation.enter_sign.bob": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [0, "0 + math.cos(q.life_time * 100.0) * 1.0", 0],
+					"scale": [1, "1 + math.cos(q.life_time * 100.0) * 0.075", 1]
+				},
+				"sign_root": {
+					"position": [0, "0 + math.cos(q.life_time * 100.0) * 5.0", 0],
+					"scale": ["1 + math.cos(q.life_time * 100.0) * 0.06", "1 + math.cos(q.life_time * 100.0) * 0.06", 1]
+				}
+			}
+		},
+		"animation.prop.align": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [0, "-q.body_y_rotation + (Math.round(q.body_y_rotation / 90) * 90)", 0]
+				}
+			}
+		},
+		"animation.sign.billboard": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": ["-query.camera_rotation(0)", "query.camera_rotation(1)", 0]
+				}
+			}
+		},
+		"animation.tp_particles": {
+			"loop": true,
+			"animation_length": 0.4,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "spiral",
+						"locator": "particle"
+					},
+					{
+						"effect": "spiral2",
+						"locator": "particle"
+					},
+					{
+						"effect": "suction",
+						"locator": "particle"
+					}
+				]
+			}
+		},
+		"animation.statue.holding": {
+			"loop": true,
+			"bones": {
+				"LeftArm": {
+					"rotation": [0, 0, -2.5]
+				},
+				"RightArm": {
+					"rotation": [-32.47528, 1.34295, 2.10886]
+				}
+			}
+		},
+		"animation.torch": {
+			"loop": true,
+			"animation_length": 0.875,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "fire",
+						"locator": "particle"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle"
+					}
+				],
+				"0.3333": {
+					"effect": "sparks",
+					"locator": "particle2"
+				}
+			}
+		},
+		"animation.fire_pit": {
+			"loop": true,
+			"animation_length": 0.875,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "fire",
+						"locator": "particle"
+					},
+					{
+						"effect": "smoke",
+						"locator": "particle"
+					},
+					{
+						"effect": "fire1",
+						"locator": "particle2"
+					},
+					{
+						"effect": "fire",
+						"locator": "particle3"
+					},
+					{
+						"effect": "fire",
+						"locator": "particle4"
+					},
+					{
+						"effect": "fire",
+						"locator": "particle5"
+					},
+					{
+						"effect": "fire",
+						"locator": "particle6"
+					}
+				],
+				"0.0833": {
+					"effect": "sparks",
+					"locator": "particle2"
+				},
+				"0.3333": {
+					"effect": "sparks",
+					"locator": "particle2"
+				},
+				"0.6667": {
+					"effect": "sparks",
+					"locator": "particle2"
+				}
+			}
+		},
+		"animation.ceiling_light": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "flame",
+						"locator": "particle"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle2"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle3"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle4"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle5"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle6"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle7"
+					},
+					{
+						"effect": "flame",
+						"locator": "particle8"
+					}
+				]
+			}
+		},
+		"animation.ceiling_light.candle_drip": {
+			"loop": true,
+			"animation_length": 23.83333,
+			"particle_effects": {
+				"0.0833": {
+					"effect": "drip",
+					"locator": "particle"
+				},
+				"1.6667": {
+					"effect": "drip",
+					"locator": "particle3"
+				},
+				"4.1667": {
+					"effect": "drip",
+					"locator": "particle8"
+				},
+				"7.0": {
+					"effect": "drip",
+					"locator": "particle2"
+				},
+				"9.2917": {
+					"effect": "drip",
+					"locator": "particle"
+				},
+				"15.6667": {
+					"effect": "drip",
+					"locator": "particle6"
+				},
+				"17.6667": {
+					"effect": "drip",
+					"locator": "particle7"
+				},
+				"18.7917": {
+					"effect": "drip",
+					"locator": "particle4"
+				},
+				"23.3333": {
+					"effect": "drip",
+					"locator": "particle7"
+				},
+				"23.8333": {
+					"effect": "drip",
+					"locator": "particle5"
+				}
+			}
+		}
+	}
+}

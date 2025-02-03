@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.lava_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'lava_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s strength 0 0 true",
+            "/effect @s fire_resistance 0 0 true"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'lava_sword'" } ,
+            { "charge": "q.is_using_item && q.get_equipped_item_name == 'lava_sword'" } 
+          ],
+          "on_entry": [ 
+            "@s xp:clear_element",
+            "/effect @s strength 99999 4 true",
+            "/effect @s fire_resistance 99999 250 true"
+           ]
+        },
+
+        "charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'lava_sword'" } ,
+            { "holding": "!q.is_using_item && (q.life_time - v.tick_delay) <= 0.5 && q.get_equipped_item_name == 'lava_sword'" } ,
+            { "shoot": "!q.is_using_item && (q.life_time - v.tick_delay) >= 0.5 && q.get_equipped_item_name == 'lava_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s fire_resistance 99999 250 true",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "shoot": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'lava_sword'" } ,
+            { "holding": "!q.is_using_item && q.get_equipped_item_name == 'lava_sword' && (q.life_time - v.tick_delay) >= 0.05" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:add_lava_sword_projectile"
+           ]
+        }
+      }
+    },
+
+    "controller.animation.meteor.impact_water": {
+      "initial_state": "in_air",
+      "states": {
+        "in_air": {
+          "transitions": [ 
+            { "in_water": "q.is_in_water" }
+          ]
+        },
+        "in_water": {
+          "on_entry": [
+            //"/structure load mystructure:meteor.impact ~-2~-1~-2",
+            "/playsound meteor.splash @a ~~~ 30 0.5 0.0001",
+            "/playsound meteor.splash @a ~~~ 30 0.25 0.0001",
+            "/particle xp:meteor.water_ripple ~~1.5~",
+            "/particle xp:water_impact1 ~~2.5~",
+            "/particle xp:water_impact ~~2.5~",
+            "/particle xp:water.sprout ~~1~"
+           ]
+        }
+      }
+    }
+  }
+}

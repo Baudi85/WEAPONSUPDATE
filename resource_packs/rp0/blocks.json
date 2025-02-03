@@ -1,0 +1,110 @@
+{
+  "format_version": "1.10.0",
+  "wall_torch_block": {
+    "sound": "copper"
+  },
+  "wall_torch_block_1": {
+    "sound": "copper"
+  },
+  "wall_torch_block_2": {
+    "sound": "copper"
+  },
+  "wall_torch_block_3": {
+    "sound": "copper"
+  },
+  "xp:fire_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "fire_ore"
+  },
+  "xp:ice_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "ice_ore"
+  },
+  "xp:ender_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "ender_ore"
+  },
+  "xp:light_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "light_ore"
+  },
+  "xp:water_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "water_ore"
+  },
+  "xp:wind_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "wind_ore"
+  },
+  "xp:spike_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "spike_ore"
+  },
+  "xp:earth_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "earth_ore"
+  },
+  "xp:thunder_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "thunder_ore"
+  },
+  "xp:jungle_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "jungle_ore"
+  },
+  "xp:ocean_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "ocean_ore"
+  },
+  "xp:darkness_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "darkness_ore"
+  },
+  "xp:nether_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "nether_ore"
+  },
+  "xp:lava_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "lava_ore"
+  },
+  "xp:sonic_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "sonic_ore"
+  },
+  "xp:poison_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "poison_ore"
+  },
+  "xp:dirt_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "dirt_ore"
+  },
+  "xp:storm_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "storm_ore"
+  },
+  "xp:tnt_ore": {
+    "isotropic": true,
+    "sound": "stone",
+    "textures": "tnt_ore"
+  }
+}

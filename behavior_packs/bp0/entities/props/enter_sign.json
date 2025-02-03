@@ -1,0 +1,112 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:enter_sign",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "trigger_start"
+        ]
+      },
+      "animations": {
+        "trigger_start": "controller.animation.enter_sign",
+        "map_start": "animation.enter_sign.map_start",
+        "sfx_vfx": "animation.enter_sign.sfx_vfx"
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "xp_dummy","xp_prop"
+        ]
+      },
+      "minecraft:skin_id": { "value": 0 },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              },
+              "event": "xp:trigger_start",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_variant", "value": 0 }
+                ]
+              },
+              "event": "xp:trigger_start"
+            },
+            "swing": true
+          }
+        ]
+      },
+      "minecraft:knockback_resistance":{
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 1.5,
+        "height": 0.25
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {}
+    },
+    "component_groups": {
+      "xp:reset":{
+        "minecraft:variant": { "value": 0 }
+      },
+      "xp:trigger_start":{
+        "minecraft:variant": { "value": 1 },
+        "minecraft:timer": {
+          "time": 16.0,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:reset"
+          }
+        }
+      }
+    },
+    "events": {
+      "xp:reset": {
+        "remove": {
+          "component_groups": [ "xp:trigger_start" ]
+        },
+        "add": {
+          "component_groups": [ "xp:reset" ]
+        }
+      },
+
+      "xp:trigger_start": {
+        "remove": {
+          "component_groups": [ "xp:reset" ]
+        },
+        "add": {
+          "component_groups": [ "xp:trigger_start" ]
+        }
+      }
+    }
+  }
+}

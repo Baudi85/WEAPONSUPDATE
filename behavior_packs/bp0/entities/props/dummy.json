@@ -1,0 +1,133 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:dummy",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "dummy"
+        ]
+      },
+      "animations": {
+        "dummy": "controller.animation.dummy"
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "xp_dummy","xp_prop"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_variant", "value": 0 }
+                ]
+              },
+              "event": "xp:hit1",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_variant", "value": 1 }
+                ]
+              },
+              "event": "xp:hit2",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_variant", "value": 2 }
+                ]
+              },
+              "event": "xp:hit3",
+              "target": "self"
+            },
+            "deals_damage": false
+          },
+          {
+          "cause": "all",
+          "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:knockback_resistance":{
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {}
+    },
+    "component_groups": {
+      "xp:default": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "xp:hit1": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "time": 0.25,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:default"
+          }
+        }
+      },
+      "xp:hit2": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:timer": {
+          "time": 0.25,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:default"
+          }
+        }
+      },
+      "xp:hit3": {
+        "minecraft:variant": {
+          "value": 3
+        },
+        "minecraft:timer": {
+          "time": 0.25,
+          "looping": false,
+          "time_down_event": {
+            "event": "xp:default"
+          }
+        }
+      }
+    },
+    "events": {
+      "xp:default": { "add": { "component_groups": [ "xp:default" ] } },
+      "xp:hit1": { "add": { "component_groups": [ "xp:hit1" ] } },
+      "xp:hit2": { "add": { "component_groups": [ "xp:hit2" ] } },
+      "xp:hit3": { "add": { "component_groups": [ "xp:hit3" ] } }
+    }
+  }
+}

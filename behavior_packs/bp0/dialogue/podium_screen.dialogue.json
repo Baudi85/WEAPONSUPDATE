@@ -1,0 +1,639 @@
+{
+  "format_version": "1.14",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "podium_info_elemental_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:elemental_sword.name" } ] },
+        "text": "podium_info_elemental_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_elemental_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_ice_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ice_sword.name" } ] },
+        "text": "podium_info_ice_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_ice_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_darkness_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:darkness_sword.name" } ] },
+        "text": "podium_info_darkness_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_darkness_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_ender_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ender_sword.name" } ] },
+        "text": "podium_info_ender_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_ender_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_poison_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:poison_sword.name" } ] },
+        "text": "podium_info_poison_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_poison_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_water_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:water_sword.name" } ] },
+        "text": "podium_info_water_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_water_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_spike_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:spike_sword.name" } ] },
+        "text": "podium_info_spike_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_spike_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_sonic_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:sonic_sword.name" } ] },
+        "text": "podium_info_sonic_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_sonic_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_storm_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:storm_sword.name" } ] },
+        "text": "podium_info_storm_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_storm_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_jungle_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:jungle_sword.name" } ] },
+        "text": "podium_info_jungle_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_jungle_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_dirt_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:dirt_sword.name" } ] },
+        "text": "podium_info_dirt_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_dirt_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_magma_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:lava_sword.name" } ] },
+        "text": "podium_info_magma_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_magma_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_light_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:light_sword.name" } ] },
+        "text": "podium_info_light_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_light_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_wind_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:air_sword.name" } ] },
+        "text": "podium_info_wind_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_wind_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_earth_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:earth_sword.name" } ] },
+        "text": "podium_info_earth_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_earth_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_tnt_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:tnt_sword.name" } ] },
+        "text": "podium_info_tnt_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_tnt_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_nether_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:nether_sword.name" } ] },
+        "text": "podium_info_nether_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_nether_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_fire_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:fire_sword.name" } ] },
+        "text": "podium_info_fire_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_fire_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_ocean_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ocean_sword.name" } ] },
+        "text": "podium_info_ocean_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_ocean_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_thunder_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:thunder_sword.name" } ] },
+        "text": "podium_info_thunder_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_thunder_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_info_wither_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:wither_sword.name" } ] },
+        "text": "podium_info_wither_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "recipe",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_recipe_wither_sword"
+            ]
+          }
+        ]
+      },
+      
+      
+      {
+        "scene_tag": "podium_recipe_elemental_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:elemental_sword.name" } ] },
+        "text": "podium_recipe_elemental_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_elemental_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_ice_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ice_sword.name" } ] },
+        "text": "podium_recipe_ice_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_ice_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_darkness_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:darkness_sword.name" } ] },
+        "text": "podium_recipe_darkness_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_darkness_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_ender_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ender_sword.name" } ] },
+        "text": "podium_recipe_ender_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_ender_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_poison_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:poison_sword.name" } ] },
+        "text": "podium_recipe_poison_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_poison_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_water_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:water_sword.name" } ] },
+        "text": "podium_recipe_water_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_water_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_spike_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:spike_sword.name" } ] },
+        "text": "podium_recipe_spike_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_spike_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_sonic_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:sonic_sword.name" } ] },
+        "text": "podium_recipe_sonic_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_sonic_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_storm_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:storm_sword.name" } ] },
+        "text": "podium_recipe_storm_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_storm_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_jungle_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:jungle_sword.name" } ] },
+        "text": "podium_recipe_jungle_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_jungle_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_dirt_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:dirt_sword.name" } ] },
+        "text": "podium_recipe_dirt_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_dirt_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_magma_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:lava_sword.name" } ] },
+        "text": "podium_recipe_magma_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_magma_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_light_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:light_sword.name" } ] },
+        "text": "podium_recipe_light_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_light_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_wind_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:air_sword.name" } ] },
+        "text": "podium_recipe_wind_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_wind_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_earth_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:earth_sword.name" } ] },
+        "text": "podium_recipe_earth_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_earth_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_tnt_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:tnt_sword.name" } ] },
+        "text": "podium_recipe_tnt_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_tnt_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_nether_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:nether_sword.name" } ] },
+        "text": "podium_recipe_nether_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_nether_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_fire_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:fire_sword.name" } ] },
+        "text": "podium_recipe_fire_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_fire_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_ocean_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:ocean_sword.name" } ] },
+        "text": "podium_recipe_ocean_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_ocean_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_thunder_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:thunder_sword.name" } ] },
+        "text": "podium_recipe_thunder_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_thunder_sword"
+            ]
+          }
+        ]
+      },
+      {
+        "scene_tag": "podium_recipe_wither_sword",
+        "npc_name": { "rawtext": [ { "translate": "item.xp:wither_sword.name" } ] },
+        "text": "podium_recipe_wither_sword",
+        "buttons": [
+          { "name": "close", "commands": [ "/playsound @initiator none" ] },
+          {
+            "name": "info",
+            "commands": [
+              "/gamemode s @initiator[m=c]",
+              "/dialogue open @e[type=xp:podium,c=1] @initiator podium_info_wither_sword"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

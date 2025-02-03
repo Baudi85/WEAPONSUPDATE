@@ -1,0 +1,69 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.door": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "fog_transition": "q.variant == 1" }
+          ]
+        },
+        "fog_transition": {
+          "animations":[
+            "sfx"
+          ],
+          "transitions": [
+            { "fog": "q.variant == 0" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/fog @a[r=25] remove ruin",
+            "/fog @a[r=25] push xp:weapon_room weapon_room",
+            "/event entity @a[r=25] xp:in_ore_room"
+          ]
+        },
+        "fog": {
+          "animations":[
+            "close_sfx"
+          ],
+          "transitions": [
+            { "default": "q.all_animations_finished" }
+          ]
+        }
+      }
+    },
+    
+    "controller.animation.front_door": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "open": "q.variant == 1" }
+          ]
+        },
+        "open": {
+          "animations":[
+            "sfx"
+          ],
+          "transitions": [
+            { "close": "q.variant == 0" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/gamemode s @a[r=25]",
+            "/event entity @a[r=25] xp:out_ore_room"
+          ]
+        },
+        "close": {
+          "animations":[
+            "close_sfx"
+          ],
+          "transitions": [
+            { "default": "q.all_animations_finished" }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+//bridge-file-version: #87
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "wu:firefly.entity",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"scripts": {
+				"animate": [
+					"wu:animation.firefly.follow_firefly"
+				]
+			},
+			"animations": {
+				"wu:animation.firefly.follow_firefly": "controller.animation.firefly.follow_firefly"
+			},
+			"runtime_identifier": "minecraft:egg"
+		},
+		"component_groups": {
+			"wu:instant_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"firefly"
+				]
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:fire_immune": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:conditional_bandwidth_optimization": {
+				"default_values": {
+					"max_optimized_distance": 80,
+					"max_dropped_ticks": 10,
+					"use_motion_prediction_hints": true
+				}
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 0.5,
+				"minimum_count": 1,
+				"require_all": true,
+				"event_filters": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"operator": "!=",
+							"value": "firefly.track"
+						}
+					]
+				},
+				"event": "wu:instant_despawn.event"
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_daytime",
+							"value": false
+						},
+						"event": "wu:instant_despawn.event"
+					},
+					{
+						"filters": {
+							"test": "in_water_or_rain",
+							"subject": "self",
+							"value": true
+						},
+						"event": "wu:instant_despawn.event"
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 0,
+				"suffocateTime": 0,
+				"generates_bubbles": false
+			}
+		},
+		"events": {
+			"wu:instant_despawn.event": {
+				"add": {
+					"component_groups": [
+						"wu:instant_despawn"
+					]
+				}
+			}
+		}
+	}
+}

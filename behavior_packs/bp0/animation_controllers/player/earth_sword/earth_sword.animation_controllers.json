@@ -1,0 +1,80 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.earth_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'earth_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s strength 0 0 true",
+            "/effect @s absorption 0 0 true",
+            "/tag @s remove earth_sword_user",
+            "@s xp:remove_earth_attack"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'earth_sword'" } ,
+            { "charge": "q.is_using_item && q.get_equipped_item_name == 'earth_sword' && !q.is_tamed" },
+            { "cant_use": "q.is_using_item && q.get_equipped_item_name == 'earth_sword' && q.is_tamed" },
+            { "earth_attack": "q.is_on_ground && v.attack_time > 0.0f && q.get_equipped_item_name == 'earth_sword'" } 
+          ],
+          "on_entry": [ 
+            "@s xp:clear_element",
+            "/tag @s add earth_sword_user",
+            "/effect @s strength 99999 5 true",
+            "/effect @s absorption 99999 1 true"
+           ]
+        },
+
+        "cant_use":{
+          "transitions": [
+            {"default": "!q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": ["/tellraw @s {\"rawtext\":[{\"text\":\"- §6Terraform skills cannot be used in this area§r\n\"}]}", "/playsound note.bassattack @s ~~~ 0.75 1 1"]
+        },
+
+        "earth_attack": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'earth_sword'" } ,
+            { "holding": " q.get_equipped_item_name == 'earth_sword' && (q.life_time - v.tick_delay) >= 1 && v.attack_time == 0.0f" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/tag @s add earth_sword_user"
+           ]
+        },
+
+        "charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'earth_sword'" } ,
+            { "holding": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1 && q.get_equipped_item_name == 'earth_sword'" } ,
+            { "shoot": "!q.is_using_item && (q.life_time - v.tick_delay) >= 1 && q.get_equipped_item_name == 'earth_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s strength 99999 5 true",
+            "/effect @s absorption 99999 1 true",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "shoot": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'earth_sword'" } ,
+            { "holding": "!q.is_using_item && q.get_equipped_item_name == 'earth_sword' && (q.life_time - v.tick_delay) >= 0.05" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/tag @s add earth_sword_user",
+            "/summon xp:earth_sword.target ^^2^15",
+            "/summon xp:earth_sword.attack ^^^2"
+           ]
+        }
+      }
+    }
+  }
+}

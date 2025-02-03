@@ -1,0 +1,68 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+      "description": {
+        "identifier": "xp:ore_button",
+        "is_spawnable": false,
+        "is_summonable": true,
+        "is_experimental": false
+      },
+
+      "component_groups": {
+        "xp:default": { "minecraft:variant": { "value": 0 } }
+      },
+
+      "components": {
+        "minecraft:type_family": {
+          "family": [ "ore_button", "xp_dummy" ]
+        },
+        "minecraft:addrider": {
+          "entity_type": "xp:reset_ore"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "ore_button", "xp_dummy"
+          ],
+          "seats": [
+            {
+              "position": [ 0, 1, 0 ],
+              "min_rider_count": 0,
+              "max_rider_count": 1,
+              "lock_rider_rotation": 0
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": {
+            "cause": "all",
+            "deals_damage": false
+          }
+        },
+        "minecraft:push_through": { "value": 1 },
+        "minecraft:breathable": { "breathes_solids": true },
+        "minecraft:knockback_resistance":{
+          "value": 1
+        },
+        "minecraft:fire_immune": {},
+        "minecraft:collision_box": {
+          "width": 0.0,
+          "height": 0.0
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": false
+        },
+        "minecraft:health": {
+          "value": 99999,
+          "max": 99999
+        },
+        "minecraft:nameable": {},
+        "minecraft:physics": {}
+      },
+
+      "events": {
+        "xp:default": { "add": { "component_groups": [ "xp:default" ] } }
+      }
+    }
+  }

@@ -1,0 +1,84 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.skeleton_corpse_1_foliage",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "skeleton_corpse_1",
+					"pivot": [0, 2.1, -16],
+					"rotation": [-90, 0, 0],
+					"cubes": [
+						{"origin": [-18, 4.1, -14], "size": [32, 32, 0], "inflate": 0.02, "uv": [0, 64]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "skeleton_corpse_1",
+					"pivot": [0, 26.1, -16],
+					"rotation": [0, 30, 0],
+					"cubes": [
+						{"origin": [-4, 26.1, -20], "size": [8, 8, 8], "uv": [0, 0]},
+						{"origin": [-4, 26.1, -20], "size": [8, 8, 8], "inflate": 0.1, "uv": [0, 32]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "skeleton_corpse_1",
+					"pivot": [0, 2.1, -16],
+					"cubes": [
+						{"origin": [-4, 14.1, -18], "size": [8, 12, 4], "uv": [16, 16]},
+						{"origin": [-4, 14.1, -18], "size": [8, 12, 4], "inflate": 0.1, "uv": [16, 48]}
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "skeleton_corpse_1",
+					"pivot": [5, 25.1, -16],
+					"rotation": [10, 0, -135],
+					"cubes": [
+						{"origin": [4, 14.1, -17], "size": [2, 12, 2], "uv": [40, 2], "mirror": true},
+						{"origin": [4, 14.1, -17], "size": [2, 12, 2], "inflate": 0.1, "uv": [40, 34], "mirror": true}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "skeleton_corpse_1",
+					"pivot": [-5, 25.1, -16],
+					"rotation": [7.24721, -1.93597, 14.87739],
+					"cubes": [
+						{"origin": [-6, 14.1, -17], "size": [2, 12, 2], "uv": [40, 16]},
+						{"origin": [-6, 14.1, -17], "size": [2, 12, 2], "inflate": 0.1, "uv": [40, 48]}
+					]
+				},
+				{
+					"name": "left_leg",
+					"parent": "skeleton_corpse_1",
+					"pivot": [2, 14.1, -16],
+					"rotation": [6.66067, 3.45533, -27.29887],
+					"cubes": [
+						{"origin": [1, 2.29924, -16.98257], "size": [2, 12, 2], "uv": [8, 16], "mirror": true},
+						{"origin": [1, 2.29924, -16.98257], "size": [2, 12, 2], "inflate": 0.1, "uv": [8, 48], "mirror": true}
+					]
+				},
+				{
+					"name": "right_leg",
+					"parent": "skeleton_corpse_1",
+					"pivot": [-2, 14.1, -16],
+					"rotation": [7.32417, -1.61888, 12.39638],
+					"cubes": [
+						{"origin": [-3, 2.29924, -16.98257], "size": [2, 12, 2], "uv": [0, 16]},
+						{"origin": [-3, 2.29924, -16.98257], "size": [2, 12, 2], "inflate": 0.1, "uv": [0, 48]}
+					]
+				}
+			]
+		}
+	]
+}

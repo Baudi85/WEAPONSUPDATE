@@ -1,0 +1,87 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:room_sign",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "xp:instant_despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "xp:remove_text": { "minecraft:variant": { "value": 0 } },
+      "xp:text": { "minecraft:variant": { "value": 1 } },
+      "xp:armory": { "minecraft:skin_id": { "value": 0 } },
+      "xp:resources": { "minecraft:skin_id": { "value": 1 } },
+      "xp:wilderness": { "minecraft:skin_id": { "value": 2 } }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "xp_dummy"
+        ]
+      },
+      "minecraft:knockback_resistance":{
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {}
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "add": {
+              "component_groups": [ "xp:armory" ]
+            },
+            "weight": 1
+          },
+          {
+            "add": {
+              "component_groups": [ "xp:resources"]
+            },
+            "weight": 1
+          },
+          {
+            "add": {
+              "component_groups": [ "xp:wilderness"]
+            },
+            "weight": 1
+          }
+        ]
+      },
+
+      "xp:instant_despawn": {
+        "add": {
+          "component_groups": [
+            "xp:instant_despawn"
+          ]
+        }
+      },
+      "xp:text": { "add": { "component_groups": [ "xp:text" ] } },
+      "xp:remove_text": { "add": { "component_groups": [ "xp:remove_text" ] } },
+      "xp:armory": { "add": { "component_groups": [ "xp:armory" ] } },
+      "xp:resources": { "add": { "component_groups": [ "xp:resources" ] } },
+      "xp:wilderness": { "add": { "component_groups": [ "xp:wilderness" ] } }
+    }
+  }
+}

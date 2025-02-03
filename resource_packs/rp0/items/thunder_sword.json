@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:item": {
+    "description": {
+      "identifier": "xp:thunder_sword",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "thunder_sword",
+      "minecraft:render_offsets": "tools"
+    }
+  }
+}

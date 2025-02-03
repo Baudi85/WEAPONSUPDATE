@@ -1,0 +1,93 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.thunder_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw", "thunder.blade_idle"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold", "thunder.blade_idle"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"thunder.attack":"v.attack_time > 0"},
+                        {"thunder.charge": "q.is_using_item"}
+                    ]
+                },
+                "thunder.attack":{
+                    "animations": ["thunder.attack", "bob", "thunder.blade_idle"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ]
+                },
+                "thunder.charge":{
+                    "animations": ["thunder.charge", "thunder.blade_idle"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"thunder.impact": "q.all_animations_finished && q.is_on_ground"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "thunder.impact":{
+                    "animations": ["thunder.impact", "thunder.blade_idle"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.thunder_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms", "thunder.blade_idle"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms", "thunder.blade_idle"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"thunder.t_attack":"v.attack_time > 0"},
+                      {"thunder.t_charge": "q.is_using_item"}
+                  ]
+              },
+              "thunder.t_attack":{
+                  "animations": ["thunder.t_attack", "holding_cancel", "thunder.blade_idle"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "thunder.t_charge":{
+                  "animations": ["thunder.t_charge", "holding_cancel", "thunder.blade_idle"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"thunder.t_impact": "q.all_animations_finished && q.is_on_ground"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "thunder.t_impact":{
+                  "animations": ["thunder.t_impact", "holding_cancel", "thunder.blade_idle"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.15
+              }
+          }
+        }
+     }
+  }

@@ -1,0 +1,173 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.statue": {
+      "geometry": "Array.geo[q.skin_id]",
+      "materials": [ { "*": "Material.glow" } ],
+      "arrays": {
+        "textures": {
+          "Array.textures": [
+            "Texture.default",
+            "Texture.darkness",
+            "Texture.dirt",
+            "Texture.earth",
+            "Texture.elemental",
+            "Texture.ender",
+            "Texture.fire",
+            "Texture.ice",
+            "Texture.jungle",
+            "Texture.light",
+            "Texture.magma",
+            "Texture.nether",
+            "Texture.ocean",
+            "Texture.poison",
+            "Texture.sonic",
+            "Texture.spike",
+            "Texture.storm",
+            "Texture.thunder",
+            "Texture.tnt",
+            "Texture.water",
+            "Texture.wind",
+            "Texture.wither"
+          ]
+        },
+        "geometries": {
+          "Array.geo": [
+            "Geometry.default",
+            "Geometry.darkness",
+            "Geometry.dirt",
+            "Geometry.earth",
+            "Geometry.elemental",
+            "Geometry.ender",
+            "Geometry.fire",
+            "Geometry.ice",
+            "Geometry.jungle",
+            "Geometry.light",
+            "Geometry.magma",
+            "Geometry.nether",
+            "Geometry.ocean",
+            "Geometry.poison",
+            "Geometry.sonic",
+            "Geometry.spike",
+            "Geometry.storm",
+            "Geometry.thunder",
+            "Geometry.tnt",
+            "Geometry.water",
+            "Geometry.wind",
+            "Geometry.wither"
+          ]
+        }
+      },
+      "textures": [ "Array.textures[q.skin_id]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    
+    "controller.render.statue.ice": {
+      "geometry": "Geometry.ice",
+      "materials": [ { "*": "Material.transparent" } ],
+      "textures": [ "Texture.ice" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.statue.magma": {
+      "geometry": "Geometry.magma",
+      "materials": [ {"*": "material.glow"} ],
+      "textures": [ "array.sword[Math.floor(math.sin((q.life_time * 10) * 20.0) * 5.0)]" ],
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.magma",
+            "texture.magma_1",
+            "texture.magma_2",
+            "texture.magma_3",
+            "texture.magma_4"
+          ]
+        }
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.statue.fire": {
+      "geometry": "Geometry.fire_blade",
+      "materials": [ {"*": "material.glow"} ],
+      "textures": [ "array.sword[Math.mod(Math.floor(query.life_time * 10.0), 3.0)]" ],
+      "ignore_lighting": true, 
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.fire_blade_0",
+            "texture.fire_blade_1",
+            "texture.fire_blade_2"
+          ]
+        }
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.statue.ocean": {
+      "geometry": "Geometry.ocean",
+      "materials": [ {"*": "material.glow"} ],
+      "textures": [ "array.sword[Math.mod(Math.floor(query.life_time * 5.0), 3.0)]" ],
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.ocean",
+            "texture.ocean_1",
+            "texture.ocean_2"
+          ]
+        }
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+
+    "controller.render.statue.thunder": {
+      "geometry": "geometry.thunder",
+      "materials": [ { "*": "material.glow" } ],
+      "textures": [ "array.sword[Math.floor(math.sin((q.life_time * 20) * 20.0) * 4.0)]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.thunder_sword",
+            "texture.thunder_sword_1",
+            "texture.thunder_sword_2",
+            "texture.thunder_sword"
+          ]
+        }
+      }
+    },
+    "controller.render.statue.thunder_blade": {
+      "geometry": "geometry.thunder_blade",
+      "materials": [ { "*": "material.add" } ],
+      "textures": [ "array.sword[Math.floor(math.sin((q.life_time * 20) * 8.0) * 8.0)]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.nothing",
+            "texture.nothing",
+            "texture.nothing",
+            "texture.thunder_sword_1",
+            "texture.thunder_sword_2",
+            "texture.thunder_sword_3",
+            "texture.thunder_sword_no_glow",
+            "texture.thunder_sword_3",
+            "texture.thunder_sword_no_glow",
+            "texture.thunder_sword_3",
+            "texture.thunder_sword_no_glow",
+            "texture.nothing",
+            "texture.nothing",
+            "texture.nothing"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:dummy",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/dummy" },
+      "geometry": { "default": "geometry.dummy" },
+      "render_controllers": [ "controller.render.default" ],
+      "scripts": { "animate": [ "align", "setup" ] },
+      "animations": { 
+        "setup": "controller.animation.dummy",
+        "align": "animation.prop.align",
+        "idle": "animation.dummy.idle",
+        "hit1": "animation.dummy.hit1",
+        "hit2": "animation.dummy.hit2",
+        "hit3": "animation.dummy.hit3"
+      },
+      "spawn_egg": {
+        "base_color": "#d3b476",
+        "overlay_color": "#a08c49"
+      }
+    }
+  }
+}

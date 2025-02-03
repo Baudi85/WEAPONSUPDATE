@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.reset_farm": {
+      "animation_length": 10,
+      "loop": true,
+      "timeline": {
+        "1": [
+          "/execute @s ~~~ camerashake add @a[r=25] 0.025 1.75 rotational",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.25 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.25 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.25 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.25 0.25 0.001"
+        ],
+        "1.25": [
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.45 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.45 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.45 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.45 0.25 0.001",
+          "/particle xp:room.farm1 74 111 509",
+          "/particle xp:room.farm1 74 111 533"
+        ],
+        "1.5": [
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.65 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.65 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.65 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.65 0.25 0.001",
+          "/particle xp:room.farm1 74 111 509",
+          "/particle xp:room.farm1 74 111 533"
+        ],
+        "1.75": [
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.75 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.75 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.75 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.75 0.25 0.001",
+          "/particle xp:room.farm1 74 111 509",
+          "/particle xp:room.farm1 74 111 533"
+        ],
+        "2.0": [
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.95 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.95 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.95 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.95 0.25 0.001",
+          "/particle xp:room.farm1 74 111 509",
+          "/particle xp:room.farm1 74 111 533",
+          "/particle xp:room.farm_poof 74 111 509",
+          "/particle xp:room.farm_poof 74 111 533"
+        ],
+        "2.75": [
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 1 0.5 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 1 0.5 0.001",
+          "/execute @a[x=74,y=111,z=509,r=25] ~~~ camerashake add @a[r=25] 0.25 0.1 rotational",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 0.9 0.25 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.netherrack @a[r=25] ~~~ 1 0.5 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ playsound fall.nether_gold_ore @a[r=25] ~~~ 1 0.5 0.001",
+          "/execute @a[x=74,y=111,z=533,r=25] ~~~ camerashake add @a[r=25] 0.25 0.1 rotational",
+          "/particle xp:room.farm_sparks 74 111 509",
+          "/particle xp:room.farm_sparks 74 111 533",
+          "/particle xp:room.farm_poof 74 111 509",
+          "/particle xp:room.farm_poof 74 111 533",
+          "/fill 71 111 511 78 111 507 minecraft:carrots 7",
+          "/fill 71 111 535 78 111 531 minecraft:potatoes 7",
+          "/structure load mystructure:water_buckets 79 111 507",
+          "/structure load mystructure:water_buckets 79 111 531"
+        ],
+        "3": [
+          "/function farm_reset"
+        ]
+      }
+    }
+  }
+}

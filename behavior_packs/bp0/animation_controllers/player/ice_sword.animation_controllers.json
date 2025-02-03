@@ -1,0 +1,167 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ice_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'ice_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s absorption 0 0 true",
+            "/tag @s remove ice_sword_user",
+            "/effect @s strength 0 0 true",
+            "/fog @s remove ice",
+            "@s xp:remove_ice_sword"
+          ]
+        },
+
+        "holding": {
+          "animations": [
+            "ice_sword.blade_audio",
+            "ice_sword.ice_walk"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ice_sword'" },
+            { "charge": "q.is_sneaking && q.get_equipped_item_name == 'ice_sword'" },
+            { "shoot": "q.is_using_item && q.get_equipped_item_name == 'ice_sword' && (q.life_time - v.tick_delay) >= 0.35" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:clear_element",
+            "/effect @s strength 99999 3 true",
+            "/fog @s push xp:ice_sword ice",
+            "/tag @s add ice_sword_user",
+            "/effect @s absorption 99999 1 true",
+            "@s xp:ice_sword"
+           ]
+        },
+
+        "shoot": {
+          "animations": [
+            "ice_sword.blade_audio",
+            "ice_sword.shoot_audio",
+            "ice_sword.ice_walk"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ice_sword'" },
+            { "holding": "q.is_using_item && q.get_equipped_item_name == 'ice_sword' && (q.life_time - v.tick_delay) >= 0.25" },
+            { "holding": "!q.is_using_item && q.get_equipped_item_name == 'ice_sword' && (q.life_time - v.tick_delay) <= 0.25" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.075 0.1 rotational",
+            "@s xp:add_ice_sword_projectile",
+            "/playsound item.trident.riptide_1 @a ~~~ 0.5 1.7 0.0001",
+            "/playsound item.trident.riptide_1 @a ~~~ 0.25 0.5 0.0001"
+           ]
+        },
+
+        "charge": {
+          "animations": [
+            "ice_sword.blade_audio",
+            "ice_sword.ice_walk"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ice_sword'" } ,
+            { "ice_spikes": "q.is_sneaking && q.get_equipped_item_name == 'ice_sword' && v.attack_time > 0.0 && (q.life_time - v.tick_delay) >= 0.65" },
+            { "holding": "!q.is_sneaking && q.get_equipped_item_name == 'ice_sword' && (q.life_time - v.tick_delay) >= 0.05" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.075 0.1 rotational"
+           ]
+        },
+
+        "ice_spikes": {
+          "animations": [
+            "ice_sword.blade_audio",
+            "ice_sword.ice_walk"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ice_sword'" },
+            { "charge": "q.is_sneaking && !v.attack_time > 0.0 && q.get_equipped_item_name == 'ice_sword' && (q.life_time - v.tick_delay) >= 1.5" },
+            { "holding": "!q.is_sneaking && q.get_equipped_item_name == 'ice_sword'" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.25 0.1 rotational",
+            "/camerashake add @s 0.075 0.5 rotational",
+            "/particle xp:ice.explode ~~0.5~",
+            "/particle xp:ice_impact ^^0.5^1",
+            "/playsound respawn_anchor.deplete @a ~~~ 0.9 1.25 0.001",
+            "/playsound mob.irongolem.crack @a ~~~ 0.75 1.25 0.001",
+            "/playsound mob.irongolem.crack @a ~~~ 0.5 0.5 0.001",
+            "/summon xp:ice_sword.attack ~~~",
+            "/summon xp:ice_sword.target ~~1~"
+           ]
+        }
+      }
+    },
+    
+    "controller.animation.ice_cube.impact": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [ 
+            "/playsound ice_cube.impact @a ~~~ 0.15 0.75 0.005",
+            "/playsound ice_cube.impact @a ~~~ 0.15 6.75 0.005",
+            "/camerashake add @a[r=4] 0.1 0.05 rotational",
+            "/particle xp:ice_cube.impact ~~0.1~",
+            "/particle xp:ice_cube.impact_smoke ~~0.1~"
+          ]
+        }
+      }
+    },
+    
+    "controller.animation.ice_cube.impact_water": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [ 
+            "/fill ~~~ ~~~ frosted_ice 0 replace water",
+            "/playsound ice_cube.impact @a ~~~ 0.15 0.75 0.005",
+            "/playsound ice_cube.impact @a ~~~ 0.15 6.75 0.005",
+            "/camerashake add @a[r=4] 0.1 0.05 rotational",
+            "/particle xp:ice_cube.impact ~~0.1~",
+            "/particle xp:ice_cube.impact_smoke ~~0.1~",
+            "/event entity @s xp:despawn"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.ice_spikes": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "transitions": [ 
+            { "explode": "q.life_time > 1.0" }
+          ],
+          "on_entry": [ 
+            "/playsound ice_cube.impact @a ~~~ 0.045 0.65 0.005",
+            "/playsound ice_cube.impact @a ~~~ 0.06 2.15 0.005",
+            "/playsound hit.soul_sand @a ~~~ 0.45 0.35 0.005",
+            "/playsound hit.soul_sand @a ~~~ 0.5 1.0 0.005",
+            "/particle xp:ice_spikes.impact ~~-0.25~",
+            "/particle xp:ice_spike.uproot ~~~"
+           ],
+          "on_exit": [ 
+            "/playsound ice_cube.impact @a ~~~ 0.015 0.75 0.005",
+            "/playsound ice_cube.impact @a ~~~ 0.015 1.75 0.005",
+            "/particle xp:ice_spike.poof ~~0.25~",
+            "/particle xp:ice_spike.death ~~-0.25~"
+          ]
+        },
+        "explode": {
+          "on_entry": [ 
+            "/event entity @e[type=xp:ice_sword.attack,r=10] xp:despawn",
+            "/event entity @e[type=xp:ice_sword.target,r=10] xp:despawn",
+            "@s xp:despawn"
+           ]
+        }
+      }
+    }
+  }
+}

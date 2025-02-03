@@ -1,0 +1,162 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ocean_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'ocean_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s strength 0 0 true",
+            "/effect @s water_breathing 0 0 true",
+            "/tag @s remove ocean_sword_user",
+            "/effect @s conduit_power 0 0 true",
+            "@s xp:clear_element",
+            "@s xp:remove_ocean_sword"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "water_holding": "q.get_equipped_item_name == 'ocean_sword' && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "basic_attack": "q.get_equipped_item_name == 'ocean_sword' && v.attack_time > 0.0 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'ocean_sword' && v.attack_time > 0.0f && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "charge": "q.get_equipped_item_name == 'ocean_sword' && q.is_using_item && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:clear_element",
+            "/tag @s add ocean_sword_user",
+            "/effect @s strength 99999 4 true",
+            "/effect @s water_breathing 99999 10 true",
+            "/effect @s conduit_power 0 0 true"
+           ]
+        },
+
+        "basic_attack": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "holding": "!v.attack_time > 0.0 && q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 0.25" } 
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:ocean_sword.glint"
+           ]
+        },
+
+        "charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "water_holding": "!q.is_using_item && q.get_equipped_item_name == 'ocean_sword' &&  (q.life_time - v.tick_delay) <= 0.749 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'ocean_sword' &&  (q.life_time - v.tick_delay) >= 0.75 && q.is_using_item && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "attack": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 0.75 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.025 0.75 rotational"
+           ],
+           "on_exit": [ 
+             "v.tick_delay = q.life_time;",
+             "/camerashake stop @s"
+            ]
+        },
+
+        "attack": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "holding": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 1 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "water_holding": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 1 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:ocean_sword.glint",
+            "/fill ~1~2~1 ~-1~-2~-1 air 0 replace fire", 
+            "/playsound mob.wither.shoot @a ~~~ 0.25 1.25 0.0001",
+            "/playsound mob.wither.shoot @a ~~~ 0.25 0.5 0.0001",
+            "/playsound meteor.splash @a ~~~ 0.15 0.65 0.0001",
+            "/playsound meteor.splash @a ~~~ 0.05 0.35 0.0001",
+            "/effect @s water_breathing 99999 10 true",
+            "/camerashake add @s 1 0.25 rotational",
+            "/effect @s conduit_power 0 0 true",
+            "/summon xp:ocean_sword.attack.ripple ~~~"
+           ]
+        },
+
+        "water_holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "water_shoot": "(q.life_time - v.tick_delay) >= 0.5 && v.attack_time > 0.0" },
+            { "holding": "q.get_equipped_item_name == 'ocean_sword' && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 0.75 && q.is_using_item && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/particle xp:ocean_sword.power_puff ~~0.75~",
+            "/playsound beacon.power @a ~~~ 0.25 0.5 0.0001",
+            "/playsound beacon.power @a ~~~ 0.25 1.25 0.0001",
+            "/playsound entity.zombie.converted_to_drowned @a ~~~ 0.25 0.85 0.0001",
+            "/playsound entity.zombie.converted_to_drowned @a ~~~ 0.25 0.25 0.0001",
+            "/tag @s add ocean_sword_user",
+            "/camerashake add @s 0.075 0.15 rotational",
+            "/effect @s conduit_power 99999 2 true"
+           ]
+        },
+
+        "rain_boost": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "water_shoot": "v.attack_time > 0.0" },
+            { "holding": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 0.75 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "water_holding": "q.get_equipped_item_name == 'ocean_sword' && (q.life_time - v.tick_delay) >= 0.75 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/camerashake add @s 0.05 2 rotational",
+            "/effect @s levitation 1 10 true",
+            "/playsound boost.in_air @s",
+            "/summon xp:ocean_sword.boost ^^^-0.5"
+           ],
+           "on_exit": [ 
+             "/effect @s levitation 0 0 true",
+             "/camerashake stop @s",
+             "/stopsound @s boost.in_air"
+            ]
+        },
+
+        "water_shoot":{
+          "transitions": [
+            { "default": "q.get_equipped_item_name != 'ocean_sword'" },
+            { "holding": "(q.life_time - v.tick_delay) >= 0.25 && v.attack_time == 0 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "water_holding": "(q.life_time - v.tick_delay) >= 0.25 && v.attack_time == 0 && (q.is_using_item || q.is_in_water_or_rain)" }
+          ],
+            "on_entry": [
+              "v.tick_delay = q.life_time;"
+            ],
+            "on_exit": [ 
+              "/playsound item.trident.riptide_2 @p[r=15] ~~~ 0.75 1.20 0.0001",
+              "/playsound mob.wither.shoot @a ~~~ 0.15 1.25 0.0001",
+              "/playsound mob.wither.shoot @a ~~~ 0.15 0.65 0.0001",
+              "@s xp:water_beam"
+             ]
+        }
+      }
+    },
+
+    "controller.animation.ocean_sword.ripple": {
+      "initial_state": "alive",
+      "states": {
+        "alive": {
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/particle xp:ocean_sword.ripple ~~-0.5~",
+            "/particle xp:ocean_sword.sprout ~~0.15~",
+            "/particle xp:ocean_sword.ripple_smoke ~~0.15~"
+           ]
+        }
+      }
+    }
+  }
+}

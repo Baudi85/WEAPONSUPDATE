@@ -1,0 +1,87 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.poison_sword_shoot":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"poison_projectile": "q.get_equipped_item_name == 'poison_sword' && v.attack_time > 0.0"}
+                    ]
+                },
+                "poison_projectile":{
+                    "on_entry": [
+                        "/playsound item.trident.riptide_2 @p[r=15] ~~~ 1.0 1.20 1.0",
+                        "@s xp:poison_projectile"
+                    ],
+                    "transitions": [
+                        {"default": "!v.attack_time > 0.0"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.poison_sword_use": {
+            "initial_state": "default",
+            "states": {
+              "default": {
+                "on_exit": ["/camerashake stop @s"],
+                "transitions": [
+                  { "ye": "q.get_equipped_item_name == 'poison_sword' && q.item_remaining_use_duration"}
+                ]
+              },
+              "ye":{
+                "on_entry": ["v.tick_delay = q.life_time;"],
+                "animations": ["sp2"],
+                "transitions": [
+                  { "finish": "!q.item_remaining_use_duration"}
+                ]
+              },
+              "finish": {
+                "animations": ["shockwave_p"],
+                "transitions": [ 
+                  { "default": "q.all_animations_finished" }
+                ]
+              }
+            }
+          },
+        "controller.animation.poison_sword":{
+            "initial_state": "holding",
+            "states": {
+                "holding":{
+                    "on_entry": [
+                        "/tag @s remove poison_sword"
+                    ],
+                    "transitions": [
+                        {"poison_sword": "q.get_equipped_item_name == 'poison_sword'"}
+                    ]
+                },
+                "poison_sword":{
+                    "on_entry": [
+                        "/tag @s add poison_sword"
+                    ],
+                    "transitions": [
+                        {"holding": "q.get_equipped_item_name != 'poison_sword'"}
+                    ]
+                }
+            }
+        },
+        "controller.animation.poison":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"poison_projectile": "(1.0)"}
+                    ]
+                },
+                "poison_projectile":{
+                    "on_entry": [
+                        "/execute @r[type=xp:poison_projectile] ~~~ effect @e[tag=!poison_sword,r=5] poison 5 5 true"
+                    ],
+                    "transitions": [
+                        {"default": "(1.0)"}
+                    ]
+                }
+            }
+        }
+    }
+}

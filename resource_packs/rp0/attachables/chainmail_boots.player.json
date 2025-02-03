@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "minecraft:chainmail_boots.player",
+      "item": { "minecraft:chainmail_boots": "query.owner_identifier == 'minecraft:player'" },
+      "materials": {
+        "glow": "spider",
+        "default": "armor",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "armor_0": "textures/armor/wither_storm_armor/0",
+        "armor_1": "textures/armor/wither_storm_armor/1",
+        "armor_2": "textures/armor/wither_storm_armor/2",
+        "armor_3": "textures/armor/wither_storm_armor/3",
+        "armor_4": "textures/armor/wither_storm_armor/4",
+        "enchanted": "textures/armor/wither_storm_armor/enchanted"
+      },
+      "geometry": {
+        "default": "geometry.shaday_armor_boots"
+      },
+      "scripts": {
+        "parent_setup": "variable.boot_layer_visible = 0.0;",
+        "animate": [
+          "offset"
+        ]
+      },
+      "animations": {
+        "offset": "animation.armor.boots.offset"
+      },
+      "render_controllers": [ "controller.render.wither_storm_armor" ]
+    }
+  }
+}

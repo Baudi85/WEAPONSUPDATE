@@ -1,0 +1,68 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.podium": {
+      "initial_state": "initialize",
+      "states": {
+        "initialize": {
+          "transitions": [ { "on_detect": "q.is_saddled" } ]
+        },
+
+        "on_detect": {
+          "transitions": [
+            { "ice_sword": "q.skin_id == 0" },
+            { "darkness_sword": "q.skin_id == 1" },
+            { "ender_sword": "q.skin_id == 2" },
+            { "poison_sword": "q.skin_id == 3" },
+            { "water_sword": "q.skin_id == 4" },
+            { "spike_sword": "q.skin_id == 5" },
+            { "sonic_sword": "q.skin_id == 6" },
+            { "storm_sword": "q.skin_id == 7" },
+            { "jungle_sword": "q.skin_id == 8" },
+            { "dirt_sword": "q.skin_id == 9" },
+            { "magma_sword": "q.skin_id == 10" },
+            { "light_sword": "q.skin_id == 11" },
+            { "wind_sword": "q.skin_id == 12" },
+            { "earth_sword": "q.skin_id == 13" },
+            { "tnt_sword": "q.skin_id == 14" },
+            { "nether_sword": "q.skin_id == 15" },
+            { "elemental_sword": "q.skin_id == 16" },
+            { "fire_sword": "q.skin_id == 17" },
+            { "ocean_sword": "q.skin_id == 18" },
+            { "thunder_sword": "q.skin_id == 19" },
+            { "wither_sword": "q.skin_id == 20" }
+          ]
+        },
+        "ice_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_ice_sword" ] },
+        "darkness_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_darkness_sword" ] },
+        "ender_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_ender_sword" ] },
+        "poison_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_poison_sword" ] },
+        "water_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_water_sword" ] },
+        "spike_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_spike_sword" ] },
+        "sonic_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_sonic_sword" ] },
+        "storm_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_storm_sword" ] },
+        "jungle_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_jungle_sword" ] },
+        "dirt_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_dirt_sword" ] },
+        "magma_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_magma_sword" ] },
+        "light_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_light_sword" ] },
+        "wind_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_wind_sword" ] },
+        "earth_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_earth_sword" ] },
+        "tnt_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_tnt_sword" ] },
+        "nether_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_nether_sword" ] },
+        "elemental_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_elemental_sword" ] },
+        "fire_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_fire_sword" ] },
+        "ocean_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_ocean_sword" ] },
+        "thunder_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_thunder_sword" ] },
+        "wither_sword": { "transitions": [ { "halt_runtime": "(q.life_time - v.t) > 0.1" } ], "on_entry": [ "v.t = q.life_time;", "/dialogue change @s podium_info_wither_sword" ] },
+
+        "halt_runtime": {
+          "transitions": [ { "initialize": "(q.life_time - v.t) > 1.0 && !q.out_of_control" } ],
+          "on_entry": [
+            "v.t = q.life_time;",
+            "@s xp:halt_runtime"
+          ]
+        }
+      }
+    }
+  }
+}

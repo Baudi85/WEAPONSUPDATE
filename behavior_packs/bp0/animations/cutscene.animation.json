@@ -1,0 +1,89 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.scene_0": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~0.015~~ facing 32 115 469" ]
+      }
+    },
+    "animation.scene_0.effects": {
+      "animation_length": 3,
+      "loop": false,
+      "timeline": {
+        "0.0": [ "/particle xp:room.weapons_center_swirl 32 104 469" ],
+        "1.25": [ "/playsound ambient.weather.thunder @s ~~~ 0.75 1 1" ],
+        "2.0": [ "/playsound ambient.weather.thunder @s ~~~ 0.5 0.85 1" ],
+        "2.15": [ "/playsound ambient.weather.thunder @s ~~~ 0.25 0.5 1" ]
+      }
+    },
+    "animation.scene_1": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~0.015~0.015~0.015 facing 32 113 469" ]
+      }
+    },
+    "animation.scene_2": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~0.015~-0.0035~ facing 32 115 469" ]
+      }
+    },
+    "animation.scene_3": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~0.015~-0.0075~-0.015 facing 32 108 469" ]
+      }
+    },
+
+    //Armory scenes
+    "animation.scene_1a": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~~0.0025~-0.025 facing 32 110.5 344" ]
+      }
+    },
+    "animation.scene_2a": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~-0.015~~-0.015 facing 44 110 332" ]
+      }
+    },
+    "animation.scene_3a": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~-0.015~-0.0075~0.05 facing 32 97 397" ]
+      }
+    },
+
+    //Resources scenes
+    "animation.scene_1r": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~0.015~-0.005~0.025 facing 69 112 509" ]
+      }
+    },
+    "animation.scene_2r": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~~0.0025~0.035 facing 32 111 565" ]
+      }
+    },
+    "animation.scene_3r": {
+      "animation_length": 0.00001,
+      "loop": true,
+      "timeline": {
+        "0.0": [ "/execute @s ~~~ tp @s ~-0.015~-0.005~0.015  facing -2 111 511" ]
+      }
+    }
+  }
+}

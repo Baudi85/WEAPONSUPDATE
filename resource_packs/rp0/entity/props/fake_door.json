@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:fake_door",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/door_rooted" },
+      "geometry": { "default": "geometry.door_rooted" },
+      "render_controllers": [ "controller.render.default" ],
+      "scripts": { "animate": [ "align", "setup" ] },
+      "animations": { 
+        "align": "animation.prop.align",
+        "open": "animation.prop.open",
+        "close_hold": "animation.prop.close_hold",
+        "close": "animation.prop.close",
+
+        "setup": "controller.animation.door_setup"
+      }
+    }
+  }
+}

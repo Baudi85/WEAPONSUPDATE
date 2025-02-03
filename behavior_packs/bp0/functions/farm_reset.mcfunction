@@ -1,0 +1,1 @@
+execute @s ~~~ tellraw @a[r=50] {"rawtext":[{"text":"- §6Farms §fReplenished!"}]}

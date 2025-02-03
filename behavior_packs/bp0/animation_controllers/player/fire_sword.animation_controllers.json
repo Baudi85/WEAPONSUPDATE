@@ -1,0 +1,116 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.fire_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'fire_sword'" }
+          ],
+          "on_entry": [ 
+            "/tag @s remove fire_sword",
+            "/effect @s fire_resistance 0 0 true"
+          ]
+        },
+
+        "holding": {
+          "animations": [
+            "fire_sword.audio",
+            "fire_sword.particles"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'fire_sword'" },
+            { "charge": "q.get_equipped_item_name == 'fire_sword' && q.is_using_item" },
+            { "attack": "q.get_equipped_item_name == 'fire_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "@s xp:clear_element",
+            "/tag @s add fire_sword",
+            "/effect @s fire_resistance 99999 250 true"
+           ]
+        },
+
+        "charge": {
+          "animations": [
+            "fire_sword.audio",
+            "fire_sword.particles"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'fire_sword'" },
+            { "boost": "q.get_equipped_item_name == 'fire_sword' && !q.is_using_item" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "boost": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'fire_sword'" },
+            { "holding": "q.get_equipped_item_name == 'fire_sword' && (q.life_time - v.tick_delay) >= 0.75 && q.is_on_ground" },
+            { "attack": "q.get_equipped_item_name == 'fire_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;", 
+            "/particle xp:fire_sword.impact_burst ~~~",
+            "/particle xp:fire_sword.black_smoke.boost ^^0.25^",
+            "/particle xp:fire_sword.black_smoke.boost1 ^^0.25^",
+            "/playsound mob.ghast.fireball @a ~~~ 2 1 0.01",
+            "/camerashake add @s 0.075 5 rotational",
+            "/playsound boost.in_air @s",
+            "/summon xp:fire_sword_boost ^^-0.25^-0.5"
+           ],
+           "on_exit": [ 
+             "/camerashake stop @s",
+             "/stopsound @s boost.in_air"
+          ]
+        },
+
+        "attack": {
+          "animations": [
+            "fire_sword.attack",
+            "fire_sword.audio",
+            "fire_sword.particles"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'fire_sword'" },
+            { "holding": "q.get_equipped_item_name == 'fire_sword' && v.attack_time <= 0.1f && (q.life_time - v.tick_delay) >= 0.75" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;"
+           ]
+        }
+      }
+    },
+    "controller.animation.fire_sword.projectile": {
+      "initial_state": "in_air",
+      "states": {
+        "in_air": {
+          "transitions": [ 
+            { "hit": "q.is_on_ground" },
+            { "hit_water": "q.variant == 1" }
+          ]
+        },
+        "hit": {
+          "on_entry": [ 
+            "/particle xp:fire_sword.impact_burst ~~0.5~",
+            "/particle xp:nether_sword.black_smoke ~~~",
+            "/particle xp:nether_sword.black_smoke ~~0.5~",
+            "/fill ~1~2~1 ~-1~-2~-1 fire 0 replace air",
+            "/kill @s"
+           ]
+        },
+
+        "hit_water": {
+          "on_entry": [ 
+            "/particle xp:nether_sword.black_smoke ~~~",
+            "/particle xp:nether_sword.black_smoke ~~0.5~",
+            "@s xp:despawn"
+           ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.darkness_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'darkness_sword'" }
+          ],
+          "on_entry": [ 
+            "/tag @s remove darkness_sword",
+            "/effect @s strength 0 0 true",
+            "/effect @s invisibility 0 0 true",
+            "/effect @s jump_boost 0 0 true",
+            "/effect @s speed 0 0 true"
+          ]
+        },
+        "holding": {
+          "animations": ["darkness_emitter"],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'darkness_sword' && (q.life_time - v.tick_delay) >= 0.75" },
+            { "effect_to_mob_in_range": "v.attack_time > 0.0f && q.get_equipped_item_name == 'darkness_sword' && (q.life_time - v.tick_delay) >= 0.75" },
+            { "start_click": "q.is_using_item && q.get_equipped_item_name == 'darkness_sword' && (q.life_time - v.tick_delay) >= 0.75" }
+          ],
+          "on_entry": [ 
+            "v.tick_delay = q.life_time;",
+            "/tag @s add darkness_sword",
+            "/effect @s strength 99999 10 true"
+           ]
+        },
+        "effect_to_mob_in_range":{
+          "transitions": [
+            {"default": "q.all_animations_finished"}
+          ],
+          "on_entry": ["/function in_range"]
+        },
+        "start_click": {
+          "transitions": [
+            {"dummy_state": "q.is_using_item"}
+          ],
+          "on_entry": [
+            "/particle xp:dark_em1 ~~1~",
+            "/particle xp:dark_em ~~1~",
+            "/playsound respawn_anchor.charge @s",
+            "/effect @s invisibility 99999 4 true",
+            "/effect @s jump_boost 10000 4 true",
+            "/effect @s speed 10000 4 true"
+          ]
+        },
+        "dummy_state":{
+          "on_exit": [
+            "/playsound random.fizz @s",
+            "/particle minecraft:egg_destroy_emitter ~~~"
+          ],
+          "transitions": [
+            {"default": "q.is_using_item"},
+            {"default": "q.get_equipped_item_name != 'darkness_sword'"}
+          ]
+        },
+        "turn_invis":{
+          "transitions": [
+            {"default": "q.get_equipped_item_name != 'darkness_sword'"}
+          ],
+          "on_exit": [
+            "/playsound random.fizz @s",
+            "/particle minecraft:egg_destroy_emitter ~~~"
+          ],
+          "on_entry": [
+            "/particle xp:dark_em1 ~~~",
+            "/particle xp:dark_em ~~~",
+            "/playsound respawn_anchor.charge @s",
+            "/effect @s invisibility 99999 4 true",
+            "/effect @s jump_boost 10000 4 true",
+            "/effect @s speed 10000 4 true"
+          ]
+        }
+      }
+    }
+  }
+}

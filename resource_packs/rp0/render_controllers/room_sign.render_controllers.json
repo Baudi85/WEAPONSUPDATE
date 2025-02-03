@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.room_sign": {
+      "arrays": {
+        "textures": {
+          "Array.textures": [
+            "Texture.armory",
+            "Texture.resources",
+            "Texture.wilderness"
+          ]
+        }
+      },
+      "geometry": "geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.textures[q.skin_id]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.room_sign.text": {
+      "arrays": {
+        "geometries": {
+          "Array.geo": [
+            "Geometry.armory_text",
+            "Geometry.resources_text",
+            "Geometry.wilderness_text"
+          ]
+        },
+        "textures": {
+          "Array.textures": [
+            "Texture.armory",
+            "Texture.resources",
+            "Texture.wilderness"
+          ]
+        }
+      },
+      "geometry": "Array.geo[q.skin_id]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.textures[q.skin_id]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    }
+  }
+}

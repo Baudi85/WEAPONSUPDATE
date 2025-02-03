@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:room_sign",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "armory": "textures/entity/sign/armory",
+        "resources": "textures/entity/sign/resources",
+        "wilderness": "textures/entity/sign/wilderness"
+       },
+      "geometry": {
+        "default": "geometry.room_sign",
+        "armory_text": "geometry.room_sign.armory_text",
+        "resources_text": "geometry.room_sign.resources_text",
+        "wilderness_text": "geometry.room_sign.wilderness_text"
+      },
+      "scripts": {
+        "scale": "1.25",
+        "animate": [ "bob", { "text_look": "q.skin_id != 2" }, { "text_look2": "q.skin_id == 2" } ]
+      },
+      "animations": { 
+        "text_look": "animation.text_look",
+        "text_look2": "animation.text_look2",
+        "bob": "animation.enter_sign.bob"
+      },
+      "spawn_egg": {
+        "base_color": "#616161",
+        "overlay_color": "#8f8f8f"
+      },
+      "render_controllers": [
+        "controller.render.room_sign",
+        { "controller.render.room_sign.text": "q.variant == 1" }
+      ]
+    }
+  }
+}

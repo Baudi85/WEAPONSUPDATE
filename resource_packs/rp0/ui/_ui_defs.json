@@ -1,0 +1,9 @@
+{
+  /* (c) XP Games | UI developed by r4isen1920 */
+  "ui_defs": [
+    "ui/xp/achievement_common.json",
+    "ui/xp/achievement_list.json",
+    "ui/xp/cinematic_effects.json",
+    "ui/xp/podium_screen.json"
+  ]
+}

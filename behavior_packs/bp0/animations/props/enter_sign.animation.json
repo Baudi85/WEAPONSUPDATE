@@ -1,0 +1,330 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.enter_sign.sfx_vfx": {
+            "animation_length": 2.75,
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound conduit.ambient @a[r=20] ~~~ 0.85 1 0.01",
+                    "/playsound conduit.ambient @a[r=20] ~~~ 0.65 0.75 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "0.25": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "0.5": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "0.75": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "1": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "1.25": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "1.5": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "1.75": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "2": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "2.25": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ],
+                "2.5": [
+                    "/camerashake add @a[r=3] 0.0025 0.25 rotational",
+                    "/camerashake add @a[r=6] 0.0025 0.25 rotational",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.25 0.15 0.01",
+                    "/playsound dig.powder_snow @a[r=20] ~~~ 0.1 0.25 0.01",
+                    "/playsound respawn_anchor.ambient @a[r=20] ~~~ 0.1 0.5 0.01",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.5 0.25 0.1",
+                    "/playsound particle.soul_escape @a[r=20] ~~~ 0.65 1 0.1",
+                    "/particle xp:enter_sign ~~-0.5~",
+                    "/particle xp:spawn_env ~~~",
+                    "/particle xp:spawn_portal ~~-0.5~",
+                    "/particle xp:portal_center ~~-0.5~"
+                ]
+            }
+        },
+        
+        "animation.enter_sign.map_start": {
+            "animation_length": 15,
+            "loop": false,
+            "timeline": {
+                "0.0": [
+                    "/music stop 1",
+                    "/playsound conduit.attack @a ~~~ 1 0.65 1",
+                    "/playsound power.on.sculk_sensor @a ~~~ 0.25 0.15 1",
+                    "/playsound power.on.sculk_sensor @a ~~~ 0.5 0.35 1",
+                    "/playsound power.on.sculk_sensor @a ~~~ 0.75 1 1",
+                    "/tickingarea add circle -23 110 469 3 ruin_entrance true",
+                    "/weather clear",
+                    "/playsound respawn_anchor.ambient @a ~~~ 0.5 0.5 0.01",
+                    "/playsound particle.soul_escape @a ~~~ 0.75 0.25 0.1",
+                    "/playsound particle.soul_escape @a ~~~ 1 1 0.1",
+                    "/execute @a[r=25] ~~~ event entity @s xp:particle_rider",
+                    "/fog @a remove spawn",
+                    "/fog @a[r=25] push xp:tp tp_swirl",
+                    "/execute @a[r=25] ~~~ particle xp:enter_sign ~~0.5~"
+                ],
+                "0.5": [
+                    "/playsound conduit.attack @a ~~~ 1 1.65 1",
+                    "/playsound respawn_anchor.ambient @a ~~~ 1 1 0.01",
+                    "/effect @a[r=20] nausea 16 20 true"
+                ],
+                "2.5": [
+                    "/playsound conduit.attack @a ~~~ 1 0.65 1",
+                    "/fog @a[r=25] remove spawn"
+                ],
+                "3": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.25 0.5 1"
+                ],
+                "4": [
+                    "/effect @a[r=25] levitation 4 0 true"
+                ],
+                "7.5": [
+                    "/music stop 1",
+                    "/playsound tp1 @a[r=25]",
+                    "/playsound tp1 @a[r=25] ~~~ 0.75 1.75 1",
+                    "/playsound tp1 @a[r=25] ~~~ 0.75 0.75 1",
+                    "/summon xp:particle_rider 2 7 -7",
+                    "/playsound ambient.weather.thunder @a ~~~ 0.75 1.25 1",
+                    "/effect @a[r=25] invisibility 8 255 true",
+                    "/execute @a[r=25] ~~~ tp 2 7 -7",
+                    "/playsound tp.shriek @a ~~~ 0.25 0.25 1"
+                ],
+                "8.0": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.85 0.5 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "8.5": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.0": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.75 1.25 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.1": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.25 0.5 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.2": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.3": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.4": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.85 0.5 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.5": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.6": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.7": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.75 1.25 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/playsound tp.shriek @a[r=25] ~~~ 1 0.5 1",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.8": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.75 0.5 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "9.9": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "10": [
+                    "/music stop 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7",
+                    "/playsound tp.shriek @a[r=25] ~~~ 0.25 0.5 1"
+                ],
+                "12": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7",
+                    "/playsound tp.shriek @a ~~~ 0.25 0.5 1"
+                ],
+                "12.5": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7",
+                    "/playsound tp.shriek @a ~~~ 0.25 0.75 1"
+                ],
+                "13": [
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "13.5": [
+                    "/playsound ambient.weather.thunder @a ~~~ 0.85 0.5 1",
+                    "/playsound ambient.weather.thunder @a ~~~ 1 1 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7"
+                ],
+                "14": [
+                    "/music stop 1",
+                    "/tag @a[r=25] add just_entered",
+                    "/tag @a[r=25] add armory",
+                    "/tag @a[r=25] add resources",
+                    "/playsound ambient.weather.thunder @a ~~~ 0.85 0.75 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7",
+                    "/particle xp:tp_particles -37 111 469",
+                    "/particle xp:tp_swirl -37 111 469",
+                    "/playsound tp.shriek @a[r=25] ~~~ 0.25 0.5 1",
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ],
+                "14.15": [
+                    "/setblock 2 1 -8 redstone_block",
+                    "/playsound tp1 @a[r=25]",
+                    "/playsound tp1 @a[r=25] ~~~ 0.75 1.75 1",
+                    "/playsound tp1 @a[r=25] ~~~ 0.75 0.75 1",
+                    "/particle xp:tp_particles 2 7 -7",
+                    "/particle xp:tp_swirl 2 7 -7",
+                    "/particle xp:tp_particles -37 111 469",
+                    "/particle xp:tp_swirl -37 111 469",
+                    "/playsound respawn_anchor.ambient @a ~~~ 1 0.5 0.01",
+                    "/playsound respawn_anchor.ambient @a ~~~ 1 1 0.01",
+                    "/execute @a[r=30] ~~~ tp -37 110 469 facing -30 109.5 469",
+                    "/tickingarea add ~~~ ~~~ enter_sign",
+                    "/particle xp:tp_particles ~~-0.5~",
+                    "/particle xp:tp_swirl ~~-0.5~"
+                ],
+                "14.45": [
+                    "/fog @a remove tp_swirl",
+                    "/fog @a[x=-36,y=108,z=469, r=15] push xp:spawn_fade fade",
+                    "/effect @a[x=-36,y=108,z=469, r=25] saturation 5000 25 true",
+                    "/spawnpoint @a[x=-36,y=108,z=469, r=15] -37 110 469",
+                    "/playsound ambient.weather.thunder @a ~~~ 1 1 1",
+                    "/playsound ambient.weather.thunder @a ~~~ 0.85 0.5 1"
+                ],
+                "14.475": [
+                    "/gamerule randomtickspeed 1",
+                    "/music stop 1",
+                    "/fog @a remove tp_swirl",
+                    "/fog @a remove tp_swirl"
+                ]
+            }
+        }
+    }
+}

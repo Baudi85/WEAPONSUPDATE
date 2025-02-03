@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+      "description": {
+        "identifier": "xp:ender_ingot",
+        "category": "Equipment"
+      },
+      "components": {
+        "minecraft:icon": "ender_ingot",
+        "minecraft:render_offsets": "tools"
+      }
+    }
+  }

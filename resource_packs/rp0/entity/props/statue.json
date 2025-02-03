@@ -1,0 +1,123 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:statue",
+      "materials": { 
+        "add": "entity_beam_additive",
+        "default": "entity_alphatest",
+        "transparent": "slime_outer",
+        "glow": "spider",
+        "blend": "entity_alphablend"
+      },
+      "textures": { 
+        "default": "textures/entity/statue",
+        "darkness": "textures/armor_statue/armor_statue_darkness_sword",
+        "dirt": "textures/armor_statue/armor_statue_dirt_sword",
+        "earth": "textures/armor_statue/armor_statue_earth_sword",
+        "elemental": "textures/armor_statue/armor_statue_elemental_sword",
+        "ender": "textures/armor_statue/armor_statue_ender_sword",
+        "fire": "textures/armor_statue/fire/fire",
+        "ice": "textures/armor_statue/armor_statue_ice_sword",
+        "jungle": "textures/armor_statue/armor_statue_jungle_sword",
+        "light": "textures/armor_statue/armor_statue_light_sword",
+        "magma": "textures/armor_statue/magma/magma_sword_0",
+        "nether": "textures/armor_statue/armor_statue_nether_sword",
+        "ocean": "textures/armor_statue/ocean/ocean_sword_0",
+        "poison": "textures/armor_statue/armor_statue_poison_sword",
+        "sonic": "textures/armor_statue/armor_statue_sonic_sword",
+        "spike": "textures/armor_statue/armor_statue_spike_sword",
+        "storm": "textures/armor_statue/armor_statue_storm_sword",
+        "thunder": "textures/armor_statue/thunder/thunder_sword",
+        "tnt": "textures/armor_statue/armor_statue_tnt_sword",
+        "water": "textures/armor_statue/armor_statue_water_sword",
+        "wind": "textures/armor_statue/armor_statue_wind_sword",
+        "wither": "textures/armor_statue/armor_statue_wither_storm_sword", 
+
+        "magma_1": "textures/armor_statue/magma/magma_sword_1",
+        "magma_2": "textures/armor_statue/magma/magma_sword_2",
+        "magma_3": "textures/armor_statue/magma/magma_sword_3",
+        "magma_4": "textures/armor_statue/magma/magma_sword_4",
+
+        "fire_blade_0": "textures/armor_statue/fire/fire_0",
+        "fire_blade_1": "textures/armor_statue/fire/fire_1",
+        "fire_blade_2": "textures/armor_statue/fire/fire_2",
+        
+        "ocean_1": "textures/armor_statue/ocean/ocean_sword_1",
+        "ocean_2": "textures/armor_statue/ocean/ocean_sword_2",
+
+        "thunder_sword": "textures/armor_statue/thunder/thunder_sword",
+        "thunder_sword_1": "textures/armor_statue/thunder/thunder_sword_1",
+        "thunder_sword_2": "textures/armor_statue/thunder/thunder_sword_2",
+        "thunder_sword_3": "textures/armor_statue/thunder/thunder_sword_3",
+        "thunder_sword_no_glow": "textures/armor_statue/thunder/thunder_sword_no_glow",
+
+        "nothing": "textures/sword/thunder_sword/nothing"
+      },
+      "geometry": { 
+        "default": "geometry.statue",
+        "darkness": "geometry.armor_statue.darkness_sword",
+        "dirt": "geometry.armor_statue.dirt_sword",
+        "earth": "geometry.armor_statue.earth_sword",
+        "elemental": "geometry.armor_statue.elemental_sword",
+        "ender": "geometry.armor_statue.ender_sword",
+        "fire": "geometry.armor_statue.fire_sword",
+        "ice": "geometry.armor_statue.ice_sword",
+        "jungle": "geometry.armor_statue.jungle_sword",
+        "light": "geometry.armor_statue.light_sword",
+        "magma": "geometry.armor_statue.magma_sword",
+        "nether": "geometry.armor_statue.nether_sword",
+        "ocean": "geometry.armor_statue.ocean_sword",
+        "poison": "geometry.armor_statue.poison_sword",
+        "sonic": "geometry.armor_statue.sonic_sword",
+        "spike": "geometry.armor_statue.spike_sword",
+        "storm": "geometry.armor_statue.storm_sword",
+        "thunder": "geometry.armor_statue.thunder_sword",
+        "tnt": "geometry.armor_statue.tnt_sword",
+        "water": "geometry.armor_statue.water_sword",
+        "wind": "geometry.armor_statue.wind_sword",
+        "wither": "geometry.armor_statue.wither_storm_sword",
+
+        "fire_blade": "geometry.armor_statue.fire_blade",
+        "thunder_blade": "geometry.armor_statue.thunder_blade"
+      },
+      "render_controllers": [ 
+        { "controller.render.statue": "(q.skin_id != 12 || q.skin_id != 17)" },
+        { "controller.render.statue.ice": "q.skin_id == 7" },
+        { "controller.render.statue.magma": "q.skin_id == 10" },
+        { "controller.render.statue.fire": "q.skin_id == 6" },
+        { "controller.render.statue.ocean": "q.skin_id == 12" },
+        { "controller.render.statue.thunder": "q.skin_id == 17" },
+        { "controller.render.statue.thunder_blade": "q.skin_id == 17" }    
+      ],
+      "scripts": { 
+        "scale": "1.75",
+        "animate": [ 
+          "align", 
+          "look", 
+          {"pose": "q.skin_id >= 1" }, 
+          {"thunder_blade": "q.skin_id == 17" }, 
+          {"fire_blade": "q.skin_id == 6" }, 
+          {"magma_blade": "q.skin_id == 10" }
+        ]
+      },
+      "animations": { 
+        "thunder_blade": "animation.thunder_sword.blade_idle", 
+        "fire_blade": "animation.armor_statue.fire_blade", 
+        "magma_blade": "animation.armor_statue.magma_blade",
+        "align": "animation.prop.align", 
+        "look": "animation.statue.look_at_target", 
+        "pose": "animation.statue.holding"
+      },
+      "spawn_egg": {
+        "base_color": "#616161",
+        "overlay_color": "#4e4e4e"
+      },
+      "particle_effects": {
+        "ice_crystals": "xp:ice_crystals.drop",
+        "fire_sword": "xp:fire_sword.smoke",
+        "fire_sword1": "xp:fire_sword_item.burst1"
+      }
+    }
+  }
+}

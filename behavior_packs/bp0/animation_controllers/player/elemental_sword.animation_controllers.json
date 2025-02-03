@@ -1,0 +1,466 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.elemental_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "say": "q.get_equipped_item_name == 'elemental_sword'" }
+          ],
+          "on_entry": [
+            "/tag @s remove fire_sword",
+            "@s xp:clear_element",
+            "@s xp:remove_earth_element",
+            "@s xp:remove_fire_element",
+            "@s xp:remove_water_element",
+            "@s xp:remove_wind_element",
+            "@s xp:remove_lightning_element",
+            "/effect @s speed 0 0 true",
+            "/effect @s strength 0 0 true",
+            "/effect @s absorption 0 0 true",
+            "/effect @s fire_resistance 0 0 true",
+            "/effect @s water_breathing 0 0 true",
+            "/effect @s conduit_power 0 0 true",
+            "/effect @s jump_boost 0 0 true"
+          ]
+        },
+        "say": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'elemental_sword'" }
+          ],
+          "on_entry": [
+            "/title @s actionbar - Sneak to cycle §6Elements§f -"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "earth_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:clear_element",
+            "/effect @s strength 99999 50 true"
+           ],
+           "on_exit": [
+             "/camerashake add @s 0.075 0.1 rotational",
+             "/effect @s strength 0 0 true"
+            ]
+        },
+
+        "earth_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.earth": "(q.life_time - v.tick_delay) >= 0.05 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.65 0.0001",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        //Earth
+        "holding.earth": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "fire_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking" },
+            { "earth_charge": "q.is_using_item && q.get_equipped_item_name == 'elemental_sword' && !q.is_tamed" },
+            { "cant_use": "q.is_using_item && q.get_equipped_item_name == 'elemental_sword' && q.is_tamed" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:earth_element",
+            "/title @s actionbar - §2Earth§f -",
+            "/effect @s strength 99999 25 true",
+            "/effect @s absorption 99999 1 true"
+           ],
+           "on_exit": [
+             "/camerashake add @s 0.075 0.1 rotational",
+             "@s xp:remove_earth_element",
+             "/effect @s strength 0 0 true",
+             "/effect @s absorption 0 0 true"
+            ]
+        },
+
+        "cant_use":{
+          "transitions": [
+            {"holding.earth": "!q.is_using_item && (q.life_time - v.tick_delay) >= 0.75"}
+          ],
+          "on_entry": ["/tellraw @s {\"rawtext\":[{\"text\":\"- §6Terraform skills cannot be used in this area§r\n\"}]}", "/playsound note.bassattack @s ~~~ 0.75 1 1"]
+        },
+
+        "earth_charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" } ,
+            { "holding.earth": "!q.is_using_item && (q.life_time - v.tick_delay) <= 1 && q.get_equipped_item_name == 'elemental_sword'" } ,
+            { "earth_shoot": "!q.is_using_item && (q.life_time - v.tick_delay) >= 1 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/effect @s strength 99999 25 true",
+            "/effect @s absorption 99999 1 true",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "earth_shoot": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" } ,
+            { "holding.earth": "!q.is_using_item && q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.05" } 
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/summon xp:earth_sword.target ^^2^15",
+            "/summon xp:earth_sword.attack ^^^2"
+           ]
+        },
+
+        "fire_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.fire": "(q.life_time - v.tick_delay) >= 0.05 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.05 0.0001",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        //Fire
+        "holding.fire": {
+          "animations": [
+            "fire_sword.audio",
+            "fire_sword.particles"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "water_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25  && q.is_sneaking" },
+            { "fire_attack": "q.get_equipped_item_name == 'elemental_sword' && v.attack_time > 0.0f" }
+          ],
+          "on_entry": [
+            "/tag @s add fire_sword",
+            "v.tick_delay = q.life_time;",
+            "@s xp:fire_element",
+            "/title @s actionbar - §4Fire§f -",
+            "/effect @s fire_resistance 99999 250 true"
+           ],
+           "on_exit": [
+             "/tag @s remove fire_sword",
+             "/camerashake add @s 0.075 0.1 rotational",
+             "@s xp:remove_fire_element",
+             "/effect @s fire_resistance 0 0 true"
+            ]
+        },
+
+        "fire_attack": {
+          "animations": [
+            "fire_sword.attack",
+            "fire_sword.audio",
+            "fire_sword.particles"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.fire": "q.get_equipped_item_name == 'elemental_sword' && v.attack_time <= 0.1f && (q.life_time - v.tick_delay) >= 0.75" }
+          ],
+          "on_entry": [
+            "/tag @s add fire_sword",
+            "v.tick_delay = q.life_time;",
+            "/effect @s fire_resistance 99999 250 true"
+           ],
+           "on_exit": [
+             "/tag @s remove fire_sword"
+            ]
+        },
+
+        "water_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.water": "(q.life_time - v.tick_delay) >= 0.05 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.25 0.0001",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        //Water
+        "holding.water": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "water_shoot": "q.get_equipped_item_name == 'elemental_sword' &&  (q.life_time - v.tick_delay) >= 0.5 && v.attack_time > 0.0" },
+            { "wind_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25  && q.is_sneaking" },
+            { "holding.water_in_water": "q.get_equipped_item_name == 'elemental_sword' && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "water_charge": "q.get_equipped_item_name == 'elemental_sword' && q.is_using_item && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'elemental_sword' && v.attack_time > 0.0f && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:water_element",
+            "/title @s actionbar - §9Water§f -",
+            "/tag @s add ocean_sword_user",
+            "/effect @s water_breathing 99999 10 true",
+            "/effect @s conduit_power 0 0 true"
+           ],
+           "on_exit": [
+             "/camerashake add @s 0.075 0.1 rotational",
+             "/tag @s remove ocean_sword_user",
+             "@s xp:remove_water_element",
+             "/effect @s water_breathing 0 0 true"
+            ]
+        },
+
+        "holding.water_in_water": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.wind": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.5  && q.is_sneaking" },
+            { "water_shoot": "v.attack_time > 0.0 && (q.life_time - v.tick_delay) >= 0.25 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "holding.water": "q.get_equipped_item_name == 'elemental_sword' && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.75 && q.is_using_item &&  q.is_in_water_or_rain" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/particle xp:ocean_sword.power_puff ~~0.75~",
+            "/playsound beacon.power @a ~~~ 0.25 0.5 0.0001",
+            "/playsound beacon.power @a ~~~ 0.25 1.25 0.0001",
+            "/playsound entity.zombie.converted_to_drowned @a ~~~ 0.25 0.85 0.0001",
+            "/playsound entity.zombie.converted_to_drowned @a ~~~ 0.25 0.25 0.0001",
+            "/tag @s add ocean_sword_user",
+            "/camerashake add @s 0.075 0.15 rotational",
+            "/effect @s conduit_power 99999 1 true"
+           ],
+           "on_exit": [
+             "/camerashake add @s 0.075 0.1 rotational",
+             "/effect @s conduit_power 0 0 true",
+             "/tag @s remove ocean_sword_user",
+             "@s xp:remove_water_element",
+             "/effect @s water_breathing 0 0 true"
+            ]
+        },
+
+        "water_charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.water_in_water": "!q.is_using_item && q.get_equipped_item_name == 'elemental_sword' &&  (q.life_time - v.tick_delay) <= 0.749 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "rain_boost": "q.get_equipped_item_name == 'elemental_sword' &&  (q.life_time - v.tick_delay) >= 0.75 && q.is_using_item && (q.is_in_contact_with_water || q.is_in_water_or_rain)" },
+            { "water_attack": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.75 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/effect @s water_breathing 99999 10 true"
+           ]
+        },
+
+        "rain_boost": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.water": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.75 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "holding.water_in_water": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.75 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/effect @s conduit_power 99999 40 true",
+            "/camerashake add @s 0.05 2 rotational",
+            "/effect @s levitation 1 10 true",
+            "/playsound boost.in_air @s",
+            "/summon xp:ocean_sword.boost ^^^-0.5"
+           ],
+           "on_exit": [
+             "/effect @s levitation 0 0 true",
+             "/effect @s conduit_power 0 0 true",
+             "/camerashake stop @s",
+             "/stopsound @s boost.in_air"
+            ]
+        },
+
+        "water_attack": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.water": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 1 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+            { "holding.water_in_water": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 1 && (q.is_in_contact_with_water || q.is_in_water_or_rain)" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:ocean_sword.glint",
+            "/fill ~1~2~1 ~-1~-2~-1 air 0 replace fire", 
+            "/tag @s add ocean_sword_user",
+            "/playsound mob.wither.shoot @a ~~~ 0.25 1.25 0.0001",
+            "/playsound mob.wither.shoot @a ~~~ 0.25 0.5 0.0001",
+            "/playsound meteor.splash @a ~~~ 0.15 0.65 0.0001",
+            "/playsound meteor.splash @a ~~~ 0.05 0.35 0.0001",
+            "/effect @s water_breathing 99999 10 true",
+            "/camerashake add @s 1 0.25 rotational",
+            "/effect @s conduit_power 0 0 true",
+            "/summon xp:ocean_sword.attack.ripple ~~~"
+           ],
+           "on_exit": [
+             "/tag @s remove ocean_sword_user"
+            ]
+        },
+
+        "water_shoot":{
+            "on_entry": [
+              "/playsound item.trident.riptide_2 @p[r=15] ~~~ 0.75 1.20 0.0001",
+              "/playsound mob.wither.shoot @a ~~~ 0.15 1.25 0.0001",
+              "/playsound mob.wither.shoot @a ~~~ 0.15 0.65 0.0001",
+              "@s xp:water_beam"
+            ],
+            "transitions": [
+              { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+              { "holding.water": "!v.attack_time > 0.0 && (!q.is_in_contact_with_water || !q.is_in_water_or_rain)" },
+              { "holding.water_in_water": "!v.attack_time > 0.0 && (q.is_using_item || q.is_in_water_or_rain)" }
+            ]
+        },
+
+        "wind_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.wind": "(q.life_time - v.tick_delay) >= 0.05 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.85 0.0001",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        //Wind
+        "holding.wind": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "lightning_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25 && q.is_sneaking" },
+            { "air_special": "q.get_equipped_item_name == 'elemental_sword' && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:wind_element",
+            "/title @s actionbar - §7Air§f -",
+            "/effect @s speed 99999 8 true",
+            "/effect @s jump_boost 99999 2 true",
+            "/stopsound @a[r=25] elytra.loop",
+            "/stopsound @a[r=25] dig.powder_snow"
+           ],
+           "on_exit": [
+            "/camerashake add @s 0.075 0.1 rotational",
+             "@s xp:remove_wind_element",
+             "/effect @s speed 0 0 true",
+             "/effect @s jump_boost 0 0 true"
+            ]
+        },
+
+        "air_special": {
+          "animations": [
+            "air_sword.special"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "throw": "q.get_equipped_item_name == 'elemental_sword' && !q.is_using_item" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/effect @s speed 99999 1 true",
+            "/title @s actionbar - Use to throw target -",
+            "/summon xp:air_sword.controller ^^^6"
+           ]
+        },
+
+        "throw": {
+          "animations": [
+            "air_sword.special"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.wind": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/event entity @e[type=xp:air_sword.controller,r=12] xp:despawn",
+            "/playsound mob.ghast.fireball @a ~~~ 2 1 0.01",
+            "/camerashake add @s 0.075 0.25 rotational",
+            "/summon xp:air_sword.throw ^^0.5^5.75"
+           ]
+        },
+
+        "lightning_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding.lightning": "(q.life_time - v.tick_delay) >= 0.05 && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.25 0.0001",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        //Lightning
+        "holding.lightning": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" } ,
+            { "holding_transition": "q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 0.25  && q.is_sneaking" },
+            { "lightning_charge": "q.is_using_item && q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "@s xp:lightning_element",
+            "/title @s actionbar - §bLightning§f -",
+            "/weather clear",
+            "/effect @s strength 0 0 true",
+            "/effect @s absorption 0 0 true",
+            "/effect @s levitation 0 0 true",
+            "@s xp:remove_no_damage"
+           ],
+           "on_exit": [
+            "/camerashake add @s 0.075 0.1 rotational",
+            "@s xp:remove_lightning_element",
+            "@s xp:remove_no_damage"
+           ]
+        },
+
+        "lightning_charge": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "lightning_strike": "(!q.is_using_item || q.is_using_item) && (q.life_time - v.tick_delay) >= 2 && q.get_equipped_item_name == 'elemental_sword' && q.is_on_ground" } 
+          ],
+          "on_entry": [
+            "/weather thunder 200",
+            "/effect @s strength 3 1 true",
+            "/effect @s absorption 3 1 true",
+            "/effect @s levitation 2 1 true",
+            "v.tick_delay = q.life_time;",
+            "@s xp:no_damage"
+           ],
+           "on_exit": [
+            "@s xp:no_damage"
+           ]
+        },
+
+        "lightning_strike": {
+          "animations": [
+            "thunder_strike"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" } ,
+            { "holding.lightning": "(!q.is_using_item || q.is_using_item) && q.get_equipped_item_name == 'elemental_sword' && (q.life_time - v.tick_delay) >= 1.7" } 
+          ],
+          "on_entry": [
+            "/summon xp:thunder_sword.explode ~~2~",
+            "/summon xp:thunder_sword.impact ~~~",
+            "@s xp:no_damage",
+            "/effect @s levitation 0 0 true",
+            "v.tick_delay = q.life_time;"
+           ]
+        },
+
+        "holding_transition": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'elemental_sword'" },
+            { "holding": "q.get_equipped_item_name == 'elemental_sword'" } 
+          ],
+          "on_entry": [
+            "/title @s clear",
+            "/playsound respawn_anchor.set_spawn @a ~~~ 0.75 2.25 0.0001"
+           ]
+        }
+      }
+    }
+  }
+}

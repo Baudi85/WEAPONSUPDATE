@@ -1,0 +1,64 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dummy": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "hit1": "q.variant == 1" },
+            { "hit2": "q.variant == 2" },
+            { "hit3": "q.variant == 3" }
+          ]
+        },
+        "hit1": {
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "hit2": "q.variant == 2" },
+            { "hit3": "q.variant == 3" }
+          ],
+          "on_entry": [
+            "/playsound block.stonecutter.use @a ~~~ 0.75 1.5 0.001",
+            "/playsound block.turtle_egg.break @a ~~~ 0.75 2.5 0.001",
+            "/playsound dig.bone_block @a ~~~ 0.5 0.5 0.001",
+            "/particle xp:dummy.hit ~~1.65~",
+            "/particle xp:dummy.hit ~~1~",
+            "/particle xp:dummy.hit_spark ~~1~"
+          ]
+        },
+        "hit2": {
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "hit1": "q.variant == 1" },
+            { "hit3": "q.variant == 3" }
+          ],
+          "on_entry": [
+            "/playsound block.stonecutter.use @a ~~~ 0.75 3 0.001",
+            "/playsound block.turtle_egg.break @a ~~~ 0.75 3 0.001",
+            "/playsound dig.bone_block @a ~~~ 0.75 2 0.001",
+            "/particle xp:dummy.hit ^^1^-0.25",
+            "/particle xp:dummy.hit ^^1.5^-0.25",
+            "/particle xp:dummy.hit_spark ^^1^-0.25",
+            "/particle xp:dummy.hit_spark ^^1.5^-0.25"
+          ]
+        },
+        "hit3": {
+          "transitions": [
+            { "default": "q.variant == 0" },
+            { "hit1": "q.variant == 1" },
+            { "hit2": "q.variant == 2" }
+          ],
+          "on_entry": [
+            "/playsound block.stonecutter.use @a ~~~ 0.75 2 0.001",
+            "/playsound block.turtle_egg.break @a ~~~ 0.75 2 0.001",
+            "/playsound dig.bone_block @a ~~~ 0.5 0.75 0.001",
+            "/particle xp:dummy.hit ^^1^-0.25",
+            "/particle xp:dummy.hit ^^1.25^-0.25",
+            "/particle xp:dummy.hit_spark ^^0.75^-0.25",
+            "/particle xp:dummy.hit_spark ^^1.5^-0.25"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:farm_button",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/podium/andesite" },
+      "geometry": { "default": "geometry.arena_button" },
+      "render_controllers": [ "controller.render.default" ],
+      "scripts": { "animate": [ "align", "idle" ] },
+      "animations": { 
+        "align": "animation.prop.align",
+        "idle": "animation.arena_button.idle",
+        "pressed": "animation.arena_button.pressed"
+      },
+      "sound_effects": {
+        "pressed": "cool sfx here"
+      },
+      "particle_effects": {
+        "particles": "xp:arena.button"
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.magma_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"magma.attack":"v.attack_time > 0"},
+                        {"magma.charge":"q.all_animations_finished && q.is_using_item"}
+                    ]
+                },
+                "magma.attack":{
+                    "animations": ["magma.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"magma.charge":"q.all_animations_finished && q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "magma.charge":{
+                    "animations": ["magma.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item" },
+                        {"magma.hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "magma.hold_charge":{
+                    "animations": ["magma.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"magma.release": "!q.is_using_item"}
+                    ]
+                },
+                "magma.release":{
+                    "animations": ["magma.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.magma_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"magma.t_attack":"v.attack_time > 0"},
+                      {"magma.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ]
+              },
+              "magma.t_attack":{
+                  "animations": ["magma.t_attack", "holding_cancel"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"},
+                      {"magma.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "magma.t_charge":{
+                "animations": ["magma.t_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "!q.is_using_item" },
+                    {"magma.t_hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                ],
+                "blend_transition": 0.15
+            },
+            "magma.t_hold_charge":{
+                "animations": ["magma.t_hold_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"magma.t_release": "!q.is_using_item"}
+                ]
+            },
+            "magma.t_release":{
+                "animations": ["magma.t_release", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.15
+                }
+            }
+        }
+    }
+}

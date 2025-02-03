@@ -1,0 +1,123 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:front_door",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "change_fog"
+        ]
+      },
+      "animations": {
+        "change_fog": "controller.animation.front_door",
+        "sfx": "animation.door_sfx",
+        "close_sfx": "animation.door_sfx.close"
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "xp_dummy"
+        ]
+      },
+      "minecraft:knockback_resistance":{
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 0.001
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                { "test": "distance_to_nearest_player", "operator": ">", "value": 7 }
+              ]
+            },
+            "event": "xp:open"
+          }
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {}
+    },
+    "component_groups": {
+      "xp:open":{
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "distance_to_nearest_player", "operator": ">", "value": 7 }
+                ]
+              },
+              "event": "xp:close"
+            }
+          ]
+        },
+        "minecraft:variant": { "value": 1 }
+      },
+      "xp:close":{
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "distance_to_nearest_player", "operator": "<", "value": 7 }
+                ]
+              },
+              "event": "xp:open"
+            }
+          ]
+        },
+        "minecraft:variant": { "value": 0 }
+      },
+      "xp:fake_door":{
+        "minecraft:variant": { "value": 3 }
+      }
+    },
+    "events": {
+      "xp:fake_door": {
+        "remove": {
+          "component_groups": [ "xp:close", "xp:open" ]
+        },
+        "add": {
+          "component_groups": [ "xp:fake_door" ]
+        }
+      },
+
+      "xp:open": {
+        "remove": {
+          "component_groups": [ "xp:close" ]
+        },
+        "add": {
+          "component_groups": [ "xp:open" ]
+        }
+      },
+
+      "xp:close": {
+        "remove": {
+          "component_groups": [ "xp:open" ]
+        },
+        "add": {
+          "component_groups": [ "xp:close" ]
+        }
+      }
+    }
+  }
+}

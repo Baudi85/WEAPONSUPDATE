@@ -1,0 +1,113 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.poison_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"poison.attack":"v.attack_time > 0"},
+                        {"poison.charge":"q.all_animations_finished && q.is_using_item"}
+                    ]
+                },
+                "poison.attack":{
+                    "animations": ["poison.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"poison.charge":"q.all_animations_finished && q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "poison.charge":{
+                    "animations": ["poison.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item" },
+                        {"poison.hold_charge": "q.all_animations_finished && q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "poison.hold_charge":{
+                    "animations": ["poison.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"poison.release": "!q.is_using_item"}
+                    ]
+                },
+                "poison.release":{
+                    "animations": ["poison.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.poison_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"poison.t_attack":"v.attack_time > 0"},
+                      {"poison.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ]
+              },
+              "poison.t_attack":{
+                  "animations": ["poison.t_attack", "holding_cancel"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"},
+                      {"poison.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "poison.t_charge":{
+                "animations": ["poison.t_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "!q.is_using_item" },
+                    {"poison.t_hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                ],
+                "blend_transition": 0.15
+            },
+            "poison.t_hold_charge":{
+                "animations": ["poison.t_hold_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"poison.t_release": "!q.is_using_item"}
+                ]
+            },
+            "poison.t_release":{
+                "animations": ["poison.t_release", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.15
+                }
+            }
+        }
+    }
+}

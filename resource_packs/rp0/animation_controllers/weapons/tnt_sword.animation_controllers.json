@@ -1,0 +1,99 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.tnt_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"tnt.attack":"v.attack_time > 0"},
+                        {"tnt.charge":"q.is_using_item && q.is_on_ground && !q.is_tamed"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "tnt.attack":{
+                    "animations": ["tnt.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "tnt.charge":{
+                    "animations": ["tnt.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item"},
+                        {"tnt.release": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "tnt.release":{
+                    "animations": ["tnt.release", "tnt.in_air"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished && q.is_on_ground"}
+                    ],
+                    "blend_transition": 0.25
+                }
+            }
+        },
+        "controller.animation.tnt_sword.tpp": {
+            "initial_state": "weapon_t_draw",
+            "states": {
+                "weapon_t_draw":{
+                    "animations": ["weapon_t_draw", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_t_hold":{
+                    "animations": ["bob","weapon_t_hold", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"tnt.t_attack":"v.attack_time > 0"},
+                        {"tnt.t_charge":"q.is_using_item && q.is_on_ground"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "tnt.t_attack":{
+                    "animations": ["tnt.t_attack", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "tnt.t_charge":{
+                    "animations": ["tnt.t_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "!q.is_using_item"},
+                        {"tnt.t_release": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "tnt.t_release":{
+                    "animations": ["tnt.t_release", "tnt.t_in_air", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished && q.is_on_ground"}
+                    ],
+                    "blend_transition": 0.25
+                }
+            }
+        }
+     }
+  }

@@ -1,0 +1,161 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.achievements": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "animations": [
+            "achievements.inventory_detect",
+            "achievements.armor_detect",
+            "achievements.hand_detect"
+          ]
+        }
+      }
+    },
+
+    "controller.animation.achievements.inventory_detect": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "animations": [
+            { "achievement.harvest_plant": "t.i = 0; loop(27, {(q.is_item_name_any('slot.inventory', t.i, 'minecraft:potato') || q.is_item_name_any('slot.hotbar', t.i, 'minecraft:potato') || q.is_item_name_any('slot.inventory', t.i, 'minecraft:carrot') || q.is_item_name_any('slot.hotbar', t.i, 'minecraft:carrot')) ? {return true;}; t.i = t.i+1;});" },
+            { "achievement.mine_ore": "t.i = 0; loop(27, {(q.is_item_name_any('slot.inventory', t.i, 'xp:air_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:air_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:dark_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:dark_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:dirt_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:dirt_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:earth_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:earth_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:ender_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ender_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:fire_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:fire_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:ice_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ice_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:jungle_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:jungle_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:lava_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:lava_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:light_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:light_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:nether_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:nether_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:ocean_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ocean_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:poison_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:poison_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:sonic_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:sonic_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:spike_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:spike_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:storm_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:storm_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:thunder_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:thunder_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:tnt_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:tnt_ingot') || q.is_item_name_any('slot.inventory', t.i, 'xp:water_ingot') || q.is_item_name_any('slot.hotbar', t.i, 'xp:water_ingot')) ? {return true;}; t.i = t.i+1;});" },
+            { "achievement.craft_weapon": "t.i = 0; loop(27, {(q.is_item_name_any('slot.inventory', t.i, 'xp:lava_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:lava_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:fire_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:fire_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:light_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:light_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:nether_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:nether_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:thunder_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:thunder_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:ice_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ice_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:sonic_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:sonic_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:darkness_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:darkness_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:air_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:air_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:tnt_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:tnt_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:ender_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ender_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:earth_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:earth_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:dirt_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:dirt_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:spike_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:spike_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:ocean_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:ocean_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:storm_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:storm_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:water_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:water_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:poison_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:poison_sword') || q.is_item_name_any('slot.inventory', t.i, 'xp:jungle_sword') || q.is_item_name_any('slot.hotbar', t.i, 'xp:jungle_sword')) ? {return true;}; t.i = t.i+1;});" }
+          ]
+        }
+      }
+    },
+
+    "controller.animation.achievements.armor_detect": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [
+            { "achievement.wear_elemental_armor": "(q.is_item_name_any('slot.armor.head', 0, 'minecraft:chainmail_helmet') && q.is_item_name_any('slot.armor.chest', 0, 'minecraft:chainmail_chestplate') && q.is_item_name_any('slot.armor.legs', 0, 'minecraft:chainmail_leggings') && q.is_item_name_any('slot.armor.feet', 0, 'minecraft:chainmail_boots'))" }
+          ]
+        },
+        "achievement.wear_elemental_armor": {
+          "on_entry": [ "/execute @s[tag=!\"achievement_wear_elemental_armor\"] ~~~ function achievements/wear_elemental_armor" ]
+        }
+      }
+    },
+
+    "controller.animation.achievements.hand_detect": {
+      "initial_state": "on_detect",
+      "states": {
+        "on_detect": {
+          "transitions": [
+            { "achievement.air_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:air_sword')" },
+            { "achievement.fire_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:fire_sword')" },
+            { "achievement.water_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:water_sword')" },
+            { "achievement.earth_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:earth_sword')" },
+            { "achievement.elemental_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:elemental_sword')" },
+
+            { "wield_lava_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:lava_sword')" },
+            { "wield_light_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:light_sword')" },
+            { "wield_nether_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:nether_sword')" },
+            { "wield_thunder_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:thunder_sword')" },
+            { "wield_ice_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ice_sword')" },
+            { "wield_sonic_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:sonic_sword')" },
+            { "wield_darkness_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:darkness_sword')" },
+            { "wield_tnt_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:tnt_sword')" },
+            { "wield_ender_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ender_sword')" },
+            { "wield_dirt_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:dirt_sword')" },
+            { "wield_spike_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:spike_sword')" },
+            { "wield_ocean_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ocean_sword')" },
+            { "wield_storm_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:storm_sword')" },
+            { "wield_poison_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:poison_sword')" },
+            { "wield_jungle_sword": "q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:jungle_sword')" }
+          ],
+          "on_exit": [
+            "/execute @s[tag=\"wield_air_sword\",tag=\"wield_fire_sword\",tag=\"wield_water_sword\",tag=\"wield_earth_sword\",tag=\"wield_elemental_sword\",tag=\"wield_lava_sword\",tag=\"wield_light_sword\",tag=\"wield_nether_sword\",tag=\"wield_thunder_sword\",tag=\"wield_ice_sword\",tag=\"wield_sonic_sword\",tag=\"wield_darkness_sword\",tag=\"wield_tnt_sword\",tag=\"wield_ender_sword\",tag=\"wield_dirt_sword\",tag=\"wield_spike_sword\",tag=\"wield_ocean_sword\",tag=\"wield_storm_sword\",tag=\"wield_poison_sword\",tag=\"wield_jungle_sword\",tag=!\"achievement_all_swords\"] ~~~ function achievements/all_swords"
+          ]
+        },
+
+        "achievement.air_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:air_sword')" } ],
+          "on_entry": [ "/execute @s[tag=!\"achievement_air_sword\"] ~~~ function achievements/air_sword", "/tag @s add wield_air_sword" ]
+        },
+        "achievement.fire_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:fire_sword')" } ],
+          "on_entry": [ "/execute @s[tag=!\"achievement_fire_sword\"] ~~~ function achievements/fire_sword", "/tag @s add wield_fire_sword" ]
+        },
+        "achievement.water_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:water_sword')" } ],
+          "on_entry": [ "/execute @s[tag=!\"achievement_water_sword\"] ~~~ function achievements/water_sword", "/tag @s add wield_water_sword" ]
+        },
+        "achievement.earth_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:earth_sword')" } ],
+          "on_entry": [ "/execute @s[tag=!\"achievement_earth_sword\"] ~~~ function achievements/earth_sword", "/tag @s add wield_earth_sword" ]
+        },
+        "achievement.elemental_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:elemental_sword')" } ],
+          "on_entry": [ "/execute @s[tag=!\"achievement_elemental_sword\"] ~~~ function achievements/elemental_sword", "/tag @s add wield_elemental_sword" ]
+        },
+
+        "wield_lava_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:lava_sword')" } ],
+          "on_entry": [ "/tag @s add wield_lava_sword" ]
+        },
+        "wield_light_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:light_sword')" } ],
+          "on_entry": [ "/tag @s add wield_light_sword" ]
+        },
+        "wield_nether_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:nether_sword')" } ],
+          "on_entry": [ "/tag @s add wield_nether_sword" ]
+        },
+        "wield_thunder_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:thunder_sword')" } ],
+          "on_entry": [ "/tag @s add wield_thunder_sword" ]
+        },
+        "wield_ice_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ice_sword')" } ],
+          "on_entry": [ "/tag @s add wield_ice_sword" ]
+        },
+        "wield_sonic_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:sonic_sword')" } ],
+          "on_entry": [ "/tag @s add wield_sonic_sword" ]
+        },
+        "wield_darkness_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:darkness_sword')" } ],
+          "on_entry": [ "/tag @s add wield_darkness_sword" ]
+        },
+        "wield_tnt_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:tnt_sword')" } ],
+          "on_entry": [ "/tag @s add wield_tnt_sword" ]
+        },
+        "wield_ender_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ender_sword')" } ],
+          "on_entry": [ "/tag @s add wield_ender_sword" ]
+        },
+        "wield_dirt_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:dirt_sword')" } ],
+          "on_entry": [ "/tag @s add wield_dirt_sword" ]
+        },
+        "wield_spike_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:spike_sword')" } ],
+          "on_entry": [ "/tag @s add wield_spike_sword" ]
+        },
+        "wield_ocean_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:ocean_sword')" } ],
+          "on_entry": [ "/tag @s add wield_ocean_sword" ]
+        },
+        "wield_storm_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:storm_sword')" } ],
+          "on_entry": [ "/tag @s add wield_storm_sword" ]
+        },
+        "wield_poison_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:poison_sword')" } ],
+          "on_entry": [ "/tag @s add wield_poison_sword" ]
+        },
+        "wield_jungle_sword": {
+          "transitions": [ { "on_detect": "!q.is_item_name_any('slot.weapon.mainhand', 0, 'xp:jungle_sword')" } ],
+          "on_entry": [ "/tag @s add wield_jungle_sword" ]
+        }
+      }
+    }
+
+  }
+}

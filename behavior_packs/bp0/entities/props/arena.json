@@ -1,0 +1,188 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:arena_start",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "arena_setup" ]
+      },
+      "animations": {
+        "arena_setup": "controller.animation.arena",
+        "start": "animation.arena_start",
+        "arena_leave": "animation.arena_leave",
+        "wave1": "animation.arena_wave1",
+        "wave2": "animation.arena_wave2",
+        "wave3": "animation.arena_wave3",
+        "win": "animation.arena_win",
+        "win_transition": "animation.win_transition",
+        "wave_transition": "animation.wave_transition",
+        "ambient": "animation.arena_ambient",
+        "lose": "animation.lose",
+        "win_particles": "animation.win_particles"
+      }
+    },
+
+    "component_groups": {
+      "xp:default": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "xp:start": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+
+      "xp:wave1": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "xp:wave2": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "xp:wave3": {
+        "minecraft:variant": {
+          "value": 4
+        }
+      },
+
+      "xp:win": {
+        "minecraft:variant": {
+          "value": 5
+        }
+      },
+
+      "xp:wave_transition": {
+        "minecraft:variant": {
+          "value": 6
+        }
+      },
+
+      "xp:lose": {
+        "minecraft:variant": {
+          "value": 7
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "arena", "xp_dummy", "xp_prop" ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "void",
+            "damage_multiplier": 10e7,
+            "deals_damage": true
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "any_of": [
+                  { "test": "has_damage", "value": "anvil" },
+                  { "test": "has_damage", "value": "block_explosion" },
+                  { "test": "has_damage", "value": "entity_explosion" },
+                  { "test": "has_damage", "value": "fire" },
+                  { "test": "has_damage", "value": "fire_tick" },
+                  { "test": "has_damage", "value": "lava" },
+                  { "test": "has_damage", "value": "projectile" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "operator": "!=", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_damage", "subject": "self", "value": "attack" }
+                ]
+              },
+              "event": "xp:start"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [ { "test": "is_variant", "value": 0 } ]
+              },
+              "event": "xp:start"
+            },
+            "swing": true
+          }
+        ]
+      },
+      "minecraft:push_through": { "value": 1 },
+      "minecraft:breathable": { "breathes_solids": true },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.25
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:health": {
+        "value": 99999,
+        "max": 99999
+      },
+      "minecraft:nameable": {},
+      "minecraft:physics": {}
+    },
+
+    "events": {
+      "xp:default": {
+        "add": { "component_groups": [ "xp:default" ] },
+        "remove": {
+          "component_groups": [
+            "xp:start",
+            "xp:wave_transition",
+            "xp:wave1",
+            "xp:wave2",
+            "xp:wave3",
+            "xp:win",
+            "xp:lose"
+          ]
+        }
+      },
+      "xp:start": { "add": { "component_groups": [ "xp:start" ] } },
+      "xp:wave1": { "add": { "component_groups": [ "xp:wave1" ] } },
+      "xp:wave2": { "add": { "component_groups": [ "xp:wave2" ] } },
+      "xp:wave3": { "add": { "component_groups": [ "xp:wave3" ] } },
+      "xp:win": { "add": { "component_groups": [ "xp:win" ] } },
+      "xp:lose": { "add": { "component_groups": [ "xp:lose" ] } },
+      "xp:wave_transition": {
+        "add": { "component_groups": [ "xp:wave_transition" ] }
+      }
+    }
+  }
+}

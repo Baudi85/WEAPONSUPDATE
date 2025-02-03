@@ -1,0 +1,211 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:ghast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {"xp:spawn": "q.variant == 1"}
+        ]
+      },
+      "animations": {
+        "xp:spawn": "controller.animation.ghast"
+      }
+    },
+    "component_groups": {
+      "xp:ghast": {
+        "minecraft:shooter": {
+          "def": "minecraft:fireball"
+        },
+        "minecraft:type_family": {
+          "family": [
+            "player",
+            "ghast",
+            "monster",
+            "mob"
+          ]
+        },
+        "minecraft:health": {
+          "value": 5,
+          "min": 1,
+          "max": 5
+        },
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_radius": 128,
+          "charge_shoot_trigger": 1,
+          "charge_charged_trigger": 0.25
+        },
+        "minecraft:follow_range": {
+          "value": 64,
+          "max": 64
+        },
+        "minecraft:collision_box": {
+          "width": 3.02,
+          "height": 3
+        },
+        "minecraft:movement": {
+          "value": 0.0075
+        },
+        "minecraft:scale": { "value": 0.25 },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "within_radius": 24.0,
+          "persist_time": 5.0,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "monster"
+                  }
+                ],
+                "none_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
+                ]
+              },
+              "max_dist": 24
+            }
+          ],
+          "must_see": false
+        },
+        "minecraft:timer": {
+            "time": 20,
+            "looping": false,
+            "time_down_event": {
+                "event": "xp:despawn"
+            }
+        }
+      },
+      "xp:despawn": {
+          "minecraft:instant_despawn": {}
+      }
+    },
+
+    "events": {
+      "xp:ghast": { "add": { "component_groups": [ "xp:ghast" ] } },
+      "xp:despawn": { "add": { "component_groups": [ "xp:despawn" ] } }
+    },
+
+    "components": {
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:collision_box": {
+        "width": 4.02,
+        "height": 4
+      },
+      "minecraft:movement": {
+        "value": 0.03
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:behavior.float_wander": {
+        "priority": 2,
+        "must_reach": true
+      },
+      "minecraft:can_fly": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ghast.json"
+      },
+      "minecraft:shooter": {
+        "def": "minecraft:fireball"
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ghast",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:jump.static": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 1,
+        "attack_radius": 64,
+        "charge_shoot_trigger": 2,
+        "charge_charged_trigger": 1
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                }
+              ],
+              "none_of": [
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "value": "nether_sword_user"
+                }
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 28
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    }
+  }
+}

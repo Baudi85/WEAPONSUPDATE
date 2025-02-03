@@ -1,0 +1,12 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/wall_torch_block",
+    "atlas_tile": "wall_torch_block",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/particles/fire_3",
+    "atlas_tile": "fire",
+    "ticks_per_frame": 1
+  }
+]

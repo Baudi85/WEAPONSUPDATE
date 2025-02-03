@@ -1,0 +1,61 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.water_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"water.attack":"v.attack_time > 0"}
+                    ]
+                },
+                "water.attack":{
+                    "animations": ["water.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.water_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"water.t_attack":"v.attack_time > 0"}
+                  ]
+              },
+              "water.t_attack":{
+                  "animations": ["water.t_attack", "holding_cancel"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.15
+              }
+          }
+        }
+     }
+  }

@@ -1,0 +1,38 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ghast": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ 
+            { "despawn": "q.life_time > 16.0 || q.health <= 1" }
+          ],
+          "on_entry": [ 
+            "/particle xp:summoning.swirl ~~~",
+            "/particle xp:summoning_fiz ~~~",
+            "/playsound xp.ghast.scream @a ~~~ 0.02 0.25 0.0001",
+            "/particle xp:ghast_spawn ~~0.1~",
+            "/particle xp:nether_sword.summon_ghast ~~0.1~"
+          ],
+          "on_exit": [ 
+            "/particle xp:summon.glow ~~~",
+            "/particle xp:summoning.swirl ~~~",
+            "/particle xp:summoning_fiz ~~~"
+          ]
+        },
+        "despawn": {
+          "on_entry": [ 
+            "/particle xp:summoning.swirl ~~~",
+            "/particle xp:summoning_fiz ~~~",
+            "/playsound xp:summon @a ~~~ 1 0.5 0.0001",
+            "/playsound xp.ghast.scream @a ~~~ 0.35 2.25 0.0001",
+            "/particle xp:ghast_spawn ~~0.1~",
+            "/particle xp:nether_sword.summon_ghast ~~0.1~",
+            "@s xp:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

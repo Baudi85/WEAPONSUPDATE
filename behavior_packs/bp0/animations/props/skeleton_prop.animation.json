@@ -1,0 +1,19 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.skeleton_drop": {
+            "animation_length": 1,
+            "loop": "hold_on_last_frame",
+            "timeline": {
+                "0.7": [
+                    "/particle xp:poof ~~~",
+                    "/particle xp:skeleton.hit ~~~",
+                    "/particle xp:dummy.hit_sparks ~~0.25~"
+                ],
+                "0.95": [
+                    "/structure load skeleton_drop ~~~"
+                ]
+            }
+        }
+    }
+}

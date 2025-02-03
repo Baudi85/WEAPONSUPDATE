@@ -1,0 +1,42 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "xp:scoreboard",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {"minecraft:tick_world": {
+      "never_despawn": true,
+      "radius": 2
+    },
+    "minecraft:type_family": {
+      "family": [
+        "xp_dummy"
+      ]
+    },
+    "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:collision_box": {
+        "height": 0,
+        "width": 0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+         {
+         "cause": "all",
+         "deals_damage": false
+         }
+       ]
+    },
+    "minecraft:physics": {
+        "has_collision": true
+    }
+    },
+    "events": {
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.thunder_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'thunder_sword'" }
+          ],
+          "on_entry": [ 
+            "/effect @s strength 0 0 true",
+            "/effect @s levitation 0 0 true",
+            "/effect @s absorption 0 0 true",
+            "@s xp:remove_lightning_element",
+            "@s xp:clear_element",
+            "@s xp:remove_no_damage"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'thunder_sword'" } ,
+            { "charge": "q.is_using_item && q.get_equipped_item_name == 'thunder_sword'" } 
+          ],
+          "on_entry": [
+            "/weather clear",
+            "@s xp:clear_element",
+            "/effect @s strength 99999 6 true",
+            "/effect @s absorption 0 0 true",
+            "/effect @s levitation 0 0 true",
+            "@s xp:lightning_element",
+            "@s xp:remove_no_damage"
+           ]
+        },
+
+        "charge": {
+          "animations": [
+            "thunder_audio"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'thunder_sword'" },
+            { "strike": "(!q.is_using_item || q.is_using_item) && (q.life_time - v.tick_delay) >= 2 && q.get_equipped_item_name == 'thunder_sword' && q.is_on_ground" } 
+          ],
+          "on_entry": [ 
+            "/weather thunder 200",
+            "/effect @s strength 3 1 true",
+            "/effect @s absorption 3 1 true",
+            "/effect @s levitation 2 1 true",
+            "v.tick_delay = q.life_time;",
+            "@s xp:no_damage"
+           ],
+           "on_exit": [ 
+            "@s xp:no_damage"
+           ]
+        },
+
+        "strike": {
+          "animations": [
+            "thunder_strike"
+          ],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'thunder_sword'" } ,
+            { "holding": "(!q.is_using_item || q.is_using_item) && q.get_equipped_item_name == 'thunder_sword' && (q.life_time - v.tick_delay) >= 1.7" } 
+          ],
+          "on_entry": [ 
+            "/summon xp:thunder_sword.explode ~~2~",
+            "/summon xp:thunder_sword.impact ~~~",
+            "@s xp:no_damage",
+            "/effect @s levitation 0 0 true",
+            "v.tick_delay = q.life_time;"
+           ]
+        }
+      }
+    }
+  }
+}

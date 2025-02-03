@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.item.root": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "execute": "q.is_powered"
+            }
+          ]
+        },
+        "execute": {
+          "on_entry": [
+            "/execute @s[type=item,name=\"§bIce Sword§r\",tag=!ice_sword] ~ ~ ~ tag @s add ice_sword",
+            "/execute @s[type=item,name=\"§8Darkness Sword§r\",tag=!darkness_sword] ~ ~ ~ tag @s add darkness_sword",
+            "/execute @s[type=item,name=\"§5Ender Sword§r\",tag=!ender_sword] ~ ~ ~ tag @s add ender_sword",
+            "/execute @s[type=item,name=\"§aPoison Sword§r\",tag=!poison_sword] ~ ~ ~ tag @s add poison_sword",
+            "/execute @s[type=item,name=\"§bWater Sword§r\",tag=!water_sword] ~ ~ ~ tag @s add water_sword",
+            "/execute @s[type=item,name=\"§7Spike Sword\",tag=!spike_sword] ~ ~ ~ tag @s add spike_sword",
+            "/execute @s[type=item,name=\"§bSonic Sword§r\",tag=!sonic_sword] ~ ~ ~ tag @s add sonic_sword",
+            "/execute @s[type=item,name=\"§8Storm Sword§r\",tag=!storm_sword] ~ ~ ~ tag @s add storm_sword",
+            "/execute @s[type=item,name=\"§2Jungle Sword§r\",tag=!jungle_sword] ~ ~ ~ tag @s add jungle_sword",
+            "/execute @s[type=item,name=\"Dirt Sword\",tag=!dirt_sword] ~ ~ ~ tag @s add dirt_sword",
+            "/execute @s[type=item,name=\"§4Magma Sword§r\",tag=!magma_sword] ~ ~ ~ tag @s add magma_sword",
+            "/execute @s[type=item,name=\"§eLight Sword§r\",tag=!light_sword] ~ ~ ~ tag @s add light_sword",
+            "/execute @s[type=item,name=\"§bAir Sword§r\",tag=!air_sword] ~ ~ ~ tag @s add air_sword",
+            "/execute @s[type=item,name=\"§aEarth Sword§r\",tag=!earth_sword] ~ ~ ~ tag @s add earth_sword",
+            "/execute @s[type=item,name=\"§cTNT Sword§r\",tag=!tnt_sword] ~ ~ ~ tag @s add tnt_sword",
+            "/execute @s[type=item,name=\"§4Nether Sword§r\",tag=!nether_sword] ~ ~ ~ tag @s add nether_sword",
+            "/execute @s[type=item,name=\"§6Elemental Sword§r\",tag=!elemental_sword] ~ ~ ~ tag @s add elemental_sword",
+            "/execute @s[type=item,name=\"§4Fire Sword§r\",tag=!fire_sword] ~ ~ ~ tag @s add fire_sword",
+            "/execute @s[type=item,name=\"§9Ocean Sword§r\",tag=!ocean_sword] ~ ~ ~ tag @s add ocean_sword",
+            "/execute @s[type=item,name=\"§bThunder Sword§r\",tag=!thunder_sword] ~ ~ ~ tag @s add thunder_sword",
+            "/execute @s[type=item,name=\"§8Wither Sword§r\",tag=!wither_sword] ~ ~ ~ tag @s add wither_sword"
+          ],
+          "transitions": [ { "default": "!q.is_powered" } ]
+        }
+      }
+    }
+  }
+}

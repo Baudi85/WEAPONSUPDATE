@@ -1,0 +1,673 @@
+{
+  "namespace": "xp_cinematic_effects",
+
+  "cinematic_effects_root": {
+    "type": "panel",
+    "controls": [
+      {
+        "show_black_bars@xp_cinematic_effects.black_bars_layout": {
+          "ignored": "(($var_title_text - 'xp_cutscene') = $var_title_text)"
+        }
+      },
+      {
+        "arena_huds@xp_cinematic_effects.arena_huds": {
+          "ignored": "(($var_title_text - 'xp_arena') = $var_title_text)"
+        }
+      }
+    ]
+  },
+
+  "cinematic_effects_root_actionbar": {
+    "type": "panel",
+    "ignored": "(not (($var_actionbar_text - '-') = $var_actionbar_text))",
+    "controls": [
+      {
+        "show_fade@xp_cinematic_effects.fade_black": {
+          "ignored": "(($var_actionbar_text - 'xp_fade') = $var_actionbar_text)"
+        }
+      },
+      {
+        "cinematic_captions@xp_cinematic_effects.cinematic_captions": {
+          "ignored": "(($var_actionbar_text - 'xp_captions') = $var_actionbar_text)"
+        }
+      }
+    ]
+  },
+
+  "black_image_anim_in": {
+    "anim_type": "size",
+    "easing": "linear",
+    "from": [ "100%", 0 ],
+    "to": [ "100%", "30%" ],
+    "duration": 0.1,
+    "next": "@xp_cinematic_effects.black_image_anim_wait"
+  },
+  "black_image_anim_wait": {
+    "anim_type": "wait",
+    "duration": "$title_stay_time",
+    "next": "@xp_cinematic_effects.black_image_anim_out"
+  },
+  "black_image_anim_out": {
+    "anim_type": "size",
+    "easing": "linear",
+    "from": [ "100%", "30%" ],
+    "to": [ "100%", 0 ],
+    "duration": 1.0
+  },
+
+  "black_image": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ "100%", "100%" ],
+    "anims": [ "@xp_cinematic_effects.black_image_anim_in" ],
+    "allow_clipping": false,
+    "layer": 110
+  },
+  "black_image_out@black_image": {
+    "anims": [ "@xp_cinematic_effects.black_image_anim_out" ]
+  },
+
+  "black_bars_layout": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "top_bar@common.empty_panel": {
+          "size": [ "100% + 50px", "50%" ],
+          "controls": [
+            {
+              "bar@xp_cinematic_effects.black_image": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ -25, -5 ],
+                "ignored": "(not (($var_title_text - 'xp_cutscene_out') = $var_title_text))"
+              }
+            },
+            {
+              "bar_out@xp_cinematic_effects.black_image_out": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [ -25, -5 ],
+                "ignored": "(($var_title_text - 'xp_cutscene_out') = $var_title_text)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "bottom_bar@common.empty_panel": {
+          "size": [ "100% + 50px", "50%" ],
+          "controls": [
+            {
+              "bar@xp_cinematic_effects.black_image": {
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "offset": [ -25, 5 ],
+                "ignored": "(not (($var_title_text - 'xp_cutscene_out') = $var_title_text))"
+              }
+            },
+            {
+              "bar_out@xp_cinematic_effects.black_image_out": {
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "offset": [ -25, 5 ],
+                "ignored": "(($var_title_text - 'xp_cutscene_out') = $var_title_text)"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "black_fade_anim_in": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 0,
+    "to": 1,
+    "duration": 0.75,
+    "next": "@xp_cinematic_effects.black_fade_anim_wait"
+  },
+  "black_fade_anim_wait": {
+    "anim_type": "wait",
+    "duration": 1,
+    "next": "@xp_cinematic_effects.black_fade_anim_out"
+  },
+  "black_fade_anim_out": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 1,
+    "to": 0,
+    "duration": 0.75
+  },
+
+  "fade_black@black_image": {
+    "size": [ "150%", "150%" ],
+    "anims": [],
+    "alpha": "@xp_cinematic_effects.black_fade_anim_in",
+    "layer": 150
+  },
+
+  "cinematic_captions@common.empty_panel": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "title_keyart@common.empty_panel": {
+          "size": [ "100%", "100%" ],
+          "alpha": "@xp_cinematic_effects.hud_effects_title_art_alpha_01",
+          "propagate_alpha": true,
+          "controls": [
+            {
+              "keyart_text_presents": {
+                "type": "label",
+                "size": [ "default", "default" ],
+                "offset": [ 0, -30 ],
+                "text": " presents",
+                "layer": 30
+              }
+            },
+            {
+              "keyart_image": {
+                "type": "image",
+                "size": [ "90%", "90%" ],
+                "texture": "textures/ui/xp/title",
+                "layer": 30
+              }
+            }
+          ],
+          "ignored": "(($var_actionbar_text - ':title') = $var_actionbar_text)"
+        }
+      },
+
+      {
+        "cutscene_a1@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':a1') = $var_actionbar_text)",
+          "text": "cutscene.a1"
+        }
+      },
+      {
+        "cutscene_a2@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':a2') = $var_actionbar_text)",
+          "text": "cutscene.a2"
+        }
+      },
+
+      {
+        "cutscene_b1@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':b1') = $var_actionbar_text)",
+          "text": "cutscene.b1"
+        }
+      },
+      {
+        "cutscene_b2@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':b2') = $var_actionbar_text)",
+          "text": "cutscene.b2"
+        }
+      },
+      {
+        "cutscene_b3@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':b3') = $var_actionbar_text)",
+          "text": "cutscene.b3"
+        }
+      },
+
+      {
+        "cutscene_c1@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':c1') = $var_actionbar_text)",
+          "text": "cutscene.c1"
+        }
+      },
+      {
+        "cutscene_c2@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':c2') = $var_actionbar_text)",
+          "text": "cutscene.c2"
+        }
+      },
+      {
+        "cutscene_c3@xp_cinematic_effects.cinematic_caption": {
+          "ignored": "(($var_actionbar_text - ':c3') = $var_actionbar_text)",
+          "text": "cutscene.c3"
+        }
+      }
+    ]
+  },
+
+  "cinematic_caption": {
+    "type": "label",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ "default", "default" ],
+    "max_size": [ "100% - 15px", "default" ],
+    "offset": [ 0, "-15px" ],
+    "shadow": true,
+    "layer": 120
+  },
+
+  "hud_effects_title_art_alpha_01": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 1.5,
+    "from": 0.0,
+    "to": 1.0,
+    "next": "@xp_cinematic_effects.hud_effects_title_art_alpha_02"
+  },
+  "hud_effects_title_art_alpha_02": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 6.0,
+    "from": 1.0,
+    "to": 1.0,
+    "next": "@xp_cinematic_effects.hud_effects_title_art_alpha_03"
+  },
+  "hud_effects_title_art_alpha_03": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.75,
+    "from": 1.0,
+    "to": 0.0
+  },
+
+
+  "arena_image_template": {
+    "type": "image",
+    "texture": "('textures/ui/xp/arena_' + $arena_text_texture)"
+  },
+
+  "arena_huds_anim_alpha": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 1.0,
+    "to": 1.0,
+    "duration": 4.5,
+    "next": "@xp_cinematic_effects.arena_huds_anim_alpha_out"
+  },
+  "arena_huds_anim_alpha_out": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 1.0,
+    "to": 0.0,
+    "duration": 0.1
+  },
+
+  "arena_swords_anim_alpha": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "from": 0.0,
+    "to": 0.0,
+    "duration": 1.5,
+    "next": "@xp_cinematic_effects.arena_huds_anim_alpha"
+  },
+  "arena_swords_anim_uv@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv_delay" },
+  "arena_swords_anim_uv_delay@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 1.5, "$set_image_uv": [ 0, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv1" },
+  "arena_swords_anim_uv1@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 20, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv2" },
+  "arena_swords_anim_uv2@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 40, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv3" },
+  "arena_swords_anim_uv3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 60, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv4" },
+  "arena_swords_anim_uv4@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.5, "$set_image_uv": [ 80, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv5" },
+  "arena_swords_anim_uv5@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 100, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv6" },
+  "arena_swords_anim_uv6@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 120, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv7" },
+  "arena_swords_anim_uv7@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 140, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv8" },
+  "arena_swords_anim_uv8@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 160, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_swords_anim_uv9" },
+  "arena_swords_anim_uv9@xp_podium_screen.weapon_stats_uv_base_conclude": {
+    "$set_image_uv": [ 180, 0 ]
+  },
+  "arena_swords_anim@arena_image_template": {
+    "$arena_text_texture": "swords_anim",
+    "uv": "@xp_cinematic_effects.arena_swords_anim_uv",
+    "uv_size": [  20, 20 ],
+    "size": [ 40, 40 ]
+  },
+
+  "arena_text_welcome@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 0, 0 ],
+    "uv_size": [  364, 18 ],
+    "size": [  182, 9 ]
+  },
+  "arena_text_get_ready@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 0, 18 ],
+    "uv_size": [  147, 18 ],
+    "size": [  73.5, 9 ]
+  },
+  "arena_text_wave_incoming@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 161, 17 ],
+    "uv_size": [  203, 18 ],
+    "size": [  101.5, 9 ]
+  },
+  "arena_text_victory@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 0, 36 ],
+    "uv_size": [  118, 18 ],
+    "size": [  59, 9 ]
+  },
+  "arena_text_defeat@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 0, 54 ],
+    "uv_size": [  107, 18 ],
+    "size": [  53.5, 9 ]
+  },
+  "arena_text_3@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 139, 36 ],
+    "uv_size": [  72, 18 ],
+    "size": [  72, 18 ]
+  },
+  "arena_text_2@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 218, 36 ],
+    "uv_size": [  72, 18 ],
+    "size": [  72, 18 ]
+  },
+  "arena_text_1@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 297, 36 ],
+    "uv_size": [  66, 18 ],
+    "size": [  66, 18 ]
+  },
+  "arena_text_lives_remaining@arena_image_template": {
+    "$arena_text_texture": "announcer_texts",
+    "uv": [ 133, 54 ],
+    "uv_size": [  230, 18 ],
+    "size": [  115, 9 ]
+  },
+
+  "arena_lives_uv_a0@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 36 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_b0" },
+  "arena_lives_uv_b0@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 45 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_0" },
+  "arena_lives_uv_0@xp_podium_screen.weapon_stats_uv_base_conclude": { "$set_image_uv": [ 0, 54 ] },  
+  
+  "arena_lives_uv_a1@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 18 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_b1" },
+  "arena_lives_uv_b1@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 27 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_1" },
+  "arena_lives_uv_1@xp_podium_screen.weapon_stats_uv_base_conclude": { "$set_image_uv": [ 0, 36 ] },
+  
+  "arena_lives_uv_a2@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 0 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_b2" },
+  "arena_lives_uv_b2@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.25, "$set_image_uv": [ 0, 9 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_2" },
+  "arena_lives_uv_2@xp_podium_screen.weapon_stats_uv_base_conclude": { "$set_image_uv": [ 0, 18 ] },
+  
+  "arena_lives_uv_a3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 54 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_b3" },
+  "arena_lives_uv_b3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 45 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_c3" },
+  "arena_lives_uv_c3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 36 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_d3" },
+  "arena_lives_uv_d3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 27 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_e3" },
+  "arena_lives_uv_e3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 18 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_f3" },
+  "arena_lives_uv_f3@xp_podium_screen.weapon_stats_uv_base": { "$set_fps": 0.1, "$set_image_uv": [ 0, 9 ], "$set_image_uv_next": "@xp_cinematic_effects.arena_lives_uv_3" },
+  "arena_lives_uv_3@xp_podium_screen.weapon_stats_uv_base_conclude": { "$set_image_uv": [ 0, 0 ] },
+  
+  "arena_lives@arena_image_template": {
+    "$arena_text_texture": "lives",
+    "$arena_lives_remaining|default": "3",
+    "uv": "('@xp_cinematic_effects.arena_lives_uv_a' + $arena_lives_remaining)",
+    "uv_size": [ 29, 9 ],
+    "size": [ 58, 18 ]
+  },
+
+  "arena_hud_panel@common.empty_panel": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ "100%cm", "100%c" ],
+    "offset": "$set_offset_padding",
+    "controls": "$show_controls",
+    "variables": [
+      {
+        "requires": "(not ($is_android or $is_ios or $nx_os))",
+        "$set_offset_padding": [ 0, 16 ]
+      },
+      {
+        "requires": "($is_android or $is_ios or $nx_os)",
+        "$set_offset_padding": [ 0, 20 ]
+      }
+    ]
+  },
+
+  "arena_huds@common.empty_panel": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "welcome@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.welcome') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_swords_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "arena_swords_anim@xp_cinematic_effects.arena_swords_anim": {} },
+            {
+              "arena_text_welcome@xp_cinematic_effects.arena_text_welcome": {
+                "offset": [ 0, 40 ]
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "lives_remaining_3@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.lives_remaining.3') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_lives_remaining@xp_cinematic_effects.arena_text_lives_remaining": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_lives@xp_cinematic_effects.arena_lives": {
+                "offset": [ 0, 58 ],
+                "$arena_lives_remaining": "3"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "lives_remaining_2@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.lives_remaining.2') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_lives_remaining@xp_cinematic_effects.arena_text_lives_remaining": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_lives@xp_cinematic_effects.arena_lives": {
+                "offset": [ 0, 58 ],
+                "$arena_lives_remaining": "2"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "lives_remaining_1@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.lives_remaining.1') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_lives_remaining@xp_cinematic_effects.arena_text_lives_remaining": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_lives@xp_cinematic_effects.arena_lives": {
+                "offset": [ 0, 58 ],
+                "$arena_lives_remaining": "1"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "lives_remaining_0@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.lives_remaining.0') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_lives_remaining@xp_cinematic_effects.arena_text_lives_remaining": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_lives@xp_cinematic_effects.arena_lives": {
+                "offset": [ 0, 58 ],
+                "$arena_lives_remaining": "0"
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "wave_incoming@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.wave_incoming') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_wave_incoming@xp_cinematic_effects.arena_text_wave_incoming": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            { 
+              "padding@common.empty_panel": {
+                "size": [ 1, 18 ],
+                "offset": [ 0, 58 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "get_ready_pre@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.get_ready.pre') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_get_ready@xp_cinematic_effects.arena_text_get_ready": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            { 
+              "padding@common.empty_panel": {
+                "size": [ 1, 18 ],
+                "offset": [ 0, 58 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "get_ready_3@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.get_ready.3') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_get_ready@xp_cinematic_effects.arena_text_get_ready": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_text_3@xp_cinematic_effects.arena_text_3": {
+                "offset": [ 0, 58 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "get_ready_2@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.get_ready.2') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_get_ready@xp_cinematic_effects.arena_text_get_ready": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_text_2@xp_cinematic_effects.arena_text_2": {
+                "offset": [ 0, 58 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "get_ready_1@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.get_ready.1') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_huds_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "padding@common.empty_panel": { "size": [ 40, 40 ] } },
+            {
+              "arena_text_get_ready@xp_cinematic_effects.arena_text_get_ready": {
+                "offset": [ 0, 40 ]
+              }
+            },
+            {
+              "arena_text_1@xp_cinematic_effects.arena_text_1": {
+                "offset": [ 0, 58 ]
+              }
+            }
+          ]
+        }
+      },
+
+      {
+        "victory@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.victory') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_swords_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "arena_swords_anim@xp_cinematic_effects.arena_swords_anim": {} },
+            {
+              "arena_text_victory@xp_cinematic_effects.arena_text_victory": {
+                "offset": [ 0, 40 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "defeat@xp_cinematic_effects.arena_hud_panel": {
+          "ignored":"(($var_title_text - 'xp_arena.defeat') = $var_title_text)",
+
+          "alpha": "@xp_cinematic_effects.arena_swords_anim_alpha",
+          "propagate_alpha": true,
+          "$show_controls": [
+            { "arena_swords_anim@xp_cinematic_effects.arena_swords_anim": {} },
+            {
+              "arena_text_defeat@xp_cinematic_effects.arena_text_defeat": {
+                "offset": [ 0, 40 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

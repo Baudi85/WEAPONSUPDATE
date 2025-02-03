@@ -1,0 +1,8 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.achievement.harvest_plant": { "loop": true, "animation_length": 0.05, "timeline": { "0.0": [ "/execute @s[tag=!\"achievement_harvest_plant\"] ~~~ function achievements/harvest_plant" ] } },
+    "animation.achievement.mine_ore": { "loop": true, "animation_length": 0.05, "timeline": { "0.0": [ "/execute @s[tag=!\"achievement_mine_ore\"] ~~~ function achievements/mine_ore" ] } },
+    "animation.achievement.craft_weapon": { "loop": true, "animation_length": 0.05, "timeline": { "0.0": [ "/execute @s[tag=!\"achievement_craft_weapon\"] ~~~ function achievements/craft_weapon" ] } }
+  }
+}

@@ -1,0 +1,36 @@
+//bridge-file-version: #21
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "wu:firefly.entity",
+			"materials": {
+				"default": "egg"
+			},
+			"textures": {
+				"default.stage.00": "textures/entity/firefly.variants/firefly.00.model",
+				"default.stage.01": "textures/entity/firefly.variants/firefly.01.model",
+				"default.stage.02": "textures/entity/firefly.variants/firefly.02.model",
+				"default.stage.03": "textures/entity/firefly.variants/firefly.03.model"
+			},
+			"geometry": {
+				"default": "geometry.firefly.model"
+			},
+			"render_controllers": [
+				"controller.render.firefly.stage"
+			],
+			"animations": {
+				"flying": "animation.firefly.model.flying"
+			},
+			"scripts": {
+				"animate": [
+					"flying"
+				]
+			},
+			"spawn_egg": {
+				"base_color": "#1778D2",
+				"overlay_color": "#1778D2"
+			}
+		}
+	}
+}

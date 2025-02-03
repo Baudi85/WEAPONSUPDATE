@@ -1,0 +1,113 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jungle_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"jungle.attack":"v.attack_time > 0"},
+                        {"jungle.charge":"q.all_animations_finished && q.is_using_item"}
+                    ]
+                },
+                "jungle.attack":{
+                    "animations": ["jungle.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"jungle.charge":"q.all_animations_finished && q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "jungle.charge":{
+                    "animations": ["jungle.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item" },
+                        {"jungle.hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "jungle.hold_charge":{
+                    "animations": ["jungle.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"jungle.rock": "!q.is_using_item"}
+                    ]
+                },
+                "jungle.rock":{
+                    "animations": ["jungle.rock"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.jungle_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"jungle.t_attack":"v.attack_time > 0"},
+                      {"jungle.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ]
+              },
+              "jungle.t_attack":{
+                  "animations": ["jungle.t_attack", "holding_cancel"], 
+                  "transitions": [
+                      {"weapon_t_draw":"v.draw_sword"},
+                      {"weapon_t_hold": "q.all_animations_finished"},
+                      {"jungle.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "jungle.t_charge":{
+                "animations": ["jungle.t_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "!q.is_using_item" },
+                    {"jungle.t_hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                ],
+                "blend_transition": 0.15
+            },
+            "jungle.t_hold_charge":{
+                "animations": ["jungle.t_hold_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"jungle.t_rock": "!q.is_using_item"}
+                ]
+            },
+            "jungle.t_rock":{
+                "animations": ["jungle.t_rock", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.15
+                }
+            }
+        }
+    }
+}

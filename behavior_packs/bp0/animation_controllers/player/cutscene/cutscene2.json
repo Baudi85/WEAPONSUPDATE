@@ -1,0 +1,143 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.cutscene2": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "scene_transition_0": "q.variant == 31 && q.out_of_control" }
+          ],
+          "on_entry": [
+            "/gamerule sendcommandfeedback false",
+            "/event entity @s xp:remove_cutscene",
+            "/event entity @s xp:clear_element",
+            "/tag @s remove armory"
+          ]
+        },
+        "scene_transition_0": {
+          "transitions": [
+            { "scene_2": "(q.life_time - v.tick_delay) >= 1.5" }
+          ],
+          "on_entry": [
+            "/music stop 2",
+            "v.tick_delay = q.life_time;",
+            "/weather clear",
+            "/title @s actionbar xp_fade"
+          ],
+          "on_exit": [
+            "/effect @s invisibility 99999 2 true",
+            "/title @s times 20 520 20",
+            "/title @s title xp_cutscene"
+          ]
+        },
+
+        "scene_0": {
+          "animations": [
+            "scene_1a"
+          ],
+          "transitions": [
+            { "scene_transition_2": "(q.life_time - v.tick_delay) >= 4.5" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/tp @s 32 111 375 facing 32 110.5 344",
+            "/title @s actionbar xp_captions:b1"
+          ]
+        },
+
+        "scene_transition_1": {
+          "animations": [
+            "scene_3a"
+          ],
+          "transitions": [
+            { "scene_0": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "/music stop 2",
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_1": {
+          "animations": [
+            "scene_2a"
+          ],
+          "transitions": [
+            { "scene_transition_3": "(q.life_time - v.tick_delay) >= 4" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/tp @s 49 112 351 facing 44 110 332",
+            "/title @s actionbar xp_captions:b2"
+          ]
+        },
+
+        "scene_transition_2": {
+          "animations": [
+            "scene_1a"
+          ],
+          "transitions": [
+            { "scene_1": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "/music stop 2",
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_2": {
+          "animations": [
+            "scene_3a"
+          ],
+          "transitions": [
+            { "scene_transition_1": "(q.life_time - v.tick_delay) >= 10" }
+          ],
+          "on_entry": [
+            "v.tick_delay = q.life_time;",
+            "/music stop 2",
+            "/playsound armory @s",
+            "/tp @s 12 109 379 facing 32 97 397",
+            "/title @s actionbar xp_captions:b3"
+          ]
+        },
+
+        "scene_transition_3": {
+          "animations": [
+            "scene_2a"
+          ],
+          "transitions": [
+            { "scene_end": "(q.life_time - v.tick_delay) >= 1.75" }
+          ],
+          "on_entry": [
+            "/music stop 2",
+            "v.tick_delay = q.life_time;",
+            "/title @s actionbar xp_fade"
+          ]
+        },
+
+        "scene_end": {
+          "transitions": [
+            { "default": "((q.life_time - v.tick_delay) >= 2.25) || ((q.position_delta(0) > 0.0 || q.position_delta(1) > 0.0 || q.position_delta(2) > 0.0) || q.is_moving || q.is_sneaking || v.attack_time > 0.0)" }
+          ],
+          "on_entry": [
+            "/effect @s invisibility 0 0 true",
+            "/tp @s 32 110 421 facing 32 111 410",
+            "v.tick_delay = q.life_time;"
+          ],
+          "on_exit": [
+            "/gamerule sendcommandfeedback true",
+            "/title @s title xp_cutscene_out",
+            "/title @s actionbar xp_",
+            "/event entity @s xp:remove_cutscene",
+            "/event entity @s xp:clear_element",
+            "/tag @s remove armory"
+          ]
+        }
+      }
+    }
+  }
+}

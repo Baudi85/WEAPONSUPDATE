@@ -1,0 +1,88 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.sonic_sword_text":{
+      "initial_state": "default",
+      "states": {
+          "default":{
+              "transitions": [
+                  {"held": "q.get_equipped_item_name == 'sonic_sword'"}
+              ]
+          },
+          "held":{
+              "on_entry": [ 
+                 "/title @s actionbar - §7Mobs From 15 Blocks Away Will Be Pull To U -§r"
+              ],
+              "transitions": [
+                  { "default": "q.get_equipped_item_name != 'sonic_sword'" }
+              ]
+          }
+      }
+  },
+  "controller.animation.sonic_sword_detection":{
+    "initial_state": "default",
+    "states": {
+        "default":{
+          "on_entry": ["v.tick_delay = q.life_time;"],
+            "transitions": [
+                {"held": "q.get_equipped_item_name == 'sonic_sword' && true && (q.life_time - v.tick_delay) >= 4.1"}
+            ]
+        },
+        "held":{
+            "on_entry": [ "/function sonic_sword/setup"],
+            "transitions": [
+                { "default": "q.get_equipped_item_name == 'sonic_sword' && q.all_animations_finished" }
+            ]
+        }
+    }
+},
+    "controller.animation.sonic_sword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            { "holding": "q.get_equipped_item_name == 'sonic_sword'" }
+          ],
+          "on_entry": [ 
+            "/tag @s remove sonic_sword",
+            "/effect @s strength 0 0 true"
+          ]
+        },
+
+        "holding": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'sonic_sword'" } ,
+            { "left_click_knock": "q.is_using_item && q.get_equipped_item_name == 'sonic_sword'" },
+            { "right_click_knock": "v.attack_time > 0.0 && q.get_equipped_item_name == 'sonic_sword'" } 
+          ],
+          "on_entry": [ 
+            "/tag @s add sonic_sword",
+            "/effect @s strength 1000 20 true"
+          ]
+        },
+        "left_click_knock": {
+          "animations": ["use_sonic"],
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'sonic_sword'" } ,
+            { "holding": "q.all_animations_finished && q.get_equipped_item_name == 'sonic_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s strength 99999 250 true",
+            "/effect @s slowness 1 2 true"
+           ]
+        },
+        "right_click_knock": {
+          "transitions": [ 
+            { "default": "q.get_equipped_item_name != 'sonic_sword'" } ,
+            { "holding": "!v.attack_time && q.get_equipped_item_name == 'sonic_sword'" } 
+          ],
+          "on_entry": [ 
+            "/effect @s strength 99999 250 true",
+            "@s xp:use_sonic_knock_pull",
+            "/effect @s slowness 1 2 true"
+           ]
+        }
+      }
+    }
+  }
+}

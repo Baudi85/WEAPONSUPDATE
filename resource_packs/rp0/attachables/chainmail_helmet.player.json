@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "minecraft:chainmail_helmet.player",
+      "item": { "minecraft:chainmail_helmet": "query.owner_identifier == 'minecraft:player'" },
+      "materials": {
+        "glow": "spider",
+        "default": "armor",
+        "enchanted": "armor_enchanted"
+      },
+      "textures": {
+        "armor_0": "textures/armor/wither_storm_armor/0",
+        "armor_1": "textures/armor/wither_storm_armor/1",
+        "armor_2": "textures/armor/wither_storm_armor/2",
+        "armor_3": "textures/armor/wither_storm_armor/3",
+        "armor_4": "textures/armor/wither_storm_armor/4",
+        "enchanted": "textures/armor/wither_storm_armor/enchanted"
+      },
+      "geometry": {
+        "default": "geometry.shaday_armor_helmet"
+      },
+      "scripts": {
+        "parent_setup": "variable.helmet_layer_visible = 0.0;"
+      },
+      "render_controllers": [ "controller.render.wither_storm_armor" ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.wind_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"wind.attack":"v.attack_time > 0"},
+                        {"wind.cast_wind": "q.is_using_item"}
+                    ]
+                },
+                "wind.attack":{
+                    "animations": ["wind.attack", "bob"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ]
+                },
+                "wind.cast_wind":{
+                    "animations": ["wind.cast_wind"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"wind.cast_loop": "q.is_using_item"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "wind.cast_loop":{
+                    "animations": ["wind.cast_loop"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"wind.release": "!q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "wind.release":{
+                    "animations": ["wind.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.wind_sword.tpp": {
+            "initial_state": "weapon_t_draw",
+            "states": {
+                "weapon_t_draw":{
+                    "animations": ["weapon_t_draw", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_t_hold":{
+                    "animations": ["bob","holding", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"wind.t_attack":"v.attack_time > 0"},
+                        {"wind.t_cast_wind": "q.is_using_item"}
+                    ]
+                },
+                "wind.t_attack":{
+                    "animations": ["wind.t_attack", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "wind.t_cast_wind":{
+                    "animations": ["wind.t_cast_wind", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"},
+                        {"wind.t_cast_loop": "q.is_using_item"}
+                    ],
+                    "blend_transition": 0.1
+                },
+                "wind.t_cast_loop":{
+                    "animations": ["wind.t_cast_loop", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"wind.t_release": "!q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "wind.t_release":{
+                    "animations": ["wind.t_release", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        }
+     }
+  }

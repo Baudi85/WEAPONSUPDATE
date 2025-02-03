@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xp:enter_sign",
+      "materials": { "default": "entity_alphatest" },
+      "textures": { "default": "textures/entity/enter" },
+      "geometry": { "default": "geometry.enter_sign" },
+      "scripts": {
+        "scale": "1.5",
+        "animate": [
+          "face_player",
+          "bob"
+        ]
+      },
+      "animations": { 
+        "face_player": "animation.sign.billboard",
+        "bob": "animation.enter_sign.bob"  
+      }
+    }
+  }
+}

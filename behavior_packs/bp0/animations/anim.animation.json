@@ -1,0 +1,159 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.sonic_anim_sync":{
+            "animation_length": 1.4,
+            "loop": false,
+            "timeline": {
+                "0.0":["/effect @s slowness 1 1 true"],
+                "0.5":["/effect @s slowness 1 2 true"],
+                "0.9":["/effect @s slowness 1 3 true", "/playsound beacon.activate @s", "@s xp:use_sonic_knock", "/camerashake add @s 0.10 0.2 positional"],
+                "1.1":[],
+                "1.2":[]
+            }
+        },
+        "animation.set_1":{
+            "animation_length": 1.6,
+            "loop": false,
+            "timeline": {
+                "0.0":["/title @s actionbar - 1 -"],
+                "0.1":["/title @s actionbar - 1 -"],
+                "0.2":["/title @s actionbar - 2 -"],
+                "0.3":["/title @s actionbar - 3 -"],
+                "0.4":["/title @s actionbar - 4 -"],
+                "0.5":["/title @s actionbar - 5 -"]
+            }
+        },
+        "animation.tornado":{
+            "animation_length": 6.1,
+            "loop": true,
+            "timeline": {
+                "0.0":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ effect @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] levitation 1 25"],
+                "1.5":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ effect @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] levitation 1 25"],
+                "3.0":["/summon minecraft:lightning_bolt ^ ^ ^4", "/summon minecraft:lightning_bolt ^ ^ ^-4","/summon minecraft:lightning_bolt ^ ^4 ^"],
+                "1.0":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ summon lightning_bolt"],
+                "2.0":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ effect @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] levitation 1 25"],
+                "5.2":["/summon minecraft:lightning_bolt ^ ^2 ^", "/summon minecraft:lightning_bolt ^ ^-2 ^", "/summon minecraft:lightning_bolt ^ ^8 ^"],
+                "5.0":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ summon lightning_bolt"],
+                "6.0":["/execute @e[family=!xp_dummy,type=!xp:tornado,family=!dummy,tag=!storm_sword,r=4] ~~~ summon minecraft:lightning_bolt ^ ^ ^8", "/summon minecraft:lightning_bolt ^ ^ ^8", "/summon minecraft:lightning_bolt ^ ^ ^-8"]
+            }
+        },
+        "animation.shockwave_p2":{
+            "animation_length": 0.5,
+            "loop": false,
+            "timeline": {
+                "0.0":["/camerashake add @s 0.05 0.8"],
+                "0.1":[],
+                "0.2":[],
+                "0.3":["/camerashake add @s 0.08 0.8"],
+                "0.4":[],
+                "0.5":[]
+            }
+        },
+        "animation.shockwave_p":{
+            "animation_length": 1.6,
+            "loop": false,
+            "timeline": {
+                "0.0":["/particle xp:poison.ripple ~~~", "/effect @s slowness 1 4 true"],
+                "0.1":[
+                    "/execute @e[tag=!poison_sword,r=6] ~~~ effect @e[tag=!poison_sword,r=6] poison 2 5", "/playsound mob.wither.shoot @p[r=15] ~~~ 0.25 0.6",
+                     "/execute @e[tag=!poison_sword,r=6] ~~~ effect @e[tag=!poison_sword,r=6] poison 2 5", "/playsound random.fizz @p[r=15] ~~~ 1 0.5"
+                    ],
+                "0.2":[],
+                "0.3":[
+                    "/execute @e[tag=!poison_sword,r=6] ~~~ effect @e[tag=!poison_sword,r=6] poison 2 5", "/playsound mob.wither.shoot @p[r=15] ~~~ 0.10 0.5",
+                    "/execute @e[tag=!poison_sword,r=6] ~~~ effect @e[tag=!poison_sword,r=6] poison 2 5"
+                   ],
+                "0.4":[],
+                "0.5":[]
+            }
+        },
+        "animation.10_sec_cooldown_dummy":{
+            "animation_length": 10.0,
+            "loop": true,
+            "timeline": {
+                "9.0":["/title @s actionbar - ! Cooled Down Ability ! -"]
+            }
+        },
+        "animation.darkness_emitter":{
+            "animation_length": 0.0,
+            "loop": true,
+            "timeline": {
+                "0.0":["/particle xp:dark_em ~~1~"]
+            }
+        },
+        "animation.cameras_shake":{
+            "animation_length": 0.4,
+            "loop": true,
+            "timeline": {
+                "0.0":["/camerashake add @a[r=12] 0.2 1.75"]
+            }
+        },
+        "animation.summon_tornado":{
+            "animation_length": 1.1,
+            "loop": false,
+            "timeline": {
+                "0.0":["/title @s actionbar - Summoning Tornado -", "/camerashake add @s 0.01 0.5 rotational", "/playsound mob.wither.spawn @p[r=10] ~~~ 1 0.20"],
+                "0.1":["/title @s actionbar - Summoning Tornado -"],
+                "0.2":["/title @s actionbar - Summoning Tornado -", "/camerashake add @s 0.02 0.5 rotational"],
+                "0.3":["/title @s actionbar - Summoning Tornado -"],
+                "0.4":["/title @s actionbar - Summoning Tornado -", "/camerashake add @s 0.03 0.5 rotational"],
+                "0.5":["/title @s actionbar - Summoning Tornado -"],
+                "0.6":["/title @s actionbar - Summoning Tornado -", "/camerashake add @s 0.04 0.5 rotational"],
+                "0.7":["/title @s actionbar - Summoning Tornado -"],
+                "0.8":["/title @s actionbar - Summoning Tornado -", "/camerashake add @s 0.05 0.5 rotational"],
+                "0.9":["/title @s actionbar - Summoning Tornado -"],
+                "1.0":["/title @s actionbar - Summoning Tornado -"]
+            }
+        },
+        "animation.jungle_throw":{
+            "animation_length": 0.6,
+            "loop": false,
+            "timeline": {
+                "0.0":["/execute @e[tag=!jungle_sword,family=!xp_dummy,r=15] ~~~ effect @e[tag=!jungle_sword,family=!xp_dummy] levitation 1 25 true"],
+                "0.1":["/title @s actionbar - 1 -"],
+                "0.2":["/title @s actionbar - 2 -"],
+                "0.3":["/title @s actionbar - 3 -"],
+                "0.4":["/title @s actionbar - 4 -"],
+                "0.5":["/title @s actionbar - 5 -"]
+            }
+        },
+        "animation.toxic_emitters":{
+            "animation_length": 0.6,
+            "loop": true,
+            "timeline": {
+                "0.0":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~"],
+                "0.1":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~", "/particle xp:toxic ~~2~"],
+                "0.2":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~"],
+                "0.3":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~", "/particle xp:toxic ~~2~"],
+                "0.4":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~"],
+                "0.5":["/effect @e[tag=!poison_sword,type=!xp:toxic,type=!xp:poison_projectile,family=!xp_dummy,r=5] poison 5 5", "/particle xp:toxic_skull ~~2~", "/particle xp:toxic ~~2~"]
+            }
+        },
+        "animation.set_structure":{
+            "animation_length": 0.5,
+            "loop": false,
+            "timeline": {
+                "0.0":["/structure load water_thing2 ~0~~0"],
+                "0.2":["/structure load water_thing1 ~0~~0", "/fill ~~~~~~ air 0 replace water"],
+                "0.4":["/kill @e[type=xp:water_beam_projectile,r=1]"]
+            }
+        },
+        "animation.dirt_p":{
+            "animation_length": 0.1,
+            "loop": true,
+            "timeline": {
+                "0.0":["/particle xp:dirt_trail ~~~"],
+                "0.1":["/particle xp:dirt_trail ~~~"]
+            }
+        },
+        "animation.particle":{
+            "animation_length": 0.1,
+            "loop": false,
+            "timeline": {
+                "0.0":["/particle minecraft:water_wake_particle ~~~","/particle minecraft:water_wake_particle ~~~","/particle minecraft:water_wake_particle ~~~","/playsound liquid.water @p[r=10]"],
+                "0.1":["/particle minecraft:water_wake_particle ~~~","/particle minecraft:water_wake_particle ~~~","/particle minecraft:water_wake_particle ~~~"]
+            }
+        }
+    }
+}

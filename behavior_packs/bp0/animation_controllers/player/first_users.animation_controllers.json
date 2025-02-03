@@ -1,0 +1,425 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+      "controller.animation.elemental_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'elemental_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'elemental_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'elemental_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'elemental_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'elemental_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!elemental_sword_acquired] minecraft:golden_carrot 32", "/tag @s add elemental_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!elemental_sword_acquired] minecraft:potion 1 22", "/tag @s add elemental_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!elemental_sword_acquired] minecraft:potion 1 29", "/tag @s add elemental_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!elemental_sword_acquired] minecraft:golden_apple 3", "/tag @s add elemental_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!elemental_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add elemental_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.ocean_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'ocean_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'ocean_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'ocean_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'ocean_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'ocean_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!ocean_sword_acquired] minecraft:golden_carrot 32", "/tag @s add ocean_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!ocean_sword_acquired] minecraft:potion 1 22", "/tag @s add ocean_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!ocean_sword_acquired] minecraft:potion 1 29", "/tag @s add ocean_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!ocean_sword_acquired] minecraft:golden_apple 3", "/tag @s add ocean_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!ocean_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add ocean_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.air_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'air_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'air_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'air_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'air_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'air_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!air_sword_acquired] minecraft:golden_carrot 32", "/tag @s add air_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!air_sword_acquired] minecraft:potion 1 22", "/tag @s add air_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!air_sword_acquired] minecraft:potion 1 29", "/tag @s add air_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!air_sword_acquired] minecraft:golden_apple 3", "/tag @s add air_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!air_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add air_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.ice_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'ice_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'ice_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'ice_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'ice_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'ice_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!ice_sword_acquired] minecraft:golden_carrot 32", "/tag @s add ice_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!ice_sword_acquired] minecraft:potion 1 22", "/tag @s add ice_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!ice_sword_acquired] minecraft:potion 1 29", "/tag @s add ice_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!ice_sword_acquired] minecraft:golden_apple 3", "/tag @s add ice_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!ice_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add ice_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.fire_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'fire_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'fire_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'fire_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'fire_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'fire_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!fire_sword_acquired] minecraft:golden_carrot 32", "/tag @s add fire_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!fire_sword_acquired] minecraft:potion 1 22", "/tag @s add fire_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!fire_sword_acquired] minecraft:potion 1 29", "/tag @s add fire_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!fire_sword_acquired] minecraft:golden_apple 3", "/tag @s add fire_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!fire_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add fire_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.light_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'light_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'light_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'light_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'light_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'light_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!light_sword_acquired] minecraft:golden_carrot 32", "/tag @s add light_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!light_sword_acquired] minecraft:potion 1 22", "/tag @s add light_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!light_sword_acquired] minecraft:potion 1 29", "/tag @s add light_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!light_sword_acquired] minecraft:golden_apple 3", "/tag @s add light_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!light_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add light_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.earth_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'earth_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'earth_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'earth_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'earth_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'earth_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!earth_sword_acquired] minecraft:golden_carrot 32", "/tag @s add earth_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!earth_sword_acquired] minecraft:potion 1 22", "/tag @s add earth_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!earth_sword_acquired] minecraft:potion 1 29", "/tag @s add earth_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!earth_sword_acquired] minecraft:golden_apple 3", "/tag @s add earth_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!earth_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add earth_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.nether_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'nether_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'nether_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'nether_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'nether_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'nether_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!nether_sword_acquired] minecraft:golden_carrot 32", "/tag @s add nether_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!nether_sword_acquired] minecraft:potion 1 22", "/tag @s add nether_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!nether_sword_acquired] minecraft:potion 1 29", "/tag @s add nether_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!nether_sword_acquired] minecraft:golden_apple 3", "/tag @s add nether_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!nether_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add nether_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.tnt_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'tnt_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'tnt_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'tnt_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'tnt_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'tnt_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!tnt_sword_acquired] minecraft:golden_carrot 32", "/tag @s add tnt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!tnt_sword_acquired] minecraft:potion 1 22", "/tag @s add tnt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!tnt_sword_acquired] minecraft:potion 1 29", "/tag @s add tnt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!tnt_sword_acquired] minecraft:golden_apple 3", "/tag @s add tnt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!tnt_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add tnt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.thunder_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'thunder_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'thunder_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'thunder_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'thunder_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'thunder_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!thunder_sword_acquired] minecraft:golden_carrot 32", "/tag @s add thunder_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!thunder_sword_acquired] minecraft:potion 1 22", "/tag @s add thunder_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!thunder_sword_acquired] minecraft:potion 1 29", "/tag @s add thunder_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!thunder_sword_acquired] minecraft:golden_apple 3", "/tag @s add thunder_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!thunder_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add thunder_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.lava_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'lava_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'lava_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'lava_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'lava_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'lava_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!lava_sword_acquired] minecraft:golden_carrot 32", "/tag @s add lava_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!lava_sword_acquired] minecraft:potion 1 22", "/tag @s add lava_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!lava_sword_acquired] minecraft:potion 1 29", "/tag @s add lava_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!lava_sword_acquired] minecraft:golden_apple 3", "/tag @s add lava_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!lava_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add lava_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.sonic_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'sonic_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'sonic_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'sonic_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'sonic_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'sonic_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!sonic_sword_acquired] minecraft:golden_carrot 32", "/tag @s add sonic_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!sonic_sword_acquired] minecraft:potion 1 22", "/tag @s add sonic_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!sonic_sword_acquired] minecraft:potion 1 29", "/tag @s add sonic_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!sonic_sword_acquired] minecraft:golden_apple 3", "/tag @s add sonic_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!sonic_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add sonic_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.darkness_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'darkness_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'darkness_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'darkness_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'darkness_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'darkness_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!darkness_sword_acquired] minecraft:golden_carrot 32", "/tag @s add darkness_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!darkness_sword_acquired] minecraft:potion 1 22", "/tag @s add darkness_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!darkness_sword_acquired] minecraft:potion 1 29", "/tag @s add darkness_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!darkness_sword_acquired] minecraft:golden_apple 3", "/tag @s add darkness_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!darkness_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add darkness_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.ender_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'ender_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'ender_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'ender_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'ender_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'ender_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!ender_sword_acquired] minecraft:golden_carrot 32", "/tag @s add ender_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!ender_sword_acquired] minecraft:potion 1 22", "/tag @s add ender_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!ender_sword_acquired] minecraft:potion 1 29", "/tag @s add ender_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!ender_sword_acquired] minecraft:golden_apple 3", "/tag @s add ender_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!ender_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add ender_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.dirt_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'dirt_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'dirt_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'dirt_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'dirt_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'dirt_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!dirt_sword_acquired] minecraft:golden_carrot 32", "/tag @s add dirt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!dirt_sword_acquired] minecraft:potion 1 22", "/tag @s add dirt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!dirt_sword_acquired] minecraft:potion 1 29", "/tag @s add dirt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!dirt_sword_acquired] minecraft:golden_apple 3", "/tag @s add dirt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!dirt_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add dirt_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.spike_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'spike_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'spike_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'spike_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'spike_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'spike_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!spike_sword_acquired] minecraft:golden_carrot 32", "/tag @s add spike_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!spike_sword_acquired] minecraft:potion 1 22", "/tag @s add spike_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!spike_sword_acquired] minecraft:potion 1 29", "/tag @s add spike_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!spike_sword_acquired] minecraft:golden_apple 3", "/tag @s add spike_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!spike_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add spike_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.storm_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'storm_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'storm_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'storm_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'storm_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'storm_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!storm_sword_acquired] minecraft:golden_carrot 32", "/tag @s add storm_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!storm_sword_acquired] minecraft:potion 1 22", "/tag @s add storm_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!storm_sword_acquired] minecraft:potion 1 29", "/tag @s add storm_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!storm_sword_acquired] minecraft:golden_apple 3", "/tag @s add storm_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!storm_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add storm_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.water_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'water_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'water_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'water_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'water_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'water_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!water_sword_acquired] minecraft:golden_carrot 32", "/tag @s add water_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!water_sword_acquired] minecraft:potion 1 22", "/tag @s add water_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!water_sword_acquired] minecraft:potion 1 29", "/tag @s add water_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!water_sword_acquired] minecraft:golden_apple 3", "/tag @s add water_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!water_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add water_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.wither_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'wither_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'wither_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'wither_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'wither_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'wither_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!wither_sword_acquired] minecraft:golden_carrot 32", "/tag @s add wither_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!wither_sword_acquired] minecraft:potion 1 22", "/tag @s add wither_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!wither_sword_acquired] minecraft:potion 1 29", "/tag @s add wither_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!wither_sword_acquired] minecraft:golden_apple 3", "/tag @s add wither_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!wither_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add wither_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.poison_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'poison_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'poison_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'poison_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'poison_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'poison_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!poison_sword_acquired] minecraft:golden_carrot 32", "/tag @s add poison_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!poison_sword_acquired] minecraft:potion 1 22", "/tag @s add poison_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!poison_sword_acquired] minecraft:potion 1 29", "/tag @s add poison_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!poison_sword_acquired] minecraft:golden_apple 3", "/tag @s add poison_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!poison_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add poison_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      },
+      "controller.animation.jungle_sword.first_user": {
+        "initial_state": "default",
+        "states": {
+          "default": {
+            "transitions": [
+              {"give_items_1": "q.get_equipped_item_name == 'jungle_sword' && v.randomize == 1"},
+              {"give_items_2": "q.get_equipped_item_name == 'jungle_sword' && v.randomize == 2"},
+              {"give_items_3": "q.get_equipped_item_name == 'jungle_sword' && v.randomize == 3"},
+              {"give_items_4": "q.get_equipped_item_name == 'jungle_sword' && v.randomize == 4"},
+              {"give_items_5": "q.get_equipped_item_name == 'jungle_sword' && v.randomize == 5"}
+            ],
+            "on_entry": [ "v.randomize = math.random_integer(1, 5);" ]
+          },
+          "give_items_1":{ "on_entry": ["/give @s[tag=!jungle_sword_acquired] minecraft:golden_carrot 32", "/tag @s add jungle_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_2":{ "on_entry": ["/give @s[tag=!jungle_sword_acquired] minecraft:potion 1 22", "/tag @s add jungle_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_3":{ "on_entry": ["/give @s[tag=!jungle_sword_acquired] minecraft:potion 1 29", "/tag @s add jungle_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_4":{ "on_entry": ["/give @s[tag=!jungle_sword_acquired] minecraft:golden_apple 3", "/tag @s add jungle_sword_acquired", "v.randomize = math.random_integer(1, 5);"] },
+          "give_items_5":{ "on_entry": ["/give @s[tag=!jungle_sword_acquired] minecraft:enchanted_golden_apple 1", "/tag @s add jungle_sword_acquired", "v.randomize = math.random_integer(1, 5);"] }
+        }
+      }
+    }
+  }

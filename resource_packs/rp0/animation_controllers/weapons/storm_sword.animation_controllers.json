@@ -1,0 +1,113 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.storm_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"storm.attack":"v.attack_time > 0"},
+                        {"storm.charge":"q.is_using_item"}
+                    ]
+                },
+                "storm.attack":{
+                    "animations": ["storm.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "storm.charge":{
+                    "animations": ["storm.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item"},
+                        {"storm.hold_charge": "q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.25
+                },
+                "storm.hold_charge":{
+                    "animations": ["storm.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"storm.release": "!q.is_using_item"}
+                    ],
+                    "blend_transition": 0.05
+                },
+                "storm.release":{
+                    "animations": ["storm.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.15
+                }
+            }
+        },
+        "controller.animation.storm_sword.tpp": {
+            "initial_state": "weapon_t_draw",
+            "states": {
+                "weapon_t_draw":{
+                    "animations": ["weapon_t_draw", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_t_hold":{
+                    "animations": ["bob","weapon_t_hold", "move.arms"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"storm.t_attack":"v.attack_time > 0"},
+                        {"storm.t_charge":"q.is_using_item"}
+                    ]
+                },
+                "storm.t_attack":{
+                    "animations": ["storm.t_attack", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "storm.t_charge":{
+                    "animations": ["storm.t_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold": "!q.is_using_item"},
+                        {"storm.t_hold_charge": "q.is_using_item && (q.life_time - v.tick_delay) >= 0.5"}
+                    ],
+                    "blend_transition": 0.25
+                },
+                "storm.t_hold_charge":{
+                    "animations": ["storm.t_hold_charge", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"storm.t_release": "!q.is_using_item"}
+                    ],
+                    "blend_transition": 0.05
+                },
+                "storm.t_release":{
+                    "animations": ["storm.t_release", "holding_cancel"], 
+                    "transitions": [
+                        {"weapon_t_draw":"v.draw_sword"},
+                        {"weapon_t_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.1
+                }
+            }
+        }
+     }
+  }

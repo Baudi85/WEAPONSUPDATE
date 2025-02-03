@@ -1,0 +1,30 @@
+//bridge-file-version: #23
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.firefly.stage": {
+			"arrays": {
+				"textures": {
+					"Array.skins": [
+						"Texture.default.stage.00",
+						"Texture.default.stage.01",
+						"Texture.default.stage.02",
+						"Texture.default.stage.03",
+						"Texture.default.stage.02",
+						"Texture.default.stage.01"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.skins[query.life_time]"
+			],
+			"ignore_lighting": true
+		}
+	}
+}

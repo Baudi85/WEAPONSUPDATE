@@ -1,0 +1,107 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.armor_statue.thunder_blade",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "root",
+					"pivot": [0, 27, 0]
+				},
+				{
+					"name": "Head",
+					"parent": "Body",
+					"pivot": [0, 27, 0]
+				},
+				{
+					"name": "LeftArm",
+					"parent": "Body",
+					"pivot": [5, 25, 0]
+				},
+				{
+					"name": "LeftLeg",
+					"parent": "Body",
+					"pivot": [1.9, 15, 0]
+				},
+				{
+					"name": "RightLeg",
+					"parent": "Body",
+					"pivot": [-1.9, 15, 0]
+				},
+				{
+					"name": "RightArm",
+					"parent": "Body",
+					"pivot": [-5, 25, 0],
+					"rotation": [-22.5, 0, 0]
+				},
+				{
+					"name": "blade",
+					"parent": "RightArm",
+					"pivot": [-6, 15.44619, -7.05941],
+					"rotation": [90, 10, -90],
+					"cubes": [
+						{
+							"origin": [-8.21927, 15.52349, -7.40941],
+							"size": [4.9, 18.9, 0.7],
+							"uv": {
+								"north": {"uv": [16, 0], "uv_size": [7, 27]},
+								"east": {"uv": [30, 51], "uv_size": [1, 27]},
+								"south": {"uv": [23, 0], "uv_size": [7, 27]},
+								"west": {"uv": [31, 51], "uv_size": [1, 27]},
+								"up": {"uv": [59, 51], "uv_size": [7, 1]},
+								"down": {"uv": [60, 42], "uv_size": [7, -1]}
+							}
+						},
+						{
+							"origin": [-8.33701, 32.20574, -7.40341],
+							"size": [4.888, 4.888, 0.688],
+							"inflate": 0.02,
+							"pivot": [-5.76927, 34.77349, -7.05941],
+							"rotation": [0, 0, -45],
+							"uv": {
+								"north": {"uv": [38, 8], "uv_size": [7, 7]},
+								"east": {"uv": [28, 61], "uv_size": [1, 7]},
+								"south": {"uv": [38, 15], "uv_size": [7, 7]},
+								"west": {"uv": [29, 61], "uv_size": [1, 7]},
+								"up": {"uv": [61, 42], "uv_size": [7, 1]},
+								"down": {"uv": [61, 44], "uv_size": [7, -1]}
+							}
+						},
+						{
+							"origin": [-21.10165, 19.44111, -7.41541],
+							"size": [5.612, 5.612, 0.712],
+							"inflate": -0.02,
+							"pivot": [-5.76927, 34.77349, -7.05941],
+							"rotation": [0, 0, -45],
+							"uv": {
+								"north": {"uv": [30, 0], "uv_size": [8, 8]},
+								"east": {"uv": [48, 0], "uv_size": [1, 8]},
+								"south": {"uv": [30, 8], "uv_size": [8, 8]},
+								"west": {"uv": [41, 59], "uv_size": [1, 8]},
+								"up": {"uv": [57, 52], "uv_size": [8, 1]},
+								"down": {"uv": [58, 4], "uv_size": [8, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "base",
+					"parent": "root",
+					"pivot": [0, 3, 0]
+				}
+			]
+		}
+	]
+}

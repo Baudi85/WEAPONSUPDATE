@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "xp:skeleton_prop1",
+        "materials": { "default": "spider" },
+        "textures": { "default": "textures/skeleton_corpse/skeleton_corpse_1"},
+        "animations": {
+          "death": "animation.normal_s1.collapse",
+          "setup": "controller.animation.skeleton_setup"
+        },
+        "scripts": {
+          "animate": ["setup"]
+        },
+        "spawn_egg": {
+          "base_color": "#d1d1d1",
+          "overlay_color": "#448527"
+        },
+        "geometry": {
+             "default": "geometry.skeleton_corpse_1_foliage"
+        },
+        "render_controllers": [ "controller.render.default" ]
+      }
+    }
+  }

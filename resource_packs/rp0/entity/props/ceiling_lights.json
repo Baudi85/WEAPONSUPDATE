@@ -1,0 +1,38 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "xp:ceiling_lights",
+        "materials": { "default": "spider" },
+        "textures": { 
+          "ceiling_lights_0": "textures/entity/lights/0",
+          "ceiling_lights_1": "textures/entity/lights/1",
+          "ceiling_lights_2": "textures/entity/lights/2",
+          "ceiling_lights_3": "textures/entity/lights/3",
+          "ceiling_lights_4": "textures/entity/lights/4"
+        },
+        "scripts": { "animate": [ "align", "idle", "drip" ] },
+        "animations": { 
+          "align": "animation.prop.align",
+          "idle": "animation.ceiling_light",
+          "drip": "animation.ceiling_light.candle_drip"
+         },
+         "spawn_egg": {
+           "texture": "ceiling_lights",
+           "texture_index": 0
+         },
+        "sound_effects": {
+          "fire": "cool sfx here"
+        },
+        "particle_effects": {
+          "drip": "xp:candle_drip",
+          "flame": "xp:flame",
+          "fire": "xp:fire1",
+          "smoke": "minecraft:basic_smoke_particle",
+          "sparks": "xp:torch.sparks"
+        },
+        "geometry": { "default": "geometry.celinglights" },
+        "render_controllers": [ "controller.render.ceiling_lights" ]
+      }
+    }
+  }

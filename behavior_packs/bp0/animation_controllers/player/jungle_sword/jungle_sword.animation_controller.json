@@ -1,0 +1,62 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.jungle_sword_effects":{
+            "initial_state": "default",
+            "states": {
+              "default":{
+                "on_entry": ["/tag @s remove jungle_sword"],
+                "transitions": [
+                  {"jungle_sword": "q.get_equipped_item_name == 'jungle_sword'"}
+                ]
+              },
+              "jungle_sword": {
+                "on_entry": ["/tag @s add jungle_sword"],
+                "transitions": [
+                  {"default": "q.get_equipped_item_name != 'jungle_sword'"}
+                ]
+              }
+            }
+          },
+        "controller.animation.jungle_sword_throw": {
+          "initial_state": "default",
+          "states": {
+            "default": {
+              "on_exit": ["/camerashake stop @s"],
+              "transitions": [
+                { "ye": "q.get_equipped_item_name == 'jungle_sword' && q.item_remaining_use_duration"}
+              ]
+            },
+            "ye":{
+              "on_entry": ["v.tick_delay = q.life_time;"],
+              "animations": ["camerashake"],
+              "transitions": [
+                { "finish": "!q.is_using_item && q.all_animations_finished && (q.life_time - v.tick_delay) >= 0.5"}
+              ]
+            },
+            "finish": {
+              "on_entry": ["/summon xp:rocks ^^^4", "/damage @e[tag=!jungle_sword] 20", "/playsound cauldron.explode @p[r=15] ~~~ 1 1 1", "/particle xp:rock2 ~~~","/particle xp:rock3 ~~~"],
+              "transitions": [ 
+                { "default": "q.all_animations_finished" }
+              ]
+            }
+          }
+        },
+        "controller.animation.jungle_sword":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"climb": "q.get_equipped_item_name == 'jungle_sword' && query.cardinal_player_facing == 1.0"}
+                    ]
+                },
+                "climb":{
+                    "on_entry": ["/function jungle_sword/climbing_setup", "/execute @s ~~1.63~ detect ^^^1 air -1 tag @s add detected_air"],
+                    "transitions": [
+                        {"default": "q.get_equipped_item_name == 'jungle_sword' && query.cardinal_player_facing == 1.0"}
+                    ]
+                } 
+            }
+        }
+    }
+}

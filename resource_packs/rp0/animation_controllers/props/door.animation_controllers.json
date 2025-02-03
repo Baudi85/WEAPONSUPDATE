@@ -1,0 +1,37 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.door_setup":{
+            "initial_state": "default",
+            "states": {
+                "default":{
+                    "transitions": [
+                        {"open": "q.variant == 1"}
+                    ]
+                },
+                "open":{
+                    "animations": ["open"],
+                    "transitions": [
+                        {"close_hold": "q.all_animations_finished"}
+                    ]
+                },
+                "close_hold":{
+                    "animations": ["close_hold"],
+                    "transitions": [
+                        {"close": "q.variant == 0"},
+                        {"inactive": "q.variant == 3"}
+                    ]
+                },
+                "close":{
+                    "animations": ["close"],
+                    "transitions": [
+                        {"default": "q.all_animations_finished"}
+                    ]
+                },
+                "inactive":{
+                    "animations": ["close"]
+                }
+            }
+        }
+    }
+}

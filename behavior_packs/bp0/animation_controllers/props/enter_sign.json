@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.enter_sign": {
+      "initial_state": "trigger_off",
+      "states": {
+        "trigger_off": {
+          "animations":[ "sfx_vfx" ],
+          "transitions": [
+            { "trigger_on": "q.variant == 1" }
+          ]
+        },
+        "trigger_on": {
+          "animations":[ 
+            "sfx_vfx",
+            "map_start"
+           ],
+          "transitions": [
+            { "trigger_off": "q.variant == 0" }
+          ],
+          "on_exit": [ 
+            "/execute @a ~~~ event entity @s xp:remove_particle_rider",
+            "/playsound respawn_anchor.ambient @a ~~~ 1 0.5 0.01",
+            "/playsound respawn_anchor.ambient @a ~~~ 1 1 0.01",
+            "/particle xp:tp_particles -37 111 469",
+            "/particle xp:tp_swirl -37 111 469",
+            "/tickingarea remove enter_sign",
+            "/tickingarea remove ruin_entrance"
+          ]
+        }
+      }
+    }
+  }
+}

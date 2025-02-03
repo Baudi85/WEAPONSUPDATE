@@ -1,0 +1,113 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.earth_sword.fpp": {
+            "initial_state": "weapon_draw",
+            "states": {
+                "weapon_draw":{
+                    "animations": ["weapon_draw"], 
+                    "transitions": [
+                        {"weapon_hold":"q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.25,
+                    "on_exit": [ "variable.draw_sword = 0;" ]
+                },
+                "weapon_hold":{
+                    "animations": ["bob","weapon_hold"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"earth.attack":"v.attack_time > 0"},
+                        {"earth.charge":"q.all_animations_finished && q.is_using_item && !q.is_tamed"}
+                    ]
+                },
+                "earth.attack":{
+                    "animations": ["earth.attack"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"},
+                        {"earth.charge":"q.all_animations_finished && q.is_using_item"}
+                    ],
+                    "blend_transition": 0.15
+                },
+                "earth.charge":{
+                    "animations": ["earth.charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "!q.is_using_item" },
+                        {"earth.hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.45"}
+                    ],
+                    "blend_transition": 0.2
+                },
+                "earth.hold_charge":{
+                    "animations": ["earth.hold_charge"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"earth.release": "!q.is_using_item"}
+                    ]
+                },
+                "earth.release":{
+                    "animations": ["earth.release"], 
+                    "transitions": [
+                        {"weapon_draw":"v.draw_sword"},
+                        {"weapon_hold": "q.all_animations_finished"}
+                    ],
+                    "blend_transition": 0.2
+                }
+            }
+        },
+        "controller.animation.earth_sword.tpp": {
+          "initial_state": "weapon_t_draw",
+          "states": {
+              "weapon_t_draw":{
+                  "animations": ["weapon_t_draw", "move.arms"], 
+                  "transitions": [
+                      {"weapon_t_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.1,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_t_hold":{
+                  "animations": ["bob","weapon_t_hold", "move.arms"], 
+                  "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"earth.t_attack":"v.attack_time > 0"},
+                    {"earth.t_charge":"q.all_animations_finished && q.is_using_item && !q.is_tamed"}
+                  ]
+              },
+              "earth.t_attack":{
+                  "animations": ["earth.t_attack", "holding_cancel"], 
+                  "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"},
+                    {"earth.t_charge":"q.all_animations_finished && q.is_using_item"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "earth.t_charge":{
+                "animations": ["earth.t_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "!q.is_using_item" },
+                    {"earth.t_hold_charge": "q.all_animations_finished && q.is_using_item && (q.life_time - v.tick_delay) >= 0.45"}
+                ],
+                "blend_transition": 0.15
+            },
+            "earth.t_hold_charge":{
+                "animations": ["earth.t_hold_charge", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"earth.t_release": "!q.is_using_item"}
+                ]
+            },
+            "earth.t_release":{
+                "animations": ["earth.t_release", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.15
+                }
+            }
+        }
+    }
+}

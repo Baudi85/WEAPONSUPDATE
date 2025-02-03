@@ -1,0 +1,30 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+      "description": {
+        "identifier": "xp:fire_pit",
+        "materials": { "default": "spider" },
+        "textures": { "default": "textures/entity/fire_pit"},
+        "scripts": { "animate": [ "align", "fire" ] },
+        "animations": { 
+          "align": "animation.prop.align",
+          "fire": "animation.fire_pit"
+         },
+         "spawn_egg": {
+           "texture": "fire_pit",
+           "texture_index": 0
+         },
+        "sound_effects": {
+          "fire": "cool sfx here"
+        },
+        "particle_effects": {
+          "fire1": "xp:fire_pit",
+          "fire": "xp:fire1",
+          "smoke": "xp:torch.smoke",
+          "sparks": "xp:torch.sparks"
+        },
+        "geometry": { "default": "geometry.fire_pit" },
+        "render_controllers": [ "controller.render.default" ]
+      }
+    }
+  }

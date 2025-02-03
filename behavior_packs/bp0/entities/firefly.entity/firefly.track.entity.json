@@ -1,0 +1,223 @@
+//bridge-file-version: #113
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "wu:firefly.track.entity",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"scripts": {
+				"animate": [
+					"wu:controller.firefly.follow_firefly"
+				]
+			},
+			"animations": {
+				"wu:controller.firefly.follow_firefly": "controller.animation.firefly.follow_firefly"
+			}
+		},
+		"component_groups": {
+			"wu:summon.firefly.entity": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"should_leash": false,
+							"num_to_spawn": 1,
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "wu:firefly.entity",
+							"single_use": true
+						},
+						{
+							"should_leash": false,
+							"num_to_spawn": 1,
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"single_use": true,
+							"spawn_entity": "wu:firefly.target.entity"
+						}
+					]
+				}
+			},
+			"wu:instant_despawn": {
+				"minecraft:instant_despawn": {
+					"remove_child_entities": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:behavior.random_hover": {
+				"priority": 12,
+				"xz_dist": 8,
+				"y_dist": 8,
+				"y_offset": -1,
+				"interval": 1,
+				"hover_height": [
+					1,
+					4
+				]
+			},
+			"minecraft:behavior.float": {
+				"priority": 19
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"firefly.track",
+					"inanimate"
+				]
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"operator": "!=",
+								"value": "frog"
+							},
+							"target": "self"
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:flying_speed": {
+				"value": 0.1
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:fire_immune": {},
+			"minecraft:can_fly": {},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_daytime",
+							"value": true
+						},
+						"event": "wu:instant_despawn.event"
+					},
+					{
+						"filters": {
+							"test": "in_water_or_rain",
+							"subject": "self",
+							"value": true
+						},
+						"event": "wu:instant_despawn.event"
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"attack_interval": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "firefly.target"
+								}
+							]
+						},
+						"max_dist": 10
+					}
+				],
+				"must_see": false,
+				"must_reach": true
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 0,
+				"speed_multiplier": 1.3,
+				"track_target": true
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"firefly"
+				],
+				"pull_in_entities": false,
+				"seats": [
+					{
+						"position": [
+							0,
+							0,
+							0
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 1
+					}
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 0,
+				"suffocateTime": 0,
+				"generates_bubbles": false
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"wu:summon.firefly.entity"
+					]
+				}
+			},
+			"wu:instant_despawn.event": {
+				"add": {
+					"component_groups": [
+						"wu:instant_despawn"
+					]
+				}
+			}
+		}
+	}
+}

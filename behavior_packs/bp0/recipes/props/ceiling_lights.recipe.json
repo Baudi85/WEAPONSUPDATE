@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "xp:ceiling_lights"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " g ",
+            "NgN",
+            "ggg"
+        ],
+        "key": {
+            "g": {
+                "item": "minecraft:iron_nugget"
+            },
+            "N": {
+                "item": "minecraft:candle"
+            }
+        },
+        "result": {
+            "item": "xp:ceiling_lights_spawn_egg",
+            "count": 1
+        }
+    }
+}

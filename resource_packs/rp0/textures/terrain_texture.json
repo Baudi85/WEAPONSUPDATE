@@ -1,0 +1,71 @@
+{
+	"resource_pack_name": "elemental_swords",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"fire": {
+			"textures": "textures/particles/fire_3"
+		},
+		"wall_torch_block": {
+			"textures": "textures/blocks/wall_torch_block"
+		},
+		"fire_ore": {
+			"textures": "textures/blocks/ore_blocks/fire_ore"
+		},
+		"ice_ore": {
+			"textures": "textures/blocks/ore_blocks/ice_ore"
+		},
+		"light_ore": {
+			"textures": "textures/blocks/ore_blocks/light_ore"
+		},
+		"ender_ore": {
+			"textures": "textures/blocks/ore_blocks/ender_ore"
+		},
+		"water_ore": {
+			"textures": "textures/blocks/ore_blocks/water_ore"
+		},
+		"wind_ore": {
+			"textures": "textures/blocks/ore_blocks/wind_ore"
+		},
+		"spike_ore": {
+			"textures": "textures/blocks/ore_blocks/spike_ore"
+		},
+		"earth_ore": {
+			"textures": "textures/blocks/ore_blocks/earth_ore"
+		},
+		"thunder_ore": {
+			"textures": "textures/blocks/ore_blocks/thunder_ore"
+		},
+		"jungle_ore": {
+			"textures": "textures/blocks/ore_blocks/jungle_ore"
+		},
+		"ocean_ore": {
+			"textures": "textures/blocks/ore_blocks/ocean_ore"
+		},
+		"darkness_ore": {
+			"textures": "textures/blocks/ore_blocks/darkness_ore"
+		},
+		"nether_ore": {
+			"textures": "textures/blocks/ore_blocks/nether_ore"
+		},
+		"lava_ore": {
+			"textures": "textures/blocks/ore_blocks/lava_ore"
+		},
+		"sonic_ore": {
+			"textures": "textures/blocks/ore_blocks/sonic_ore"
+		},
+		"poison_ore": {
+			"textures": "textures/blocks/ore_blocks/poison_ore"
+		},
+		"dirt_ore": {
+			"textures": "textures/blocks/ore_blocks/dirt_ore"
+		},
+		"storm_ore": {
+			"textures": "textures/blocks/ore_blocks/storm_ore"
+		},
+		"tnt_ore": {
+			"textures": "textures/blocks/ore_blocks/tnt_ore"
+		}
+	}
+}

@@ -1,0 +1,119 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.podium": {
+      "arrays": {
+        "textures": {
+          "array.podium_material": [ 
+            "texture.andesite_podium",
+            "texture.diorite_podium",
+            "texture.granite_podium"
+          ]
+        }
+      },
+      "geometry": "geometry.podium",
+      "materials": [ { "*": "material.podium" } ],
+      "textures": [ "array.podium_material[q.variant]" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": "!q.is_in_ui" }
+      ]
+    },
+
+    "controller.render.darkness_sword_podium": {
+      "geometry": "geometry.darkness_sword",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "Texture.darkness_sword" ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "part_visibility": [
+        { "*": true },
+        { "glisters": false }
+      ]
+    },
+    "controller.render.darkness_sword_effect": {
+      "geometry": "geometry.darkness_sword",
+      "materials": [ { "*": "material.default" } ],
+      "textures": [ "array.sword[Math.mod(Math.floor(query.life_time * 15.0), 30.0)]" ],
+      "arrays": {
+        "textures": {
+          "array.sword": [ 
+            "texture.darkness_sword_0",
+            "texture.darkness_sword_1",
+            "texture.darkness_sword_2",
+            "texture.darkness_sword_3",
+            "texture.darkness_sword_4",
+            "texture.darkness_sword_5",
+            "texture.darkness_sword_6",
+            "texture.darkness_sword_7",
+            "texture.darkness_sword_8",
+            "texture.darkness_sword_9",
+            "texture.darkness_sword_10",
+            "texture.darkness_sword_11",
+            "texture.darkness_sword_12",
+            "texture.darkness_sword_13",
+            "texture.darkness_sword_14",
+            "texture.darkness_sword_15",
+            "texture.darkness_sword_16",
+            "texture.darkness_sword_17",
+            "texture.darkness_sword_18",
+            "texture.darkness_sword_19",
+            "texture.darkness_sword_20",
+            "texture.darkness_sword_21",
+            "texture.darkness_sword_22",
+            "texture.darkness_sword_23",
+            "texture.darkness_sword_24",
+            "texture.darkness_sword_25",
+            "texture.darkness_sword_26",
+            "texture.darkness_sword_27",
+            "texture.darkness_sword_28",
+            "texture.darkness_sword_29",
+            "texture.darkness_sword_30",
+            "texture.darkness_sword_31",
+            "texture.darkness_sword_32",
+            "texture.darkness_sword_33",
+            "texture.darkness_sword_34",
+            "texture.darkness_sword_35",
+            "texture.darkness_sword_36",
+            "texture.darkness_sword_37",
+            "texture.darkness_sword_38",
+            "texture.darkness_sword_39",
+            "texture.darkness_sword_30",
+            "texture.darkness_sword_31",
+            "texture.darkness_sword_32",
+            "texture.darkness_sword_33",
+            "texture.darkness_sword_34",
+            "texture.darkness_sword_35",
+            "texture.darkness_sword_36",
+            "texture.darkness_sword_37",
+            "texture.darkness_sword_38",
+            "texture.darkness_sword_39",
+            "texture.darkness_sword_40",
+            "texture.darkness_sword_41",
+            "texture.darkness_sword_42",
+            "texture.darkness_sword_43",
+            "texture.darkness_sword_44",
+            "texture.darkness_sword_45",
+            "texture.darkness_sword_46",
+            "texture.darkness_sword_47",
+            "texture.darkness_sword_48",
+            "texture.darkness_sword_49",
+            "texture.darkness_sword_50",
+            "texture.darkness_sword_51",
+            "texture.darkness_sword_52",
+            "texture.darkness_sword_53",
+            "texture.darkness_sword_54",
+            "texture.darkness_sword_55",
+            "texture.darkness_sword_56",
+            "texture.darkness_sword_57",
+            "texture.darkness_sword_58",
+            "texture.darkness_sword_59"
+          ]
+        }
+      },
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    }
+  }
+}

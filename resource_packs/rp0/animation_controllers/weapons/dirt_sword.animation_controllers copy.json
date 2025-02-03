@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+      "controller.animation.dirt_sword.fpp": {
+          "initial_state": "weapon_draw",
+          "states": {
+              "weapon_draw":{
+                  "animations": ["weapon_draw"], 
+                  "transitions": [
+                      {"weapon_hold":"q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.25,
+                  "on_exit": [ "variable.draw_sword = 0;" ]
+              },
+              "weapon_hold":{
+                  "animations": ["bob","weapon_hold"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"dirt.attack":"v.attack_time > 0"},
+                      {"dirt.use":"q.is_using_item"}
+                  ]
+              },
+              "dirt.attack":{
+                  "animations": ["dirt.attack"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"weapon_hold": "q.all_animations_finished"},
+                      {"dirt.use":"q.is_using_item"}
+                  ],
+                  "blend_transition": 0.15
+              },
+              "dirt.use":{
+                  "animations": ["dirt.use"], 
+                  "transitions": [
+                      {"weapon_draw":"v.draw_sword"},
+                      {"weapon_hold": "q.all_animations_finished"}
+                  ],
+                  "blend_transition": 0.15
+              }
+          }
+      },
+      "controller.animation.dirt_sword.tpp": {
+        "initial_state": "weapon_t_draw",
+        "states": {
+            "weapon_t_draw":{
+                "animations": ["weapon_t_draw", "move.arms"], 
+                "transitions": [
+                    {"weapon_t_hold":"q.all_animations_finished"}
+                ],
+                "blend_transition": 0.1,
+                "on_exit": [ "variable.draw_sword = 0;" ]
+            },
+            "weapon_t_hold":{
+                "animations": ["bob","weapon_t_hold", "move.arms"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"dirt.t_attack":"v.attack_time > 0"},
+                    {"dirt.t_use":"q.is_using_item"}
+                ]
+            },
+            "dirt.t_attack":{
+                "animations": ["dirt.t_attack", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"},
+                    {"dirt.t_use":"q.is_using_item"}
+                ],
+                "blend_transition": 0.1
+            },
+            "dirt.t_use":{
+                "animations": ["dirt.t_use", "holding_cancel"], 
+                "transitions": [
+                    {"weapon_t_draw":"v.draw_sword"},
+                    {"weapon_t_hold": "q.all_animations_finished"}
+                ],
+                "blend_transition": 0.1
+            }
+        }
+      }
+   }
+}
